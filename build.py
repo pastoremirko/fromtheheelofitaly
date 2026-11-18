@@ -240,13 +240,17 @@ def window_bg(a):
 
 def area_window(a, n):
     label = f"{n} update{'s' if n != 1 else ''}" if n else "Coming soon"
-    return f"""<a class="window" href="/{a['slug']}/" {style_c(a)}>
-  {window_bg(a)}
-  <div class="inner">
-    <span class="count">{label}</span>
+    if a.get("image"):
+        img = f'<div class="media"><img src="{esc(a["image"])}" alt="" loading="lazy"></div>'
+    else:
+        img = f'<div class="media ph" {style_c(a)}>{ICONS[a["icon"]]}</div>'
+    return f"""<a class="area-card" href="/{a['slug']}/" {style_c(a)}>
+  {img}
+  <div class="body">
+    <span class="tag">{label}</span>
     <h3>{esc(a['name'])}</h3>
     <p>{esc(a['intro'])}</p>
-    <span class="go">Explore</span>
+    <span class="go">Read the updates</span>
   </div>
 </a>"""
 
@@ -273,6 +277,14 @@ def chips(active=""):
 def page_home(posts):
     counts = {a["slug"]: sum(1 for p in posts if p["area"]["slug"] == a["slug"]) for a in SITE["areas"]}
     windows = "".join(area_window(a, counts[a["slug"]]) for a in SITE["areas"])
+    windows += f"""<a class="area-card cta" href="/support/">
+  <div class="body">
+    <span class="tag">Partner with us</span>
+    <h3>Support the work</h3>
+    <p>Pray with us, give, or come and visit. Every area of this ministry is carried by friends like you.</p>
+    <span class="go">How to help</span>
+  </div>
+</a>"""
     latest = ""
     if posts:
         latest = featured(posts[0])
@@ -300,7 +312,7 @@ def page_home(posts):
 <section><div class="wrap">
   <div class="section-head">
     <h2 class="display">Our areas of ministry</h2>
-    <span class="link">Five windows on one mission</span>
+    <span class="link">One church, one mission</span>
   </div>
   <div class="areas">{windows}</div>
 </div></section>

@@ -295,3 +295,29 @@ a.window:hover .bg img { transform: scale(1.05); }
 .site-footer li { margin-bottom: 8px; }
 .site-footer .small { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); font-size: .82rem; color: rgba(255,255,255,.5); }
 @media (max-width: 760px) { .site-footer .cols { grid-template-columns: 1fr; } }
+
+/* Area cards (ministrydesigns-style: image on top, clean white card) */
+.areas { grid-template-columns: repeat(3, 1fr); }
+.areas .area-card { grid-column: auto !important; }
+@media (max-width: 960px) { .areas { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .areas { grid-template-columns: 1fr; } }
+.area-card {
+  background: var(--surface); border-radius: var(--r-md); overflow: hidden; text-decoration: none; color: var(--ink);
+  display: flex; flex-direction: column; box-shadow: var(--shadow-rest);
+  transition: box-shadow .3s var(--ease), transform .3s var(--ease);
+}
+.area-card:hover { box-shadow: var(--shadow-lift); transform: translateY(-2px); color: var(--ink); }
+.area-card:hover .media img { transform: scale(1.04); }
+.area-card .media { aspect-ratio: 16 / 9; }
+.area-card .media.ph svg { width: 64px; height: 64px; opacity: .55; }
+.area-card .body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.area-card h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 1.75rem; line-height: 1.05; margin: 0; }
+.area-card p { margin: 0; color: var(--ink-soft); font-size: .95rem; line-height: 1.55; }
+.area-card .go { margin-top: auto; padding-top: 10px; font-size: 12px; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; color: var(--brand); }
+.area-card .go::after { content: " →"; }
+.area-card.cta { background: var(--brand); color: #fff; justify-content: flex-end; min-height: 300px; position: relative; overflow: hidden; }
+.area-card.cta::before { content: ""; position: absolute; right: -60px; top: -60px; width: 240px; height: 240px; border-radius: 50%; border: 36px solid rgba(255,255,255,.12); }
+.area-card.cta:hover { color: #fff; background: var(--brand-deep); }
+.area-card.cta .tag, .area-card.cta p { color: rgba(255,255,255,.85); }
+.area-card.cta .go { color: #fff; }
+.area-card.cta .body { position: relative; flex: 0; }
