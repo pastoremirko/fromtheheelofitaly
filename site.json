@@ -1,10 +1,10 @@
 {
-  "title": "From the Heel of Italy",
-  "tagline": "…to the ends of the earth",
-  "description": "Updates from Pastor Mirko and Full Gospel Church in Modugno, Southern Italy: family, church life, Il Rifugio Center, missions and church planting across Puglia and beyond.",
+  "title": "Updates",
+  "tagline": "From the heel of Italy to the nations",
+  "description": "News from the Pieno Vangelo ministry and the Ronchi family: church life in Modugno, Il Rifugio, missions and church planting across Puglia and beyond.",
   "base_url": "https://fromtheheelofitaly.org",
-  "author": "Pastor Mirko",
-  "church": "Full Gospel Church Modugno",
+  "author": "Pastor Mirko Ronchi",
+  "church": "Pieno Vangelo Church",
   "subscribe_url": "#subscribe",
   "contact_email": "",
   "youtube": "",
@@ -57,5 +57,6 @@
       "image": ""
     }
   ],
-  "draft_mode": true
+  "draft_mode": true,
+  "site_name": "Updates · Pieno Vangelo"
 }
