@@ -11,7 +11,10 @@
 <meta property="og:url" content="https://fromtheheelofitaly.org/updates/welcome/">
 <meta property="og:type" content="website">
 
+<meta name="theme-color" content="#f6f6f6">
 <link rel="icon" href="/img/mark.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" type="application/rss+xml" title="From the Heel of Italy" href="/feed.xml">
 <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -20,18 +23,18 @@
   <div class="wrap">
     <a class="brand" href="/"><img src="/img/mark.svg" alt=""><span>From the Heel of Italy</span></a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">Menu</button>
-    <nav class="nav"><a href="/">Home</a><a href="/updates/">Updates</a><a href="/family/">Family</a><a href="/church/">Church</a><a href="/il-rifugio/">Il Rifugio</a><a href="/missions/">Missions</a><a href="/plant-and-strengthen/">Church Planting</a><a href="/support/">Support</a><a class="btn-sub" href="#subscribe">Subscribe</a></nav>
+    <nav class="nav"><a href="/updates/">Updates</a><a href="/family/">Family</a><a href="/church/">Church</a><a href="/il-rifugio/">Il Rifugio</a><a href="/missions/">Missions</a><a href="/plant-and-strengthen/">Church Planting</a><a href="/about/">About</a><a href="/support/">Support</a><a class="btn-sub" href="#subscribe">Subscribe</a></nav>
   </div>
 </header>
 <main>
-<article style="--c:#1F4E79">
+<article>
   <header class="article-head"><div class="narrow">
-    <span class="tag">News</span>
-    <h1>Welcome to From the Heel of Italy</h1>
+    <p class="eyebrow">News</p>
+    <h1 class="display">Welcome to From the Heel of Italy</h1>
     <div class="meta">18 November 2026 · Pastor Mirko</div>
   </div></header>
   
-  <div class="narrow prose"><p>Dear friends,</p>
+  <div class="narrow page-body"><div class="prose-card prose"><p>Dear friends,</p>
 <p>Thank you for being here. Many of you have prayed for us, visited us or supported our work in Puglia over the years, and we have often wished we could keep you better informed. <em>From the Heel of Italy</em> is our answer to that.</p>
 <p>Every two to four weeks we will send you a short update from one of the areas of ministry that grow out of our local church in Modugno:</p>
 <ul>
@@ -46,22 +49,25 @@
 <p><em>With gratitude,</em><br />
 <em>Pastor Mirko</em></p>
     <div class="article-foot"><a href="/updates/">← All updates</a><a href="#subscribe">Get updates by email →</a></div>
-  </div>
+  </div></div>
 </article>
 
-<section class="subscribe" id="subscribe">
-  <div class="narrow">
-    <h2>Walk with us</h2>
-    <p>Receive a short update every few weeks: one story, one photo, and a link to read more. No spam, and you can unsubscribe at any time.</p>
-    <a class="btn btn-primary" href="#subscribe">Subscribe to the newsletter</a>
+<section class="subscribe" id="subscribe"><div class="wrap"><div class="box">
+  <div>
+    <h2 class="display">Walk <em>with us</em></h2>
+    <p>A short update every few weeks: one story, one photo and a link to read more. No spam, unsubscribe anytime.</p>
   </div>
-</section>
+  <div class="actions">
+    <a class="btn btn-primary" href="#subscribe">Subscribe</a>
+    <a class="btn btn-light" href="/support/">Support the work</a>
+  </div>
+</div></div></section>
 </main>
 <footer class="site-footer">
   <div class="wrap">
     <div class="cols">
       <div>
-        <h4>From the Heel of Italy</h4>
+        <p class="brandline">From the Heel of Italy<br><em>to the ends of the earth</em></p>
         <p>Updates from Pastor Mirko and Full Gospel Church in Modugno, Southern Italy: family, church life, Il Rifugio Center, missions and church planting across Puglia and beyond.</p>
       </div>
       <div>
@@ -75,11 +81,12 @@
           <li><a href="/support/">Support the work</a></li>
           <li><a href="/about/">About us</a></li>
           
+          <li><a href="https://pienovangelo.it" rel="noopener">pienovangelo.it</a></li>
           <li><a href="/feed.xml">RSS feed</a></li>
         </ul>
       </div>
     </div>
-    <p class="small">© 2026 Full Gospel Church Modugno · <a href="/privacy/">Privacy</a></p>
+    <p class="small">© 2026 Full Gospel Church Modugno · Modugno (BA), Italy · <a href="/privacy/">Privacy</a></p>
   </div>
 </footer>
 </body>

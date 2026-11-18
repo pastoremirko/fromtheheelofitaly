@@ -15,41 +15,46 @@
       "slug": "family",
       "name": "Family Life",
       "short": "Family",
-      "color": "#B5562F",
+      "color": "#e74759",
       "icon": "home",
-      "intro": "Personal news from Pastor Mirko and family: what God is doing in our home, how we are doing, and how you can pray for us."
+      "intro": "Personal news from Pastor Mirko and family: what God is doing in our home, how we are doing, and how you can pray for us.",
+      "image": ""
     },
     {
       "slug": "church",
       "name": "Our Church – Modugno",
       "short": "Church",
-      "color": "#1F4E79",
+      "color": "#b0181b",
       "icon": "church",
-      "intro": "Full Gospel Church in Modugno, near Bari, was born in the 1970s from a Dutch missionary work. Here we share news on events, new projects, initiatives and the vision we are pursuing for our city."
+      "intro": "Full Gospel Church in Modugno, near Bari, was born in the 1970s from a Dutch missionary work. Here we share news on events, new projects, initiatives and the vision we are pursuing for our city.",
+      "image": ""
     },
     {
       "slug": "il-rifugio",
       "name": "Il Rifugio Center",
       "short": "Il Rifugio",
-      "color": "#5F6E2E",
+      "color": "#e26900",
       "icon": "tent",
-      "intro": "Il Rifugio, in Ruvo di Puglia, is a centre serving churches in Puglia and across Italy: camps, retreats, conferences, leadership training and a place of rest for missionaries."
+      "intro": "Il Rifugio, in Ruvo di Puglia, is a centre serving churches in Puglia and across Italy: camps, retreats, conferences, leadership training and a place of rest for missionaries.",
+      "image": ""
     },
     {
       "slug": "missions",
       "name": "To the Ends of the Earth",
       "short": "Missions",
-      "color": "#1D6B70",
+      "color": "#2f7d8a",
       "icon": "globe",
-      "intro": "Sending workers beyond our borders and preparing young people to go: training, departures and stories from those we send."
+      "intro": "Sending workers beyond our borders and preparing young people to go: training, departures and stories from those we send.",
+      "image": ""
     },
     {
       "slug": "plant-and-strengthen",
       "name": "Plant & Strengthen",
       "short": "Church Planting",
-      "color": "#A97A1E",
+      "color": "#8a9a3b",
       "icon": "seed",
-      "intro": "Planting new churches across Puglia, a region where many towns still have no living church, and standing alongside existing churches that need support to keep going."
+      "intro": "Planting new churches across Puglia, a region where many towns still have no living church, and standing alongside existing churches that need support to keep going.",
+      "image": ""
     }
   ]
 }

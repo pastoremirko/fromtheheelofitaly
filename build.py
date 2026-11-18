@@ -19,7 +19,7 @@ ROOT = Path(__file__).parent
 OUT = ROOT / "public"
 SITE = json.loads((ROOT / "site.json").read_text(encoding="utf-8"))
 AREAS = {a["slug"]: a for a in SITE["areas"]}
-GENERAL = {"slug": "", "name": "News", "short": "News", "color": "#1F4E79", "icon": "mark"}
+GENERAL = {"slug": "", "name": "News", "short": "News", "color": "#e74759", "icon": "mark"}
 
 ICONS = {
     "home": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M12 17.5s-3-1.8-3-3.8a1.6 1.6 0 0 1 3-.8 1.6 1.6 0 0 1 3 .8c0 2-3 3.8-3 3.8z"/></svg>',
@@ -105,9 +105,9 @@ def fmt_date(d):
 
 
 def nav(active=""):
-    links = [("/", "Home", "home"), ("/updates/", "Updates", "updates")]
+    links = [("/updates/", "Updates", "updates")]
     links += [(f"/{a['slug']}/", a["short"], a["slug"]) for a in SITE["areas"]]
-    links += [("/support/", "Support", "support")]
+    links += [("/about/", "About", "about"), ("/support/", "Support", "support")]
     items = "".join(
         f'<a href="{u}"{" class=active" if k == active else ""}>{esc(t)}</a>' for u, t, k in links)
     items += f'<a class="btn-sub" href="{SITE["subscribe_url"]}">Subscribe</a>'
@@ -138,7 +138,10 @@ def layout(title, content, description=None, active="", image=None, path="/"):
 <meta property="og:url" content="{url}">
 <meta property="og:type" content="website">
 {og_img}
+<meta name="theme-color" content="#f6f6f6">
 <link rel="icon" href="/img/mark.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" type="application/rss+xml" title="{esc(SITE['title'])}" href="/feed.xml">
 <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -157,7 +160,7 @@ def layout(title, content, description=None, active="", image=None, path="/"):
   <div class="wrap">
     <div class="cols">
       <div>
-        <h4>{esc(SITE['title'])}</h4>
+        <p class="brandline">From the Heel of Italy<br><em>to the ends of the earth</em></p>
         <p>{esc(SITE['description'])}</p>
       </div>
       <div>
@@ -171,11 +174,12 @@ def layout(title, content, description=None, active="", image=None, path="/"):
           <li><a href="/support/">Support the work</a></li>
           <li><a href="/about/">About us</a></li>
           {contact}{socials}
+          <li><a href="https://pienovangelo.it" rel="noopener">pienovangelo.it</a></li>
           <li><a href="/feed.xml">RSS feed</a></li>
         </ul>
       </div>
     </div>
-    <p class="small">© {year} {esc(SITE['church'])} · <a href="/privacy/">Privacy</a></p>
+    <p class="small">© {year} {esc(SITE['church'])} · Modugno (BA), Italy · <a href="/privacy/">Privacy</a></p>
   </div>
 </footer>
 </body>
@@ -187,18 +191,22 @@ def style_c(area):
     return f'style="--c:{area["color"]}"'
 
 
-def cover_html(post, cls="cover"):
+def media(post, extra=""):
+    a = post["area"]
     if post["cover"]:
-        return f'<div class="{cls}"><img src="{esc(post["cover"])}" alt="{esc(post["cover_alt"])}" loading="lazy"></div>'
-    return f'<div class="{cls} placeholder" {style_c(post["area"])}><span>{ICONS[post["area"]["icon"]]}</span></div>'
+        return f'<div class="media {extra}"><img src="{esc(post["cover"])}" alt="{esc(post["cover_alt"])}" loading="lazy"></div>'
+    return f'<div class="media ph {extra}" {style_c(a)}>{ICONS[a["icon"]]}</div>'
 
 
-def post_card(p):
-    a = p["area"]
-    return f"""<a class="post-card" href="{p['url']}" {style_c(a)}>
-  {cover_html(p)}
+def tag_html(a):
+    return f'<span class="tag">{esc(a["name"])}</span>'
+
+
+def card(p):
+    return f"""<a class="card" href="{p['url']}">
+  {media(p)}
   <div class="body">
-    <span class="tag">{esc(a['short'])}</span>
+    {tag_html(p['area'])}
     <h3>{esc(p['title'])}</h3>
     <p>{esc(p['excerpt'])}</p>
     <span class="meta">{fmt_date(p['date'])}</span>
@@ -206,130 +214,172 @@ def post_card(p):
 </a>"""
 
 
-def posts_grid(posts, empty="The first update is on its way."):
-    if not posts:
-        return f'<div class="empty">{esc(empty)}</div>'
-    return '<div class="posts-grid">' + "".join(post_card(p) for p in posts) + "</div>"
-
-
-def area_card(a):
-    return f"""<a class="area-card" href="/{a['slug']}/" {style_c(a)}>
-  <span class="icon">{ICONS[a['icon']]}</span>
-  <h3>{esc(a['name'])}</h3>
-  <p>{esc(a['intro'])}</p>
-  <span class="more">See updates →</span>
+def featured(p):
+    return f"""<a class="featured" href="{p['url']}">
+  {media(p)}
+  <div class="body">
+    {tag_html(p['area'])}
+    <h3>{esc(p['title'])}</h3>
+    <p>{esc(p['excerpt'])}</p>
+    <span class="meta">{fmt_date(p['date'])} · Read more →</span>
+  </div>
 </a>"""
 
 
-SUBSCRIBE_BAND = f"""<section class="subscribe" id="subscribe">
-  <div class="narrow">
-    <h2>Walk with us</h2>
-    <p>Receive a short update every few weeks: one story, one photo, and a link to read more. No spam, and you can unsubscribe at any time.</p>
-    <a class="btn btn-primary" href="{SITE['subscribe_url']}">Subscribe to the newsletter</a>
-  </div>
-</section>"""
+def cards_grid(posts, empty="The first update is on its way.", cls=""):
+    if not posts:
+        return f'<div class="empty">{esc(empty)}</div>'
+    return f'<div class="grid {cls}">' + "".join(card(p) for p in posts) + "</div>"
 
-VERSE = """<section class="verse">
-  <div class="wrap">
-    <blockquote>“You will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth.”</blockquote>
-    <cite>Acts 1:8</cite>
+
+def window_bg(a):
+    if a.get("image"):
+        return f'<div class="bg"><img src="{esc(a["image"])}" alt="" loading="lazy"></div>'
+    return f'<div class="bg ph" {style_c(a)}>{ICONS[a["icon"]]}</div>'
+
+
+def area_window(a, n):
+    label = f"{n} update{'s' if n != 1 else ''}" if n else "Coming soon"
+    return f"""<a class="window" href="/{a['slug']}/" {style_c(a)}>
+  {window_bg(a)}
+  <div class="inner">
+    <span class="count">{label}</span>
+    <h3>{esc(a['name'])}</h3>
+    <p>{esc(a['intro'])}</p>
+    <span class="go">Explore</span>
   </div>
-</section>"""
+</a>"""
+
+
+def subscribe_band():
+    return f"""<section class="subscribe" id="subscribe"><div class="wrap"><div class="box">
+  <div>
+    <h2 class="display">Walk <em>with us</em></h2>
+    <p>A short update every few weeks: one story, one photo and a link to read more. No spam, unsubscribe anytime.</p>
+  </div>
+  <div class="actions">
+    <a class="btn btn-primary" href="{SITE['subscribe_url']}">Subscribe</a>
+    <a class="btn btn-light" href="/support/">Support the work</a>
+  </div>
+</div></div></section>"""
+
+
+def chips(active=""):
+    items = [("/updates/", "All", "")] + [(f"/{a['slug']}/", a["short"], a["slug"]) for a in SITE["areas"]]
+    return '<nav class="chips">' + "".join(
+        f'<a href="{u}"{" class=on" if k == active else ""}>{esc(t)}</a>' for u, t, k in items) + "</nav>"
 
 
 def page_home(posts):
-    areas = "".join(area_card(a) for a in SITE["areas"])
-    content = f"""<section class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Puglia · Southern Italy</p>
-    <h1>{esc(SITE['title'])}</h1>
-    <p class="tagline">{esc(SITE['tagline'])}</p>
-    <p class="lead">{esc(SITE['description'])}</p>
-    <a class="btn btn-primary" href="{SITE['subscribe_url']}">Get the newsletter</a>
-    <a class="btn btn-ghost" href="/updates/">Read the updates</a>
-  </div>
-</section>
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <h2>What we are building</h2>
-      <p>Five areas of ministry, all growing out of our local church in Modugno, near Bari.</p>
+    counts = {a["slug"]: sum(1 for p in posts if p["area"]["slug"] == a["slug"]) for a in SITE["areas"]}
+    windows = "".join(area_window(a, counts[a["slug"]]) for a in SITE["areas"])
+    latest = ""
+    if posts:
+        latest = featured(posts[0])
+        if len(posts) > 1:
+            latest += cards_grid(posts[1:4], cls="top")
+    else:
+        latest = '<div class="empty">The first update is on its way.</div>'
+    content = f"""<div class="intro"><div class="wrap">
+  <p class="eyebrow">{esc(SITE['church'])} · Puglia, Southern Italy</p>
+  <h1 class="display">From the Heel of Italy<br><em>to the ends of the earth</em></h1>
+  <div class="sub">
+    <p>{esc(SITE['description'])}</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="{SITE['subscribe_url']}">Get the newsletter</a>
     </div>
-    <div class="areas-grid">{areas}</div>
   </div>
-</section>
-{VERSE}
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Latest updates</h2>
-      <p><a href="/updates/">See all updates →</a></p>
-    </div>
-    {posts_grid(posts[:6])}
+</div></div>
+<section><div class="wrap">
+  <div class="section-head">
+    <h2 class="display">Latest updates</h2>
+    <a class="link" href="/updates/">All updates →</a>
   </div>
-</section>
-{SUBSCRIBE_BAND}"""
+  {latest}
+</div></section>
+<section><div class="wrap">
+  <div class="section-head">
+    <h2 class="display">Our areas of ministry</h2>
+    <span class="link">Five windows on one mission</span>
+  </div>
+  <div class="areas">{windows}</div>
+</div></section>
+<div class="verse"><div class="wrap"><div class="box">
+  <blockquote>“You will be my witnesses in Jerusalem, and in all Judea and Samaria, and <em>to the ends of the earth</em>.”</blockquote>
+  <cite>Acts 1:8</cite>
+</div></div></div>
+{subscribe_band()}"""
     return layout(SITE["title"], content, active="home")
 
 
 def page_updates(posts):
     content = f"""<header class="page-head"><div class="wrap">
-  <h1>All updates</h1>
-  <p>Every story we have shared, newest first.</p>
+  <p class="eyebrow">News &amp; stories</p>
+  <h1 class="display">All <em>updates</em></h1>
+  {chips("")}
 </div></header>
-<section><div class="wrap">{posts_grid(posts)}</div></section>
-{SUBSCRIBE_BAND}"""
+<section><div class="wrap">{cards_grid(posts)}</div></section>
+{subscribe_band()}"""
     return layout("Updates", content, active="updates", path="/updates/")
 
 
 def page_area(a, posts):
     mine = [p for p in posts if p["area"]["slug"] == a["slug"]]
-    content = f"""<header class="page-head area" {style_c(a)}><div class="wrap">
-  <span class="icon">{ICONS[a['icon']]}</span>
-  <h1>{esc(a['name'])}</h1>
-  <p>{esc(a['intro'])}</p>
-</div></header>
-<section><div class="wrap">{posts_grid(mine, "The first update from this area is on its way.")}</div></section>
-{SUBSCRIBE_BAND}"""
+    content = f"""<div class="area-hero"><div class="wrap">
+  <div class="window" {style_c(a)}>
+    {window_bg(a)}
+    <div class="inner">
+      <span class="count">{len(mine) or 'No'} update{'s' if len(mine) != 1 else ''}</span>
+      <h1>{esc(a['name'])}</h1>
+      <p>{esc(a['intro'])}</p>
+    </div>
+  </div>
+  {chips(a['slug'])}
+</div></div>
+<section><div class="wrap">{cards_grid(mine, "The first update from this area is on its way.")}</div></section>
+{subscribe_band()}"""
     return layout(a["name"], content, description=a["intro"], active=a["slug"], path=f"/{a['slug']}/")
 
 
 def page_post(p, posts):
     a = p["area"]
-    area_link = f'<a class="tag" href="/{a["slug"]}/">{esc(a["name"])}</a>' if a["slug"] else f'<span class="tag">{esc(a["name"])}</span>'
-    more = [q for q in posts if q is not p and q["area"]["slug"] == a["slug"]][:3]
+    eyebrow = (f'<a class="eyebrow" href="/{a["slug"]}/">{esc(a["name"])}</a>' if a["slug"]
+               else f'<p class="eyebrow">{esc(a["name"])}</p>')
+    more = [q for q in posts if q is not p and (q["area"]["slug"] == a["slug"] or not a["slug"])][:3]
     more_html = ""
     if more:
+        title = f"More from {esc(a['name'])}" if a["slug"] else "More updates"
         more_html = f"""<section><div class="wrap">
-  <div class="section-head"><h2>More from {esc(a['name'])}</h2></div>
-  {posts_grid(more)}
+  <div class="section-head"><h2 class="display">{title}</h2></div>
+  {cards_grid(more)}
 </div></section>"""
-    back = f'<a href="/{a["slug"]}/">← All {esc(a["name"])} updates</a>' if a["slug"] else '<a href="/updates/">← All updates</a>'
-    cover = f'<div class="article-cover">{cover_html(p)}</div>' if p["cover"] else ""
-    content = f"""<article {style_c(a)}>
+    back = (f'<a href="/{a["slug"]}/">← All {esc(a["name"])} updates</a>' if a["slug"]
+            else '<a href="/updates/">← All updates</a>')
+    cover = f'<div class="article-cover">{media(p)}</div>' if p["cover"] else ""
+    content = f"""<article>
   <header class="article-head"><div class="narrow">
-    {area_link}
-    <h1>{esc(p['title'])}</h1>
+    {eyebrow}
+    <h1 class="display">{esc(p['title'])}</h1>
     <div class="meta">{fmt_date(p['date'])} · {esc(SITE['author'])}</div>
   </div></header>
   {cover}
-  <div class="narrow prose">{p['html']}
+  <div class="narrow page-body"><div class="prose-card prose">{p['html']}
     <div class="article-foot">{back}<a href="{SITE['subscribe_url']}">Get updates by email →</a></div>
-  </div>
+  </div></div>
 </article>
 {more_html}
-{SUBSCRIBE_BAND}"""
+{subscribe_band()}"""
     return layout(p["title"], content, description=p["excerpt"], active=a["slug"],
                   image=p["cover"] or None, path=p["url"])
 
 
 def page_simple(slug, meta, body):
-    content = f"""<header class="page-head"><div class="wrap">
-  <h1>{esc(meta.get('title', slug))}</h1>
+    content = f"""<header class="page-head"><div class="narrow">
+  <h1 class="display">{esc(meta.get('title', slug))}</h1>
   {f"<p>{esc(meta['intro'])}</p>" if meta.get('intro') else ""}
 </div></header>
-<div class="page-body"><div class="narrow prose">{render_body(body)}</div></div>
-{SUBSCRIBE_BAND if slug != 'privacy' else ''}"""
+<div class="narrow page-body"><div class="prose-card prose">{render_body(body)}</div></div>
+{subscribe_band() if slug != 'privacy' else ''}"""
     return layout(meta.get("title", slug), content, description=meta.get("intro"), active=slug, path=f"/{slug}/")
 
 
@@ -375,7 +425,7 @@ def main():
         write(f"{pg.stem}/index.html", page_simple(pg.stem, meta, body))
     write("feed.xml", feed(posts))
     write("404.html", layout("Page not found", """<header class="page-head"><div class="wrap">
-  <h1>Page not found</h1><p>The page you are looking for is not here. <a href="/">Go back home</a>.</p>
+  <h1 class="display">Page <em>not found</em></h1><p>The page you are looking for is not here. <a href="/">Go back home</a>.</p>
 </div></header>"""))
     print(f"Built {len(posts)} posts into {OUT}")
 
