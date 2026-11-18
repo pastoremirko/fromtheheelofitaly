@@ -1,0 +1,55 @@
+{
+  "title": "From the Heel of Italy",
+  "tagline": "…to the ends of the earth",
+  "description": "Updates from Pastor Mirko and Full Gospel Church in Modugno, Southern Italy: family, church life, Il Rifugio Center, missions and church planting across Puglia and beyond.",
+  "base_url": "https://fromtheheelofitaly.org",
+  "author": "Pastor Mirko",
+  "church": "Full Gospel Church Modugno",
+  "subscribe_url": "#subscribe",
+  "contact_email": "",
+  "youtube": "",
+  "facebook": "",
+  "instagram": "",
+  "areas": [
+    {
+      "slug": "family",
+      "name": "Family Life",
+      "short": "Family",
+      "color": "#B5562F",
+      "icon": "home",
+      "intro": "Personal news from Pastor Mirko and family: what God is doing in our home, how we are doing, and how you can pray for us."
+    },
+    {
+      "slug": "church",
+      "name": "Our Church – Modugno",
+      "short": "Church",
+      "color": "#1F4E79",
+      "icon": "church",
+      "intro": "Full Gospel Church in Modugno, near Bari, was born in the 1970s from a Dutch missionary work. Here we share news on events, new projects, initiatives and the vision we are pursuing for our city."
+    },
+    {
+      "slug": "il-rifugio",
+      "name": "Il Rifugio Center",
+      "short": "Il Rifugio",
+      "color": "#5F6E2E",
+      "icon": "tent",
+      "intro": "Il Rifugio, in Ruvo di Puglia, is a centre serving churches in Puglia and across Italy: camps, retreats, conferences, leadership training and a place of rest for missionaries."
+    },
+    {
+      "slug": "missions",
+      "name": "To the Ends of the Earth",
+      "short": "Missions",
+      "color": "#1D6B70",
+      "icon": "globe",
+      "intro": "Sending workers beyond our borders and preparing young people to go: training, departures and stories from those we send."
+    },
+    {
+      "slug": "plant-and-strengthen",
+      "name": "Plant & Strengthen",
+      "short": "Church Planting",
+      "color": "#A97A1E",
+      "icon": "seed",
+      "intro": "Planting new churches across Puglia, a region where many towns still have no living church, and standing alongside existing churches that need support to keep going."
+    }
+  ]
+}
