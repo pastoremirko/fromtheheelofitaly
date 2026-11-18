@@ -421,7 +421,44 @@ def write(rel, text):
     path.write_text(text, encoding="utf-8")
 
 
+def coming_soon():
+    """Minimal holding page published on the live domain until launch."""
+    if OUT.exists():
+        shutil.rmtree(OUT)
+    OUT.mkdir()
+    for d in ("css", "fonts", "img"):
+        shutil.copytree(ROOT / "static" / d, OUT / d)
+    shutil.copy(ROOT / "static" / "robots.txt", OUT / "robots.txt")
+    page = """<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>From the Heel of Italy · Coming soon</title>
+<link rel="icon" href="/img/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+ .soon{min-height:100vh;display:grid;place-items:center;padding:40px 24px;text-align:center}
+ .soon img{width:56px;height:56px;border-radius:14px;margin:0 auto 26px}
+ .soon .display{font-size:clamp(2.2rem,6vw,3.8rem)}
+ .soon p{color:var(--ink-soft);max-width:520px;margin:18px auto 0;font-size:1.08rem}
+ .soon .eyebrow{justify-content:center}
+</style></head>
+<body><main class="soon"><div>
+ <img src="/img/mark.svg" alt="">
+ <p class="eyebrow">Coming soon</p>
+ <h1 class="display">From the Heel of Italy<br><em>to the ends of the earth</em></h1>
+ <p>Updates from Full Gospel Church in Modugno, Southern Italy, are on their way.</p>
+</div></main></body></html>
+"""
+    for rel in ("index.html", "404.html"):
+        (OUT / rel).write_text(page, encoding="utf-8")
+    print("Built coming-soon page into", OUT)
+
+
 def main():
+    import sys
+    if "--coming-soon" in sys.argv:
+        return coming_soon()
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / "static", OUT)
