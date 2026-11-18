@@ -321,3 +321,77 @@ a.window:hover .bg img { transform: scale(1.05); }
 .area-card.cta .tag, .area-card.cta p { color: rgba(255,255,255,.85); }
 .area-card.cta .go { color: #fff; }
 .area-card.cta .body { position: relative; flex: 0; }
+
+/* ===== Soft theme: same palette as pienovangelo.it, gentler type ===== */
+.display {
+  font-family: var(--text); font-weight: 800; text-transform: none;
+  letter-spacing: -0.025em; line-height: 1.08;
+}
+.display em { font-weight: 700; }
+.intro { padding: 60px 0 30px; }
+.intro .display { font-size: clamp(2.3rem, 5.4vw, 4.1rem); }
+.section-head .display { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+.page-head .display { font-size: clamp(2.1rem, 4.6vw, 3.4rem); }
+.article-head .display { font-size: clamp(2rem, 4.2vw, 3rem); }
+
+.brand span { font-family: var(--text); font-weight: 800; text-transform: none; letter-spacing: -0.01em; font-size: 1.05rem; }
+.nav a { text-transform: none; letter-spacing: 0; font-size: 14.5px; font-weight: 500; }
+.nav a.btn-sub { font-weight: 700; }
+.btn { text-transform: none; letter-spacing: 0; font-size: 15px; }
+.section-head .link, .article-foot a, .chips a { text-transform: none; letter-spacing: 0; font-size: 14px; font-weight: 700; }
+.eyebrow { font-weight: 700; letter-spacing: 1.2px; }
+
+.featured h3, .area-card h3, .window h3, .area-hero .window h1 {
+  font-family: var(--text); font-weight: 800; text-transform: none; letter-spacing: -0.02em; line-height: 1.15;
+}
+.featured h3 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+.area-card h3 { font-size: 1.4rem; }
+.card h3 { font-weight: 800; }
+.area-card .go, .window .go { text-transform: none; letter-spacing: 0; font-size: 14.5px; font-weight: 700; }
+
+/* Soft, light placeholders instead of dark blocks */
+.media.ph {
+  color: var(--c, var(--brand));
+  background:
+    radial-gradient(90% 80% at 85% 15%, color-mix(in srgb, var(--c, var(--brand)) 22%, white) 0%, transparent 70%),
+    linear-gradient(140deg, color-mix(in srgb, var(--c, var(--brand)) 7%, white) 0%, color-mix(in srgb, var(--c, var(--brand)) 16%, white) 100%);
+}
+.media.ph svg { opacity: .75; }
+.area-card .media.ph svg { opacity: .6; }
+
+/* Area page hero: light and gentle */
+.area-hero .window { min-height: 280px; color: var(--ink); background: var(--surface); }
+.area-hero .window::after { display: none; }
+.area-hero .window .bg.ph {
+  color: color-mix(in srgb, var(--c) 35%, white);
+  background:
+    radial-gradient(80% 90% at 95% 0%, color-mix(in srgb, var(--c) 20%, white) 0%, transparent 70%),
+    linear-gradient(140deg, #fff 0%, color-mix(in srgb, var(--c) 9%, white) 100%);
+}
+.area-hero .window p { color: var(--ink-soft); }
+.area-hero .window .count { background: color-mix(in srgb, var(--c) 10%, white); border-color: color-mix(in srgb, var(--c) 25%, white); color: color-mix(in srgb, var(--c) 80%, black); }
+.area-hero .window h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+
+/* Verse: gentle */
+.verse blockquote { font-family: var(--text); font-weight: 500; text-transform: none; letter-spacing: -0.01em; font-size: clamp(1.3rem, 2.6vw, 1.9rem); line-height: 1.4; color: var(--ink-soft); }
+.verse blockquote em { font-weight: 700; }
+
+/* Subscribe: soft blush instead of dark block */
+.subscribe .box { background: color-mix(in srgb, var(--brand) 9%, white); color: var(--ink); }
+.subscribe .box::before { background: radial-gradient(circle, rgba(231,71,89,.18), transparent 65%); }
+.subscribe p { color: var(--ink-soft); }
+.subscribe .btn-light { color: var(--ink); border-color: var(--line); background: var(--surface); }
+.subscribe .btn-light:hover { border-color: var(--ink); color: var(--ink); }
+
+/* Support card: softer red */
+.area-card.cta { background: linear-gradient(150deg, #ec6070 0%, var(--brand) 100%); }
+.area-card.cta h3 { font-size: 1.6rem; }
+
+/* Article / prose */
+.prose h2, .prose h3 { font-family: var(--text); font-weight: 800; text-transform: none; letter-spacing: -0.015em; }
+.prose h2 { font-size: 1.6rem; } .prose h3 { font-size: 1.3rem; }
+
+/* Footer: a little lighter */
+.site-footer { background: #24282b; }
+.site-footer .brandline { font-family: var(--text); font-weight: 800; text-transform: none; letter-spacing: -0.02em; font-size: 1.45rem; line-height: 1.2; }
+.site-footer .brandline em { font-weight: 700; }

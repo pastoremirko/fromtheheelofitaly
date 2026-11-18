@@ -140,7 +140,6 @@ def layout(title, content, description=None, active="", image=None, path="/"):
 {og_img}
 <meta name="theme-color" content="#f6f6f6">
 <link rel="icon" href="/img/mark.svg" type="image/svg+xml">
-<link rel="preload" href="/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" type="application/rss+xml" title="{esc(SITE['title'])}" href="/feed.xml">
 <link rel="stylesheet" href="/css/style.css">
