@@ -337,10 +337,10 @@ def page_updates(posts):
 def page_area(a, posts):
     mine = [p for p in posts if p["area"]["slug"] == a["slug"]]
     content = f"""<div class="area-hero"><div class="wrap">
-  <div class="window" {style_c(a)}>
+  <div class="window{' has-img' if a.get('image') else ''}" {style_c(a)}>
     {window_bg(a)}
     <div class="inner">
-      <span class="count">{len(mine) or 'No'} update{'s' if len(mine) != 1 else ''}</span>
+      <span class="count">{(str(len(mine)) + ' update' + ('s' if len(mine) != 1 else '')) if mine else 'Coming soon'}</span>
       <h1>{esc(a['name'])}</h1>
       <p>{esc(a['intro'])}</p>
     </div>
