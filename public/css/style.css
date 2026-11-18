@@ -409,3 +409,7 @@ a.window:hover .bg img { transform: scale(1.05); }
   .area-hero .window.has-img .bg { grid-column: 1; grid-row: 1; }
   .area-hero .window.has-img .inner { grid-row: 2; padding: 28px 24px; }
 }
+/* Taller frames so real photos are not over-cropped */
+.area-card .media { aspect-ratio: 4 / 3; }
+.area-hero .window.has-img .bg { aspect-ratio: 4 / 3; }
+.area-hero .window.has-img .bg img { object-position: center; }
