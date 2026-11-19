@@ -457,3 +457,6 @@ a.window:hover .bg img { transform: scale(1.05); }
   .areas .area-card.cta:nth-child(odd):last-child { grid-column: 1 / -1 !important; min-height: 0; }
   .areas .area-card.cta:nth-child(odd):last-child .body { padding: 34px 40px; }
 }
+
+/* Balanced line breaks in card titles */
+.area-card h3, .featured h3 { text-wrap: balance; }
