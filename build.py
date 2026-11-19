@@ -313,7 +313,6 @@ def page_home(posts):
 <section><div class="wrap">
   <div class="section-head">
     <h2 class="display">Our areas of ministry</h2>
-    <span class="link">One church, one mission</span>
   </div>
   <div class="areas">{windows}</div>
 </div></section>
