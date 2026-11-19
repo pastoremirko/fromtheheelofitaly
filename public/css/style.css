@@ -439,3 +439,6 @@ a.window:hover .bg img { transform: scale(1.05); }
 .about-text.prose { font-size: 1.02rem; line-height: 1.7; }
 .about-text.prose p:last-child { margin-bottom: 0; }
 @media (max-width: 900px) { .about-grid.has-video { grid-template-columns: 1fr; } .about-grid { padding: 22px; } }
+
+/* Home subtitle continuing the title */
+.intro .sub p.lead em { font-style: normal; font-weight: 700; color: var(--brand); }
