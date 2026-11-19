@@ -425,3 +425,8 @@ a.window:hover .bg img { transform: scale(1.05); }
 .foot-brand span { font-family: var(--display); text-transform: uppercase; font-size: 1.3rem; color: #fff; letter-spacing: .02em; }
 .about-map { margin: 0 0 1.4em; }
 .about-map svg { width: 100%; height: auto; display: block; }
+/* Official logotype (Vito Marinelli, 2015 guidelines) */
+.brand img.pv-logo { width: auto; height: 46px; border-radius: 0; }
+.brand .sep { height: 26px; margin: 0 6px 0 14px; }
+.foot-brand img { width: auto; height: 46px; }
+@media (max-width: 420px) { .brand img.pv-logo { height: 34px; } }

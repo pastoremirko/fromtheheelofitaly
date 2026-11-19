@@ -140,7 +140,7 @@ def layout(title, content, description=None, active="", image=None, path="/"):
 {og_img}
 <meta name="theme-color" content="#f6f6f6">
 {'<meta name="robots" content="noindex, nofollow">' if SITE.get("draft_mode") else ''}
-<link rel="icon" href="/img/pv-logo-icon.png" type="image/png">
+<link rel="icon" href="/img/pv-glifo.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" type="application/rss+xml" title="{esc(SITE['title'])}" href="/feed.xml">
 <link rel="stylesheet" href="/css/style.css">
@@ -148,7 +148,7 @@ def layout(title, content, description=None, active="", image=None, path="/"):
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/img/pv-logo-icon.png" alt=""><span class="pv">Pienovangelo</span><span class="sep"></span><span class="upd">Updates</span></a>
+    <a class="brand" href="/"><img class="pv-logo" src="/img/pv-logotipo.svg" alt="Chiesa Pienovangelo"><span class="sep"></span><span class="upd">Updates</span></a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">Menu</button>
     <nav class="nav">{nav(active)}</nav>
   </div>
@@ -160,7 +160,7 @@ def layout(title, content, description=None, active="", image=None, path="/"):
   <div class="wrap">
     <div class="cols">
       <div>
-        <a class="foot-brand" href="https://pienovangelo.it" rel="noopener"><img src="/img/pv-logo-icon.png" alt=""><span>Pienovangelo</span></a>
+        <a class="foot-brand" href="https://pienovangelo.it" rel="noopener"><img src="/img/pv-logotipo-negativo.svg" alt="Chiesa Pienovangelo"></a>
         <p class="brandline">From the Heel of Italy<br><em>to the ends of the earth</em></p>
         <p>{esc(SITE['description'])}</p>
       </div>
