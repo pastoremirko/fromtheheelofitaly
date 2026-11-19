@@ -3,10 +3,29 @@ title: About these updates
 intro: News from the Pieno Vangelo ministry in Modugno and from the Ronchi family.
 ---
 
+Dear friends,
+
+Thank you for being here. Many of you have prayed for us, visited us or supported our work in Puglia over the years, and we have often wished we could keep you better informed. These updates are our answer to that.
+
+Every two to four weeks we will send you a short update from one of the areas of ministry that grow out of our local church, Pieno Vangelo in Modugno:
+
+- **Family Life** – personal news from our home.
+- **Church Life** – life in our church in Modugno: events, new projects and the vision we are pursuing for our city.
+- **Il Rifugio Center** – a place of refreshment in Ruvo di Puglia, at the service of churches and ministries.
+- **To the Ends of the Earth** – the workers and young people we prepare and send.
+- **Plant & Strengthen** – new churches in Puglia and support for churches that are going through a hard time.
+
+The email will be short. If you want to know more, the *Read more* link will bring you here, where each area collects longer stories, photos and videos.
+
+## Who we are
+
 Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, was born in the 1970s from a missionary work supported by churches in the Netherlands. From the very beginning we have carried a clear vision: to be a church that responds concretely to the Great Commission, a community that looks from Puglia to the ends of the earth.
 
-Puglia, the "heel" of Italy, is still a region where many towns, even large ones, have no living, healthy church. We long to see the Kingdom of God advance in Southern Italy and, from here, reach the nations.
+Puglia, the "heel" of Italy, is still a region where many towns, even large ones, have no living, healthy church. We believe God wants to change that, and that from here the Gospel can reach the nations.
 
-Out of our local church grow several areas of ministry: the life of the church in Modugno, the **Il Rifugio** centre in Ruvo di Puglia, the sending of workers and young people abroad, and the planting of new churches together with support for existing churches that are going through difficult times.
+For everything else about our church, visit [pienovangelo.it](https://pienovangelo.it).
 
-These updates are how we keep our friends and supporters informed and invite them to pray and walk with us. For everything else about our church, visit [pienovangelo.it](https://pienovangelo.it).
+Thank you for walking with us.
+
+*With gratitude,*  
+*Pastor Mirko*

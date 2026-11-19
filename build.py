@@ -108,6 +108,7 @@ def nav(active=""):
     links = [(f"/{a['slug']}/", a["short"], a["slug"]) for a in SITE["areas"]]
     items = "".join(
         f'<a href="{u}"{" class=active" if k == active else ""}>{esc(t)}</a>' for u, t, k in links)
+    items += f'<a href="/about/"{" class=active" if active == "about" else ""}>About</a>'
     items += '<a class="btn-sub" href="/support/">Support</a>'
     return items
 
@@ -171,7 +172,6 @@ def layout(title, content, description=None, active="", image=None, path="/"):
         <ul>
           <li><a href="{SITE['subscribe_url']}">Subscribe to the newsletter</a></li>
           <li><a href="/support/">Support the work</a></li>
-          <li><a href="/about/">About us</a></li>
           {contact}{socials}
           <li><a href="https://pienovangelo.it" rel="noopener">pienovangelo.it</a></li>
           <li><a href="/feed.xml">RSS feed</a></li>
