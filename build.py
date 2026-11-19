@@ -308,16 +308,16 @@ def page_home(posts):
   </div>
   {latest}
 </div></section>
+<div class="verse"><div class="wrap"><div class="box">
+  <blockquote>“You will be my witnesses in Jerusalem, and in all Judea and Samaria, and <em>to the ends of the earth</em>.”</blockquote>
+  <cite>Acts 1:8</cite>
+</div></div></div>
 <section><div class="wrap">
   <div class="section-head">
     <h2 class="display">Updates by area</h2>
   </div>
   <div class="areas">{windows}</div>
 </div></section>
-<div class="verse"><div class="wrap"><div class="box">
-  <blockquote>“You will be my witnesses in Jerusalem, and in all Judea and Samaria, and <em>to the ends of the earth</em>.”</blockquote>
-  <cite>Acts 1:8</cite>
-</div></div></div>
 {subscribe_band()}"""
     return layout(SITE["title"], content, active="home")
 
