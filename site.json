@@ -5,6 +5,11 @@
   "base_url": "https://fromtheheelofitaly.org",
   "author": "Pastor Mirko",
   "church": "Full Gospel Church Modugno",
+  "organization": {
+    "name": "Associazione religiosa “Missione del Pieno Vangelo”",
+    "tax_code": "93008040722",
+    "address": "Contrada Iazzo de Cesare SNC, 70037 Ruvo di Puglia (BA), Italy"
+  },
   "subscribe_url": "#subscribe",
   "contact_email": "",
   "youtube": "",

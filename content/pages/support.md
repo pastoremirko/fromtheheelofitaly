@@ -9,6 +9,8 @@ Prayer is the first and most important way to support us. Every update includes 
 
 ## Give
 
+Gifts are received by the **Associazione religiosa “Missione del Pieno Vangelo”** (C.F. 93008040722), the association our church is part of.
+
 *Donation details will be added here soon.*
 
 <!-- TODO: add bank details (IBAN / BIC, account name) and/or an online giving link -->

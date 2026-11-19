@@ -8,4 +8,8 @@ When you subscribe to the newsletter, your email address (and your name, if you 
 
 Videos on this site are embedded from YouTube in privacy-enhanced mode (youtube-nocookie.com).
 
-*Data controller: Full Gospel Church Modugno.*
+## Data controller
+
+The data controller is the **Associazione religiosa “Missione del Pieno Vangelo”** (an unincorporated religious association, of which Full Gospel Church Modugno is part), represented by its President as legal representative.
+
+Registered office: Contrada Iazzo de Cesare SNC, 70037 Ruvo di Puglia (BA), Italy · Tax code (C.F.) 93008040722

@@ -180,6 +180,7 @@ def layout(title, content, description=None, active="", image=None, path="/"):
       </div>
     </div>
     <p class="small">© {year} {esc(SITE['church'])} · Modugno (BA), Italy · <a href="/privacy/">Privacy</a></p>
+    <p class="small">{esc(SITE['organization']['name'])} · {esc(SITE['organization']['address'])} · C.F. {esc(SITE['organization']['tax_code'])}</p>
   </div>
 </footer>
 </body>
