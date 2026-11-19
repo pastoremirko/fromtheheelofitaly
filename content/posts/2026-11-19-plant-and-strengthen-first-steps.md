@@ -9,7 +9,7 @@ excerpt: Giugliano, Potenza and Massafra: three churches God has given us the pr
 
 Dear friends,
 
-One of the quiet joys of our church's life has always been walking alongside other churches. Not because we have it all figured out, but because we know how much it means when someone believes in you. Our own church was born in the 1970s thanks to missionaries from the Netherlands and the Dutch churches who stood behind them. We were once the small church that needed a friend (and still are).
+One of the quiet joys of our church's life has always been walking alongside other churches. Not because we have it all figured out, but because we know how much it means when someone believes in you. Our own church was born in the 1970s thanks to missionaries from the Netherlands and the Dutch churches who stood behind them.
 
 In recent years God has given us the privilege of standing beside three churches in particular. The work is theirs, and above all it is His. We are simply grateful to be part of the story.
 

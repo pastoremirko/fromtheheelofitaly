@@ -9,7 +9,7 @@ Walking alongside other churches
 
 Dear friends,
 
-One of the quiet joys of our church's life has always been walking alongside other churches. Not because we have it all figured out, but because we know how much it means when someone believes in you. We were once that church too (and still are).
+One of the quiet joys of our church's life has always been walking alongside other churches. Not because we have it all figured out, but because we know how much it means when someone believes in you.
 
 In recent years God has given us the privilege of standing beside three of them.
 
