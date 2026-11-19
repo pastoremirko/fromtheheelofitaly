@@ -413,3 +413,15 @@ a.window:hover .bg img { transform: scale(1.05); }
 .area-card .media { aspect-ratio: 4 / 3; }
 .area-hero .window.has-img .bg { aspect-ratio: 4 / 3; }
 .area-hero .window.has-img .bg img { object-position: center; }
+
+/* ===== Pieno Vangelo branding ===== */
+.brand img { width: 34px; height: 34px; border-radius: 0; }
+.brand .pv { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 1.25rem; letter-spacing: .02em; }
+.brand .sep { width: 1px; height: 22px; background: var(--line); margin: 0 2px; }
+.brand .upd { font-family: var(--text); font-weight: 600; font-size: 1rem; color: var(--ink-soft); letter-spacing: 0; text-transform: none; }
+@media (max-width: 420px) { .brand .sep, .brand .upd { display: none; } }
+.foot-brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; margin-bottom: 18px; }
+.foot-brand img { width: 34px; height: 34px; }
+.foot-brand span { font-family: var(--display); text-transform: uppercase; font-size: 1.3rem; color: #fff; letter-spacing: .02em; }
+.about-map { margin: 0 0 1.4em; }
+.about-map svg { width: 100%; height: auto; display: block; }

@@ -1,7 +1,7 @@
 {
-  "title": "Updates",
+  "title": "From the Heel of Italy",
   "tagline": "From the heel of Italy to the nations",
-  "description": "News from the Pieno Vangelo ministry and the Ronchi family: church life in Modugno, Il Rifugio, missions and church planting across Puglia and beyond.",
+  "description": "Updates from the Pieno Vangelo ministry and the Ronchi family: our church in Modugno, Il Rifugio, missions and church planting across Puglia and beyond.",
   "base_url": "https://fromtheheelofitaly.org",
   "author": "Pastor Mirko Ronchi",
   "church": "Pieno Vangelo Church",
@@ -22,11 +22,11 @@
     },
     {
       "slug": "church",
-      "name": "Our Church – Modugno",
+      "name": "Pieno Vangelo Church – Modugno",
       "short": "Church",
       "color": "#b0181b",
       "icon": "church",
-      "intro": "Full Gospel Church in Modugno, near Bari, was born in the 1970s from a Dutch missionary work. Here we share news on events, new projects, initiatives and the vision we are pursuing for our city.",
+      "intro": "Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, was born in the 1970s from a Dutch missionary work. News on events, new projects, initiatives and the vision we are pursuing for our city.",
       "image": ""
     },
     {
@@ -57,6 +57,5 @@
       "image": ""
     }
   ],
-  "draft_mode": true,
-  "site_name": "Updates · Pieno Vangelo"
+  "draft_mode": true
 }

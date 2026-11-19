@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 64" role="img" aria-label="Pieno Vangelo (placeholder logo)">
-  <rect x="0" y="4" width="56" height="56" rx="13" fill="#e74759"/>
-  <circle cx="28" cy="32" r="13" fill="none" stroke="#fff" stroke-width="5"/>
-  <path d="M28 19 V45 M15 32 H41" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-  <text x="68" y="45" font-family="Anton, 'Arial Narrow', sans-serif" font-size="34" fill="#1c1f21" textLength="218" lengthAdjust="spacingAndGlyphs">PIENOVANGELO</text>
-</svg>
