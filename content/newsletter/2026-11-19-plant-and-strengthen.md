@@ -1,11 +1,11 @@
-Subject: Walking alongside other churches
+Subject: Alongside Other Churches
 Preview text: Giugliano, Potenza and Massafra: three churches God has given us the privilege to encourage.
 Image: /images/2026-11-plant-strengthen-map.jpg
 Read more: https://fromtheheelofitaly.org/updates/plant-and-strengthen-first-steps/
 
 PLANT & STRENGTHEN
 
-Walking alongside other churches
+Alongside Other Churches
 
 Dear friends,
 

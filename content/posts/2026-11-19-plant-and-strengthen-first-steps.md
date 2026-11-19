@@ -1,5 +1,5 @@
 ---
-title: Walking alongside other churches
+title: Alongside Other Churches
 date: 2026-11-19
 area: plant-and-strengthen
 cover: /images/2026-11-plant-strengthen-map.jpg
