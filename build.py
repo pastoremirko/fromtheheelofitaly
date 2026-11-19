@@ -294,7 +294,6 @@ def page_home(posts):
     else:
         latest = '<div class="empty">The first update is on its way.</div>'
     content = f"""<div class="intro"><div class="wrap">
-  <p class="eyebrow">Updates from the Pieno Vangelo ministry · Modugno (BA)</p>
   <h1 class="display">From the Heel of Italy<br><em>to the ends of the earth</em></h1>
   <div class="sub">
     <p>{esc(SITE['description'])}</p>
