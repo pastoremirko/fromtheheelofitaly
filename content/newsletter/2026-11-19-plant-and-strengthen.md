@@ -1,20 +1,24 @@
-Subject: Strengthening churches beyond Modugno
-Preview text: Giugliano, Potenza and Massafra: three churches we have the privilege to stand beside.
+Subject: Walking alongside other churches
+Preview text: Giugliano, Potenza and Massafra: three churches God has given us the privilege to encourage.
 Image: /images/2026-11-plant-strengthen-map.jpg
 Read more: https://fromtheheelofitaly.org/updates/plant-and-strengthen-first-steps/
 
 PLANT & STRENGTHEN
 
-Strengthening churches beyond Modugno
+Walking alongside other churches
 
-From the very beginning, our church has been committed to valuing and strengthening other local churches. In recent years this has taken us to three cities.
+Dear friends,
 
-In Giugliano, near Naples, we have had the privilege of supporting the birth of a new church, Connect Church, in partnership with Eleviva, a ministry from Canada.
+One of the quiet joys of our church's life has always been walking alongside other churches. Not because we have it all figured out, but because we know how much it means when someone believes in you. We were once that church too.
 
-Among the many churches we encourage and support, we spent a season focused on strengthening the church in Potenza. There we helped a group of young people take responsibility for a small congregation that would otherwise have closed. Today we keep encouraging them and supporting their work, so that their ministry can flourish.
+In recent years God has given us the privilege of standing beside three of them.
 
-In Massafra, after the senior pastor died of Covid in 2020, we helped the church through the pastoral transition. Today we stand beside pastors Francesco and Arianna Rotelli in the hard, tiring but also glorious work of leading a church with a long history and a desire to walk into a new future.
+In Giugliano, near Naples, a new church has been born: Connect Church. We are grateful to have been able to support it, together with our friends from Eleviva in Canada.
 
-Please pray with us for these three churches and their leaders.
+In Potenza, a small church was close to closing its doors. A group of young people chose to take responsibility for it, and we were blessed to spend a season encouraging them. We still walk beside them, praying that their ministry will flourish.
+
+In Massafra, the church lost its senior pastor to Covid in 2020. Today Francesco and Arianna Rotelli are carrying on a work with a long history, with the courage to look towards a new future. It is hard and tiring work, and also glorious, and it is an honour for us to encourage them along the way.
+
+Would you pray with us for these three churches?
 
 [Read the full update →]

@@ -1,38 +1,36 @@
 ---
-title: Strengthening churches beyond Modugno
+title: Walking alongside other churches
 date: 2026-11-19
 area: plant-and-strengthen
 cover: /images/2026-11-plant-strengthen-map.jpg
 cover_alt: Map of southern Italy with dotted lines from Modugno to Giugliano, Potenza and Massafra
-excerpt: Giugliano, Potenza and Massafra: three churches we have the privilege to stand beside, helping them to be born, to stay open and to look to the future.
+excerpt: Giugliano, Potenza and Massafra: three churches God has given us the privilege to encourage and to bless.
 ---
 
 Dear friends,
 
-From the very beginning, our church has been committed to valuing and strengthening other local churches. We were born ourselves from the work of missionaries from the Netherlands, and we know how much it means when another church believes in you and walks beside you. In recent years this calling has taken us to three cities.
+One of the quiet joys of our church's life has always been walking alongside other churches. Not because we have it all figured out, but because we know how much it means when someone believes in you. Our own church was born in the 1970s thanks to missionaries from the Netherlands and the Dutch churches who stood behind them. We were once the small church that needed a friend.
 
-## Giugliano: a new church is born
+In recent years God has given us the privilege of standing beside three churches in particular. The work is theirs, and above all it is His. We are simply grateful to be part of the story.
 
-In Giugliano, near Naples, we have had the privilege of supporting the birth of a new church, **Connect Church**. We have done this in partnership with **Eleviva**, a ministry from Canada that helps young Europeans find life in Jesus through new communities of faith. Seeing a church born in a city of this size is a gift, and we are grateful to be part of its story.
+## Giugliano
 
-## Potenza: a church that did not close
+In Giugliano, near Naples, a new church has been born: **Connect Church**. It is always moving to see a church start from nothing, with a few people, a lot of faith and a great deal of courage. We are thankful to have been able to support it, together with our friends from **Eleviva**, a ministry from Canada.
 
-Among the many churches we encourage and support, we spent a season focused on strengthening the church in Potenza. There we helped a group of young people take responsibility for a small congregation that would otherwise have closed. Today we keep encouraging them and supporting them in the work, so that their ministry can grow and flourish.
+## Potenza
 
-## Massafra: a long history, a new future
+In Potenza, a small church was close to closing its doors. Then a group of young people chose to take responsibility for it. We were blessed to spend a season encouraging them, and we still walk beside them today. Our prayer is that their ministry will flourish, and that many in their city will find a home in this church.
 
-In 2020 the senior pastor of the church in Massafra died of Covid. It was a deep loss for the whole community. We helped the church through the pastoral transition, and today we stand beside pastors **Francesco and Arianna Rotelli**. Theirs is hard and tiring work, but also glorious: leading a church with a long history that wants to walk into a new season and a new future.
+## Massafra
 
-## Looking ahead
-
-Our desire is to see new churches born all across Puglia in the years to come, and existing churches made stronger. Many towns in our region still have no living church.
+In Massafra, the church lost its senior pastor to Covid in 2020. It was a painful time for the whole community. Today **Francesco and Arianna Rotelli** are carrying on a work with a long history, with the courage to look towards a new future. It is hard and tiring work, and also glorious. It is an honour for us to encourage them along the way.
 
 ## How you can pray
 
-- For Connect Church in Giugliano and the team leading it.
+- For Connect Church in Giugliano and those who lead it.
 - For the young leaders of the church in Potenza.
-- For Francesco and Arianna Rotelli and the church in Massafra.
+- For Francesco and Arianna and the church in Massafra.
 
-Thank you for standing with us.
+Thank you for walking with us, and with them.
 
 *Pastor Mirko*
