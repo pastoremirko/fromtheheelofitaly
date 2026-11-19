@@ -11,6 +11,7 @@ Every two to four weeks we will send you a short update from one of the areas of
 
 - **Family Life** – personal news from our home.
 - **Church Life** – life in our church in Modugno: events, new projects and the vision we are pursuing for our city.
+- **The Nations Among Us** – welcoming people from other nations who now live among us.
 - **Il Rifugio Center** – a place of refreshment in Ruvo di Puglia, at the service of churches and ministries.
 - **To the Ends of the Earth** – the workers and young people we prepare and send.
 - **Plant & Strengthen** – new churches in Puglia and support for churches that are going through a hard time.
