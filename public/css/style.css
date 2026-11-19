@@ -430,3 +430,12 @@ a.window:hover .bg img { transform: scale(1.05); }
 .brand .sep { height: 26px; margin: 0 6px 0 14px; }
 .foot-brand img { width: auto; height: 46px; }
 @media (max-width: 420px) { .brand img.pv-logo { height: 34px; } }
+/* Area presentation: video + text */
+.area-about { padding: 30px 0 10px; }
+.about-grid { background: var(--surface); border-radius: var(--r-lg); box-shadow: var(--shadow-rest); padding: 32px; display: grid; gap: 32px; align-items: center; }
+.about-grid.has-video { grid-template-columns: 1.15fr 1fr; }
+.about-video .video { margin: 0; }
+.about-text h2 { font-family: var(--text); font-weight: 800; text-transform: none; letter-spacing: -0.02em; font-size: 1.7rem; margin: 0 0 14px; }
+.about-text.prose { font-size: 1.02rem; line-height: 1.7; }
+.about-text.prose p:last-child { margin-bottom: 0; }
+@media (max-width: 900px) { .about-grid.has-video { grid-template-columns: 1fr; } .about-grid { padding: 22px; } }

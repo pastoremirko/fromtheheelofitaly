@@ -349,9 +349,29 @@ def page_area(a, posts):
   </div>
   {chips(a['slug'])}
 </div></div>
-<section><div class="wrap">{cards_grid(mine, "The first update from this area is on its way.")}</div></section>
+{area_about(a)}
+<section><div class="wrap">
+  {'<div class="section-head"><h2 class="display">Latest updates</h2></div>' if (ROOT / "content" / "areas" / (a["slug"] + ".md")).exists() else ''}
+  {cards_grid(mine, "The first update from this area is on its way.")}
+</div></section>
 {subscribe_band()}"""
     return layout(a["name"], content, description=a["intro"], active=a["slug"], path=f"/{a['slug']}/")
+
+
+def area_about(a):
+    """Optional presentation (text + video) from content/areas/<slug>.md"""
+    path = ROOT / "content" / "areas" / f"{a['slug']}.md"
+    if not path.exists():
+        return ""
+    meta, body = parse_md(path)
+    video = video_embed(meta.get("video", ""))
+    return f"""<section class="area-about"><div class="wrap"><div class="about-grid{' has-video' if video else ''}">
+  {f'<div class="about-video">{video}</div>' if video else ''}
+  <div class="about-text prose">
+    <h2>{esc(meta.get('title', 'About'))}</h2>
+    {render_body(body)}
+  </div>
+</div></div></section>"""
 
 
 def page_post(p, posts):
