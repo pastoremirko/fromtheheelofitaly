@@ -442,3 +442,12 @@ a.window:hover .bg img { transform: scale(1.05); }
 
 /* Home subtitle continuing the title */
 .intro .sub p.lead em { font-style: normal; font-weight: 700; color: var(--brand); }
+
+/* Compact featured card */
+@media (min-width: 821px) {
+  .featured { grid-template-columns: 1fr 1fr; }
+  .featured .media { min-height: 0; aspect-ratio: 16/9; }
+  .featured .body { padding: 26px 34px; gap: 10px; }
+  .featured h3 { font-size: clamp(1.4rem, 2.1vw, 1.75rem); }
+  .featured p { font-size: .96rem; }
+}
