@@ -310,7 +310,7 @@ def page_home(posts):
 </div></section>
 <section><div class="wrap">
   <div class="section-head">
-    <h2 class="display">Our areas of ministry</h2>
+    <h2 class="display">Updates by area</h2>
   </div>
   <div class="areas">{windows}</div>
 </div></section>
