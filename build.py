@@ -105,12 +105,10 @@ def fmt_date(d):
 
 
 def nav(active=""):
-    links = [("/updates/", "Updates", "updates")]
-    links += [(f"/{a['slug']}/", a["short"], a["slug"]) for a in SITE["areas"]]
-    links += [("/about/", "About", "about"), ("/support/", "Support", "support")]
+    links = [(f"/{a['slug']}/", a["short"], a["slug"]) for a in SITE["areas"]]
     items = "".join(
         f'<a href="{u}"{" class=active" if k == active else ""}>{esc(t)}</a>' for u, t, k in links)
-    items += f'<a class="btn-sub" href="{SITE["subscribe_url"]}">Subscribe</a>'
+    items += '<a class="btn-sub" href="/support/">Support</a>'
     return items
 
 
