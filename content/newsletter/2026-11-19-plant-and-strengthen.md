@@ -1,18 +1,20 @@
-Subject: Beyond Modugno: Giugliano, Potenza and Massafra
-Preview text: Where we are already helping churches to be born and to stand firm.
+Subject: Strengthening churches beyond Modugno
+Preview text: Giugliano, Potenza and Massafra: three churches we have the privilege to stand beside.
 Image: /images/2026-11-plant-strengthen-map.jpg
 Read more: https://fromtheheelofitaly.org/updates/plant-and-strengthen-first-steps/
 
 PLANT & STRENGTHEN
 
-Beyond Modugno: Giugliano, Potenza and Massafra
+Strengthening churches beyond Modugno
 
-Our church in Modugno was born in the 1970s from the work of Dutch missionaries. Someone planted and watered so that a church could grow here, and from the beginning we have felt the responsibility to do the same for others.
+From the very beginning, our church has been committed to valuing and strengthening other local churches. In recent years this has taken us to three cities.
 
-This map shows where that is already happening. In Potenza we are walking alongside a church that has been through a very hard season. Near Naples, in Giugliano, we have accompanied a couple who started a new church community. In Massafra we supported the church through a delicate change of pastors, and it has welcomed the believers reached in nearby Mottola. We have also begun a new church planting project in southern Puglia.
+In Giugliano, near Naples, we have had the privilege of supporting the birth of a new church, Connect Church, in partnership with Eleviva, a ministry from Canada.
 
-Our desire is to see new churches born all across Puglia in the next ten years. God has already given us leaders ready for this work.
+Among the many churches we encourage and support, we spent a season focused on strengthening the church in Potenza. There we helped a group of young people take responsibility for a small congregation that would otherwise have closed. Today we keep encouraging them and supporting their work, so that their ministry can flourish.
 
-Please pray with us for these churches, their leaders, and the new churches still to come.
+In Massafra, after the senior pastor died of Covid in 2020, we helped the church through the pastoral transition. Today we stand beside pastors Francesco and Arianna Rotelli in the hard, tiring but also glorious work of leading a church with a long history and a desire to walk into a new future.
+
+Please pray with us for these three churches and their leaders.
 
 [Read the full update →]
