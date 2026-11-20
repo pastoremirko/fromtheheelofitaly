@@ -293,7 +293,8 @@ def page_home(posts):
     else:
         latest = '<div class="empty">The first update is on its way.</div>'
     content = f"""<div class="intro"><div class="wrap">
-  <h1 class="display">From the Heel of Italy</h1>
+  <p class="eyebrow">News &amp; stories</p>
+  <h1 class="display">From the <em>Heel of Italy</em></h1>
   <div class="sub">
     <p class="lead">&hellip; <em>to the ends of the earth</em>. Updates from the Pieno Vangelo ministry and the Ronchi family.</p>
     <div class="actions">
