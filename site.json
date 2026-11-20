@@ -35,7 +35,8 @@
       "short": "Nations Among Us",
       "color": "#7a4f8f",
       "icon": "people",
-      "intro": "Welcoming people who have come to Puglia from other nations, including refugees and migrants. Through friendship, practical help and our after-school program, we want them to find a home among us and to meet Jesus."
+      "intro": "Welcoming people who have come to Puglia from other nations, including refugees and migrants. Through friendship, practical help and our after-school program, we want them to find a home among us and to meet Jesus.",
+      "image": "/images/area-nations.jpg"
     },
     {
       "slug": "plant-and-strengthen",
