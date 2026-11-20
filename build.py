@@ -406,7 +406,7 @@ def page_simple(slug, meta, body):
   {f"<p>{esc(meta['intro'])}</p>" if meta.get('intro') else ""}
 </div></header>
 <div class="narrow page-body"><div class="prose-card prose">{('<div class="about-map">' + (ROOT / "static" / "img" / "map-sketch.svg").read_text(encoding="utf-8") + '</div>') if slug == 'about' else ''}{render_body(body)}</div></div>
-{subscribe_band() if slug != 'privacy' else ''}"""
+{subscribe_band() if slug not in ('privacy', 'subscribe') else ''}"""
     return layout(meta.get("title", slug), content, description=meta.get("intro"), active=slug, path=f"/{slug}/")
 
 

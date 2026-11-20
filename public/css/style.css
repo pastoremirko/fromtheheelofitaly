@@ -460,3 +460,8 @@ a.window:hover .bg img { transform: scale(1.05); }
 
 /* Balanced line breaks in card titles */
 .area-card h3, .featured h3 { text-wrap: balance; }
+
+/* Subscribe page */
+.form-embed { display: flex; justify-content: center; margin: 8px 0 18px; }
+.form-embed iframe { width: 100%; max-width: 540px; border: 0; display: block; }
+.prose .small-print { font-size: .88rem; color: var(--ink-soft); text-align: center; }
