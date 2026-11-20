@@ -10,17 +10,17 @@ Thank you for being here. Many of you have prayed for us, visited us or supporte
 Every two to four weeks we will send you a short update from one of the areas of ministry that grow out of our local church, Pieno Vangelo in Modugno:
 
 - **Family Life** – personal news from our home.
-- **Church Life** – life in our church in Modugno: events, new projects and the vision we are pursuing for our city.
-- **Loving the Nations Among Us** – welcoming people from other nations who now live among us.
-- **Plant & Strengthen** – new churches in Puglia and support for churches that are going through a hard time.
+- **Church Life** – initiatives and the vision we are pursuing for Modugno and beyond.
+- **Loving the Nations Among Us** – welcoming and serving those who have come to Puglia from other nations.
+- **Plant & Strengthen** – planting new churches in Puglia and standing alongside those that need support.
 - **To the Ends of the Earth** – the workers and young people we prepare and send.
-- **Il Rifugio Center** – a place of refreshment in Ruvo di Puglia, at the service of churches and ministries.
+- **Il Rifugio Center** – a place of welcome and rest in Ruvo di Puglia, serving churches and ministries.
 
-The email will be short. If you want to know more, the *Read more* link will bring you here, where each area collects longer stories, photos and videos.
+Each email will be short. If you want to know more, the *Read more* link will bring you here, where each area collects longer stories, photos and videos.
 
 ## Who we are
 
-Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, was born in the 1970s from a missionary work supported by churches in the Netherlands. From the very beginning we have carried a clear vision: to be a church that responds concretely to the Great Commission, a community that looks from Puglia to the ends of the earth.
+Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, was born in the 1970s through the work of Dutch missionaries and the churches in the Netherlands that stood behind them. From the very beginning we have carried a clear vision: to be a church that responds concretely to the Great Commission, a community that looks from Puglia to the ends of the earth.
 
 Puglia, the "heel" of Italy, is still a region where many towns, even large ones, have no living, healthy church. We believe God wants to change that, and that from here the Gospel can reach the nations.
 

@@ -23,7 +23,7 @@ In Potenza, a small church was close to closing its doors. Then a group of young
 
 ## Massafra
 
-In Massafra, the church lost its senior pastor to Covid in 2020. It was a painful time for the whole community. Today **Francesco and Arianna Rotelli** are carrying on a work with a long history, with the courage to look towards a new future. It is hard and tiring work, and also glorious. It is an honour for us to encourage them along the way.
+In Massafra, the church lost its senior pastor to Covid in 2020. It was a painful time for the whole community. Today **Francesco and Arianna Rotelli** are carrying on a work with a long history, with the courage to look towards a new future. It is hard and tiring work, and also glorious. It is an honor for us to encourage them along the way.
 
 ## How you can pray
 

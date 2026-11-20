@@ -15,4 +15,4 @@ Prayer is the first and most important way to support us. Every update includes 
 
 ## Visit us
 
-If you are travelling to Southern Italy, we would love to welcome you to our church in Modugno or to Il Rifugio in Ruvo di Puglia. Write to us and we will help you plan your visit.
+If you are traveling to Southern Italy, we would love to welcome you to our church in Modugno or to Il Rifugio in Ruvo di Puglia. Write to us and we will help you plan your visit.
