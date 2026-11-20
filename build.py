@@ -410,6 +410,42 @@ def page_simple(slug, meta, body):
     return layout(meta.get("title", slug), content, description=meta.get("intro"), active=slug, path=f"/{slug}/")
 
 
+BREVO_FORM = "https://36a940e5.sibforms.com/serve/MUIFAEFtdAN7GjCm-AuY7B6D7oFzLgCFwCa8E13xulCfjhB61wh3tmIzLsTYJvG5nzJ8Sd1IT0sWJjIkB6RRHnLRxuOofGwwzazUZLyCTzaHxdfVvTcX12MKzcmnqlTnZ-w4ATzYlFVNVwaZuxnb7s40ZrW6TCW-ob6SYHI2yrUBExRDkQwaEuzYx54I5PZqCAMry5H_RBGjIq34jA=="
+
+
+def page_subscribe(meta):
+    """Minimal native signup form that posts to the Brevo form (no iframe)."""
+    content = f"""<header class="page-head"><div class="narrow">
+  <h1 class="display">{esc(meta.get('title', 'Subscribe'))}</h1>
+  {f"<p>{esc(meta['intro'])}</p>" if meta.get('intro') else ""}
+  <form class="signup" id="signup" method="POST" action="{BREVO_FORM}">
+    <label class="sr-only" for="EMAIL">Email</label>
+    <input type="email" id="EMAIL" name="EMAIL" placeholder="Your email" autocomplete="email" required>
+    <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+    <input type="hidden" name="locale" value="en">
+    <button class="btn btn-primary" type="submit">Subscribe</button>
+  </form>
+  <p class="signup-msg" id="signup-msg" role="status" aria-live="polite"></p>
+  <p class="signup-note">Only these updates, nothing else. Unsubscribe anytime. <a href="/privacy/">Privacy</a></p>
+</div></header>
+<script>{{
+  const f = document.getElementById('signup'), m = document.getElementById('signup-msg');
+  f.addEventListener('submit', async (e) => {{
+    e.preventDefault();
+    const b = f.querySelector('button'); b.disabled = true; m.className = 'signup-msg';
+    try {{
+      const r = await fetch(f.action + '?isAjax=1', {{ method: 'POST', body: new FormData(f) }});
+      const j = await r.json().catch(() => ({{}}));
+      if (!r.ok || j.success === false) throw 0;
+      f.hidden = true; m.textContent = 'Thank you for walking with us! You are now subscribed.'; m.classList.add('ok');
+    }} catch (_) {{
+      m.textContent = 'Something went wrong. Please check your email address and try again.'; m.classList.add('err');
+    }} finally {{ b.disabled = false; }}
+  }});
+}}</script>"""
+    return layout(meta.get("title", "Subscribe"), content, description=meta.get("intro"), active="subscribe", path="/subscribe/")
+
+
 def feed(posts):
     base = SITE["base_url"].rstrip("/")
     items = ""
@@ -449,7 +485,8 @@ def main():
         write(f"updates/{p['slug']}/index.html", page_post(p, posts))
     for pg in sorted((ROOT / "content" / "pages").glob("*.md")):
         meta, body = parse_md(pg)
-        write(f"{pg.stem}/index.html", page_simple(pg.stem, meta, body))
+        page = page_subscribe(meta) if pg.stem == "subscribe" else page_simple(pg.stem, meta, body)
+        write(f"{pg.stem}/index.html", page)
     write("feed.xml", feed(posts))
     write("404.html", layout("Page not found", """<header class="page-head"><div class="wrap">
   <h1 class="display">Page <em>not found</em></h1><p>The page you are looking for is not here. <a href="/">Go back home</a>.</p>

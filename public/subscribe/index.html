@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Walk with us · From the Heel of Italy</title>
-<meta name="description" content="A short update every few weeks from the Pieno Vangelo ministry and the Ronchi family: one story, one photo and a link to read more.">
+<meta name="description" content="One story, one photo and a link to read more, every few weeks, from the Pieno Vangelo ministry and the Ronchi family.">
 <link rel="canonical" href="https://fromtheheelofitaly.org/subscribe/">
 <meta property="og:title" content="Walk with us · From the Heel of Italy">
-<meta property="og:description" content="A short update every few weeks from the Pieno Vangelo ministry and the Ronchi family: one story, one photo and a link to read more.">
+<meta property="og:description" content="One story, one photo and a link to read more, every few weeks, from the Pieno Vangelo ministry and the Ronchi family.">
 <meta property="og:url" content="https://fromtheheelofitaly.org/subscribe/">
 <meta property="og:type" content="website">
 
@@ -29,14 +29,32 @@
 <main>
 <header class="page-head"><div class="narrow">
   <h1 class="display">Walk with us</h1>
-  <p>A short update every few weeks from the Pieno Vangelo ministry and the Ronchi family: one story, one photo and a link to read more.</p>
+  <p>One story, one photo and a link to read more, every few weeks, from the Pieno Vangelo ministry and the Ronchi family.</p>
+  <form class="signup" id="signup" method="POST" action="https://36a940e5.sibforms.com/serve/MUIFAEFtdAN7GjCm-AuY7B6D7oFzLgCFwCa8E13xulCfjhB61wh3tmIzLsTYJvG5nzJ8Sd1IT0sWJjIkB6RRHnLRxuOofGwwzazUZLyCTzaHxdfVvTcX12MKzcmnqlTnZ-w4ATzYlFVNVwaZuxnb7s40ZrW6TCW-ob6SYHI2yrUBExRDkQwaEuzYx54I5PZqCAMry5H_RBGjIq34jA==">
+    <label class="sr-only" for="EMAIL">Email</label>
+    <input type="email" id="EMAIL" name="EMAIL" placeholder="Your email" autocomplete="email" required>
+    <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+    <input type="hidden" name="locale" value="en">
+    <button class="btn btn-primary" type="submit">Subscribe</button>
+  </form>
+  <p class="signup-msg" id="signup-msg" role="status" aria-live="polite"></p>
+  <p class="signup-note">Only these updates, nothing else. Unsubscribe anytime. <a href="/privacy/">Privacy</a></p>
 </div></header>
-<div class="narrow page-body"><div class="prose-card prose"><div class="form-embed">
-<iframe src="https://36a940e5.sibforms.com/serve/MUIFAEFtdAN7GjCm-AuY7B6D7oFzLgCFwCa8E13xulCfjhB61wh3tmIzLsTYJvG5nzJ8Sd1IT0sWJjIkB6RRHnLRxuOofGwwzazUZLyCTzaHxdfVvTcX12MKzcmnqlTnZ-w4ATzYlFVNVwaZuxnb7s40ZrW6TCW-ob6SYHI2yrUBExRDkQwaEuzYx54I5PZqCAMry5H_RBGjIq34jA==" title="Newsletter subscription form" width="540" height="420" frameborder="0" scrolling="auto" allowfullscreen loading="lazy"></iframe>
-</div>
-
-<p class="small-print">We use Brevo to send our emails. Your email address is used only to send you these updates, and every email has a link to unsubscribe at any time. Read our <a href="/privacy/">privacy notice</a>.</p></div></div>
-
+<script>{
+  const f = document.getElementById('signup'), m = document.getElementById('signup-msg');
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const b = f.querySelector('button'); b.disabled = true; m.className = 'signup-msg';
+    try {
+      const r = await fetch(f.action + '?isAjax=1', { method: 'POST', body: new FormData(f) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || j.success === false) throw 0;
+      f.hidden = true; m.textContent = 'Thank you for walking with us! You are now subscribed.'; m.classList.add('ok');
+    } catch (_) {
+      m.textContent = 'Something went wrong. Please check your email address and try again.'; m.classList.add('err');
+    } finally { b.disabled = false; }
+  });
+}</script>
 </main>
 <footer class="site-footer">
   <div class="wrap">
