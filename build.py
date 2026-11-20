@@ -344,12 +344,28 @@ def page_area(a, posts):
   {chips(a['slug'])}
 </div></div>
 {area_about(a)}
-<section><div class="wrap">
-  {'<div class="section-head"><h2 class="display">Latest updates</h2></div>' if (ROOT / "content" / "areas" / (a["slug"] + ".md")).exists() else ''}
-  {cards_grid(mine, "The first update from this area is on its way.")}
-</div></section>
+{'<section><div class="wrap"><div class="section-head"><h2 class="display">Latest updates</h2></div></div></section>' if (ROOT / "content" / "areas" / (a["slug"] + ".md")).exists() else ''}
+{area_articles(mine)}
 {subscribe_band()}"""
     return layout(a["name"], content, description=a["intro"], active=a["slug"], path=f"/{a['slug']}/")
+
+
+def area_articles(mine):
+    """On an area page every update is shown in full, newest first (no extra click)."""
+    if not mine:
+        return '<section><div class="wrap"><div class="empty">The first update from this area is on its way.</div></div></section>'
+    out = []
+    for p in mine:
+        cover = f'<div class="article-cover">{media(p)}</div>' if p["cover"] else ""
+        out.append(f"""<article class="area-article" id="{esc(p['slug'])}">
+  <header class="article-head"><div class="narrow">
+    <h2 class="display"><a href="{p['url']}">{esc(p['title'])}</a></h2>
+    <div class="meta">{fmt_date(p['date'])} · {esc(SITE['author'])}</div>
+  </div></header>
+  {cover}
+  <div class="narrow page-body"><div class="prose-card prose">{p['html']}</div></div>
+</article>""")
+    return "\n".join(out)
 
 
 def area_about(a):

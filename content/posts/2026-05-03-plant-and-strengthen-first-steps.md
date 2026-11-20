@@ -1,6 +1,6 @@
 ---
 title: Alongside Other Churches
-date: 2026-11-19
+date: 2026-05-03
 area: plant-and-strengthen
 cover: /images/2026-11-plant-strengthen-map.jpg
 cover_alt: Map of southern Italy with dotted lines from Modugno to Giugliano, Potenza and Massafra

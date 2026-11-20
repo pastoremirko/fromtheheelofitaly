@@ -474,3 +474,8 @@ a.window:hover .bg img { transform: scale(1.05); }
 @media (max-width: 520px) { .signup { flex-direction: column; } }
 .signup button { font: inherit; font-weight: 700; font-size: 15px; padding: 0 28px; }
 .page-head:has(.signup) { padding-bottom: 120px; min-height: 55vh; }
+
+/* Area pages: full articles instead of cards */
+.area-article { padding-bottom: 24px; }
+.area-article + .area-article { border-top: 1px solid var(--line); margin-top: 24px; }
+.area-article .article-head .display a { color: inherit; text-decoration: none; }
