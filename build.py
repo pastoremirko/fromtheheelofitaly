@@ -202,14 +202,20 @@ def tag_html(a):
     return f'<span class="tag">{esc(a["name"])}</span>'
 
 
-def card(p):
+def date_eyebrow(p, show_area=True):
+    """Blog-style small header: the date, plus the area when the list mixes areas."""
+    area = f' · {esc(p["area"]["name"])}' if show_area and p["area"]["slug"] else ""
+    return f'<span class="tag">{fmt_date(p["date"])}{area}</span>'
+
+
+def card(p, show_area=True):
     return f"""<a class="card" href="{p['url']}">
   {media(p)}
   <div class="body">
-    {tag_html(p['area'])}
+    {date_eyebrow(p, show_area)}
     <h3>{esc(p['title'])}</h3>
     <p>{esc(p['excerpt'])}</p>
-    <span class="meta">{fmt_date(p['date'])}</span>
+    <span class="meta">Read more →</span>
   </div>
 </a>"""
 
@@ -218,18 +224,18 @@ def featured(p):
     return f"""<a class="featured" href="{p['url']}">
   {media(p)}
   <div class="body">
-    {tag_html(p['area'])}
+    {date_eyebrow(p)}
     <h3>{esc(p['title'])}</h3>
     <p>{esc(p['excerpt'])}</p>
-    <span class="meta">{fmt_date(p['date'])} · Read more →</span>
+    <span class="meta">Read more →</span>
   </div>
 </a>"""
 
 
-def cards_grid(posts, empty="The first update is on its way.", cls=""):
+def cards_grid(posts, empty="The first update is on its way.", cls="", show_area=True):
     if not posts:
         return f'<div class="empty">{esc(empty)}</div>'
-    return f'<div class="grid {cls}">' + "".join(card(p) for p in posts) + "</div>"
+    return f'<div class="grid {cls}">' + "".join(card(p, show_area) for p in posts) + "</div>"
 
 
 def window_bg(a):
@@ -346,7 +352,7 @@ def page_area(a, posts):
 {area_about(a)}
 <section><div class="wrap">
   {'<div class="section-head"><h2 class="display">Latest updates</h2></div>' if (ROOT / "content" / "areas" / (a["slug"] + ".md")).exists() else ''}
-  {cards_grid(mine, "The first update from this area is on its way.")}
+  {cards_grid(mine, "The first update from this area is on its way.", show_area=False)}
 </div></section>
 {subscribe_band()}"""
     return layout(a["name"], content, description=a["intro"], active=a["slug"], path=f"/{a['slug']}/")
@@ -378,7 +384,7 @@ def page_post(p, posts):
         title = f"More from {esc(a['name'])}" if a["slug"] else "More updates"
         more_html = f"""<section><div class="wrap">
   <div class="section-head"><h2 class="display">{title}</h2></div>
-  {cards_grid(more)}
+  {cards_grid(more, show_area=not a['slug'])}
 </div></section>"""
     back = (f'<a href="/{a["slug"]}/">← All {esc(a["name"])} updates</a>' if a["slug"]
             else '<a href="/updates/">← All updates</a>')
