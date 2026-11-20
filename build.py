@@ -296,7 +296,6 @@ def page_home(posts):
   <p class="eyebrow">News &amp; stories</p>
   <h1 class="display">From the <em>Heel of Italy</em></h1>
   <div class="sub">
-    <p class="lead">&hellip; <em>to the ends of the earth</em>. Updates from the Pieno Vangelo ministry and the Ronchi family.</p>
     <div class="actions">
       <a class="btn btn-primary" href="{SITE['subscribe_url']}">Get the newsletter</a>
       <a class="btn btn-outline" href="https://pienovangelo.it" rel="noopener">pienovangelo.it</a>
