@@ -474,8 +474,3 @@ a.window:hover .bg img { transform: scale(1.05); }
 @media (max-width: 520px) { .signup { flex-direction: column; } }
 .signup button { font: inherit; font-weight: 700; font-size: 15px; padding: 0 28px; }
 .page-head:has(.signup) { padding-bottom: 120px; min-height: 55vh; }
-
-/* Header: menu on the left (About first), Pieno Vangelo logo on the right */
-.site-header .nav { margin-left: -14px; }
-.site-header .brand { margin-left: 12px; }
-@media (max-width: 960px) { .site-header .nav { margin-left: 0; } }

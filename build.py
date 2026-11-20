@@ -147,9 +147,9 @@ def layout(title, content, description=None, active="", image=None, path="/"):
 <body>
 <header class="site-header">
   <div class="wrap">
+    <a class="brand" href="/" aria-label="From the Heel of Italy – home"><img class="pv-logo" src="/img/pv-glifo.svg" alt="Chiesa Pienovangelo"></a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">Menu</button>
     <nav class="nav">{nav(active)}</nav>
-    <a class="brand" href="/" aria-label="From the Heel of Italy – home"><img class="pv-logo" src="/img/pv-glifo.svg" alt="Chiesa Pienovangelo"></a>
   </div>
 </header>
 <main>
