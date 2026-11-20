@@ -5,5 +5,7 @@
   "assets": {
     "directory": "./public",
     "not_found_handling": "404-page"
-  }
+  },
+  // Preview environments for non-production branches (e.g. design)
+  "previews": {}
 }
