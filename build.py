@@ -106,10 +106,9 @@ def fmt_date(d):
 
 
 def nav(active=""):
-    links = [(f"/{a['slug']}/", a["short"], a["slug"]) for a in SITE["areas"]]
+    links = [("/about/", "About", "about")] + [(f"/{a['slug']}/", a["short"], a["slug"]) for a in SITE["areas"]]
     items = "".join(
         f'<a href="{u}"{" class=active" if k == active else ""}>{esc(t)}</a>' for u, t, k in links)
-    items += f'<a href="/about/"{" class=active" if active == "about" else ""}>About</a>'
     items += '<a class="btn-sub" href="/support/">Support</a>'
     return items
 
@@ -148,9 +147,9 @@ def layout(title, content, description=None, active="", image=None, path="/"):
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/"><img class="pv-logo" src="/img/pv-glifo.svg" alt="Chiesa Pienovangelo"><span class="sep"></span><span class="upd">Updates</span></a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">Menu</button>
     <nav class="nav">{nav(active)}</nav>
+    <a class="brand" href="/" aria-label="From the Heel of Italy – home"><img class="pv-logo" src="/img/pv-glifo.svg" alt="Chiesa Pienovangelo"></a>
   </div>
 </header>
 <main>
