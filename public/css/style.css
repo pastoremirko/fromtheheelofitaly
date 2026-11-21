@@ -514,3 +514,6 @@ a.window:hover .bg img { transform: scale(1.05); }
 .prose .sup-note { background: color-mix(in srgb, var(--brand) 7%, white); border-radius: var(--r-md); padding: 14px 18px; font-size: .95rem; }
 @media (max-width: 620px) { .sup-grid { grid-template-columns: 1fr; } .sup-bank { grid-template-columns: 1fr; gap: 0 0; } .sup-bank dd { margin-bottom: 8px; } }
 .sup-card.main .sup-note { margin: 16px 0 0; }
+.sup-card:not(.main) .sup-bank { grid-template-columns: 1fr; gap: 0; margin: 4px 0 10px; }
+.sup-card:not(.main) .sup-bank dd { margin-bottom: 6px; }
+.sup-card:not(.main) .sup-bank dd.mono { font-size: .86rem; white-space: nowrap; letter-spacing: 0; }
