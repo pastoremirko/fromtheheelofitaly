@@ -459,7 +459,7 @@ def page_simple(slug, meta, body):
   <h1 class="display">{esc(meta.get('title', slug))}</h1>
   {f"<p>{esc(meta['intro'])}</p>" if meta.get('intro') else ""}
 </div></header>
-<div class="narrow page-body"><div class="prose-card prose">{('<div class="about-map">' + (ROOT / "static" / "img" / "map-sketch.svg").read_text(encoding="utf-8") + '</div>') if slug == 'about' else ''}{render_body(body)}</div></div>
+<div class="narrow page-body"><div class="prose-card prose">{('<div class="about-map">' + (ROOT / "static" / "img" / "map-italy-puglia.svg").read_text(encoding="utf-8") + '</div>') if slug == 'about' else ''}{render_body(body)}</div></div>
 {subscribe_band() if slug not in ('privacy', 'subscribe') else ''}"""
     return layout(meta.get("title", slug), content, description=meta.get("intro"), active=slug, path=f"/{slug}/")
 
