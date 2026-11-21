@@ -341,7 +341,6 @@ def page_area(a, posts):
       <p>{esc(a['intro'])}</p>
     </div>
   </div>
-  {chips(a['slug'])}
 </div></div>
 {area_about(a)}
 {'<section><div class="wrap"><div class="section-head"><h2 class="display">Latest updates</h2></div></div></section>' if (ROOT / "content" / "areas" / (a["slug"] + ".md")).exists() else ''}
