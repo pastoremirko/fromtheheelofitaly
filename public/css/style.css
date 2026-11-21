@@ -535,3 +535,5 @@ a.window:hover .bg img { transform: scale(1.05); }
 .ap-more .prose { max-width: 720px; }
 .ap-more .prose > :first-child { margin-top: 0; }
 @media (max-width: 700px) { .area-post.has-img { grid-template-columns: 1fr; } .area-post { padding: 16px; } }
+.sup-card.main.neutral { border-color: var(--line); margin-bottom: 18px; }
+.sup-card.main p { font-size: 1.02rem; }
