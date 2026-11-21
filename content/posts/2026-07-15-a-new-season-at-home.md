@@ -2,8 +2,8 @@
 title: A New Season at Home
 date: 2026-07-15
 area: family
-cover: /images/area-family.jpg
-cover_alt: Pastor Mirko and Giorgia with Johanna and Amedeo by the sea
+cover: /images/2026-07-family-update.jpg
+cover_alt: Pastor Mirko and Giorgia with Johanna and Amedeo, smiling together
 excerpt: Johanna has started preschool, Amedeo is growing fast, and we are learning to protect what matters most in a busy and beautiful season.
 ---
 

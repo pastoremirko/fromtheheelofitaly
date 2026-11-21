@@ -1,6 +1,6 @@
 Subject: A new season at home
 Preview text: Johanna has started preschool, Amedeo is growing fast, and we are learning to protect what matters most.
-Image: /images/area-family.jpg
+Image: /images/2026-07-family-update.jpg
 Read more: https://fromtheheelofitaly.org/family/#a-new-season-at-home
 
 FAMILY LIFE
