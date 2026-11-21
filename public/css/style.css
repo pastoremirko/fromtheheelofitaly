@@ -492,3 +492,6 @@ a.window:hover .bg img { transform: scale(1.05); }
 .area-hero .inner, .area-hero .window.has-img .inner { padding: 28px 32px; }
 .area-hero .window h1 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); margin-bottom: 10px; }
 .area-hero .window p { font-size: 1rem; }
+
+/* Smaller inline image in area articles */
+.area-article .post-img img { max-width: 420px; aspect-ratio: auto; }
