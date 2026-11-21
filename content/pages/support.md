@@ -25,6 +25,7 @@ intro: Thank you for considering standing with us in prayer, visiting us and giv
 <dt>BIC / SWIFT</dt><dd class="mono">BCITITMME77</dd>
 <dt>Bank</dt><dd>Intesa Sanpaolo, Bari, Italy</dd>
 </dl>
+<p class="sup-note"><strong>What is your gift for?</strong> Write it in the payment reference: <em>Family Life, Church Life, Nations Among Us, Plant &amp; Strengthen, To the Ends of the Earth</em> or <em>Il Rifugio</em>. If you leave it blank, your gift goes where the need is greatest.</p>
 </div>
 <div class="sup-card">
 <p class="sup-k">Tax-deductible gift <span>From the United States</span></p>
@@ -39,7 +40,6 @@ intro: Thank you for considering standing with us in prayer, visiting us and giv
 </div>
 </div>
 
-<p class="sup-note"><strong>What is your gift for?</strong> Write it in the payment reference (or in the comments on Adventive): <em>Family Life, Church Life, Nations Among Us, Plant &amp; Strengthen, To the Ends of the Earth</em> or <em>Il Rifugio</em>. If you leave it blank, your gift goes where the need is greatest.</p>
 
 <p class="sup-small">Giving by check in the US? Make it payable to ACCI with a note “Italy Pieno Vangelo”, and don't write our names on the check.</p>
 
