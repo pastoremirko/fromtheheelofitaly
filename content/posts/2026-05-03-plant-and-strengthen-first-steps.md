@@ -19,7 +19,7 @@ In Giugliano, near Naples, a new church has been born: **Connect Church**. It is
 
 ## Potenza
 
-In Potenza, a small church was close to closing its doors. Then a group of young people chose to take responsibility for it. We were blessed to spend a season encouraging them, and we still walk beside them today. Our prayer is that their ministry will flourish, and that many in their city will find a home in this church.
+In Potenza, a small church was close to closing its doors. Then a group of young people chose to take responsibility for it. We were blessed to stand with them through the first and most delicate season, encouraging them and giving them the tools and training to lead the church. We still walk beside them today. Our prayer is that their ministry will flourish, and that many in their city will find a home in this church.
 
 ## Massafra
 
