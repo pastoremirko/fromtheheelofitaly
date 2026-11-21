@@ -1,6 +1,6 @@
 ---
 title: A New Season at Home
-date: 2026-11-21
+date: 2026-07-15
 area: family
 cover: /images/area-family.jpg
 cover_alt: Pastor Mirko and Giorgia with Johanna and Amedeo by the sea
