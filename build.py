@@ -313,8 +313,6 @@ def page_home(posts):
     latest = ""
     if posts:
         latest = featured(posts[0])
-        if len(posts) > 1:
-            latest += cards_grid(posts[1:4], cls="top")
     else:
         latest = '<div class="empty">The first update is on its way.</div>'
     content = f"""<div class="intro"><div class="wrap">
