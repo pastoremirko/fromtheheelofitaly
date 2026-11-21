@@ -3,33 +3,44 @@ title: Support the work
 intro: Thank you for considering standing with us in prayer, visiting us and giving.
 ---
 
-## Pray with us
-
-Prayer is the first and most important way to support us. Every update ends with a few short prayer points: we would be grateful if you made them part of your prayers.
-
-## Visit us
-
-If you are traveling to Southern Italy, we would love to welcome you to our church in Modugno, near Bari, or to Il Rifugio in Ruvo di Puglia. [Write to us](mailto:pastoremirko@pienovangelo.it) and we will help you plan your visit.
+<div class="sup-grid two">
+<div class="sup-card">
+<p class="sup-k">Pray with us</p>
+<p>Prayer is the first way to support us. Every update ends with a few short prayer points.</p>
+</div>
+<div class="sup-card">
+<p class="sup-k">Visit us</p>
+<p>Coming to Southern Italy? Visit our church in Modugno, near Bari, or Il Rifugio in Ruvo di Puglia. <a href="mailto:pastoremirko@pienovangelo.it">Write to us</a>.</p>
+</div>
+</div>
 
 ## Give
 
-### Bank transfer (in euros)
+<div class="sup-grid">
+<div class="sup-card main">
+<p class="sup-k">Bank transfer <span>From any country, including the US</span></p>
+<dl class="sup-bank">
+<dt>Account name</dt><dd>Missione del Pieno Vangelo</dd>
+<dt>IBAN</dt><dd class="mono">IT24 P030 6909 6061 0000 0007 779</dd>
+<dt>BIC / SWIFT</dt><dd class="mono">BCITITMME77</dd>
+<dt>Bank</dt><dd>Intesa Sanpaolo, Bari, Italy</dd>
+</dl>
+</div>
+<div class="sup-card">
+<p class="sup-k">Tax-deductible gift <span>From the United States</span></p>
+<p>Give online through our partner <strong>Adventive (ACCI)</strong>.</p>
+<p><a class="sup-btn" href="https://www.adventive.ca/make-a-donation-us/">Give through Adventive →</a></p>
+<p class="sup-small">Select fund: <strong>Europe → Italy Pieno Vangelo</strong></p>
+</div>
+<div class="sup-card">
+<p class="sup-k">For the Ronchi family <span>Personal support</span></p>
+<p>Gifts for our family go to a separate personal account.</p>
+<p class="sup-small"><em>Details coming soon.</em></p>
+</div>
+</div>
 
-The simplest way to give from Italy and Europe is a bank transfer to our church:
+<p class="sup-note"><strong>What is your gift for?</strong> Write it in the payment reference (or in the comments on Adventive): <em>Church Life, Nations Among Us, Plant &amp; Strengthen, To the Ends of the Earth</em> or <em>Il Rifugio</em>. If you leave it blank, your gift goes where the need is greatest.</p>
 
-- **Account name:** Missione del Pieno Vangelo
-- **IBAN:** IT24 P030 6909 6061 0000 0007 779
-- **BIC / SWIFT:** BCITITMME77
-- **Bank:** Intesa Sanpaolo, Bari, Italy
+<p class="sup-small">Giving by check in the US? Make it payable to ACCI with a note “Italy Pieno Vangelo”, and don't write our names on the check.</p>
 
-In the payment reference, please write what your gift is for: for example *Church Life*, *Loving the Nations Among Us*, *Plant & Strengthen*, *To the Ends of the Earth* or *Il Rifugio*. If you leave it blank, your gift will go where the need is greatest.
-
-**For the Ronchi family:** gifts for our family go to a separate personal account. *Details coming soon.*
-
-### From the United States (USD)
-
-Gifts from the United States are received through **Adventive Cross Cultural Initiatives (ACCI)**, our partner organization. Give online at [adventive.ca/make-a-donation-us](https://www.adventive.ca/make-a-donation-us/): under *Select fund*, choose **Europe**, then **Italy Pieno Vangelo**. To tell us what your gift is for, add a short note in the comments.
-
-If you need to give by check, please make it payable to ACCI, add a note saying it is for **Italy Pieno Vangelo**, and do not write our names anywhere on the check.
-
-Thank you for your generosity.
+<p>Thank you for your generosity.</p>
