@@ -45,7 +45,7 @@ others = [f for f in regs if f["properties"]["reg_name"] != "Puglia"]
 pug = next(f for f in regs if f["properties"]["reg_name"] == "Puglia")
 land_top = "".join(path(f["geometry"]) for f in others)
 land_all = land_top + path(pug["geometry"])
-SLAB, LIFT = 9, 16
+SLAB, LIFT = 9, 9
 slab = "".join(f'<path d="{land_all}" transform="translate(0,{i})"/>' for i in range(SLAB, 0, -1))
 pug_top = path(pug["geometry"], dy=-LIFT)
 pug_sides = "".join(f'<path d="{path(pug["geometry"], dy=-i)}"/>' for i in range(0, LIFT, 1))
