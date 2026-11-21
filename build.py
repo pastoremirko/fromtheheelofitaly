@@ -356,15 +356,16 @@ def area_articles(mine):
         return '<section><div class="wrap"><div class="empty">The first update from this area is on its way.</div></div></section>'
     out = []
     for p in mine:
-        cover = f'<div class="article-cover">{media(p)}</div>' if p["cover"] else ""
-        out.append(f"""<article class="area-article" id="{esc(p['slug'])}">
-  <header class="article-head"><div class="narrow">
-    <h2 class="display"><a href="{p['url']}">{esc(p['title'])}</a></h2>
-    <div class="meta">{fmt_date(p['date'])} · {esc(SITE['author'])}</div>
-  </div></header>
-  {cover}
-  <div class="narrow page-body"><div class="prose-card prose">{p['html']}</div></div>
-</article>""")
+        cover = f'<figure class="post-img"><img src="{esc(p["cover"])}" alt="{esc(p["cover_alt"])}" loading="lazy"></figure>' if p["cover"] else ""
+        out.append(f"""<article class="area-article" id="{esc(p['slug'])}"><div class="narrow">
+  <div class="prose-card prose">
+    <p class="post-date"><time datetime="{p['date'].isoformat()}">{fmt_date(p['date'])}</time></p>
+    <h2 class="post-title"><a href="{p['url']}">{esc(p['title'])}</a></h2>
+    <p class="post-author">{esc(SITE['author'])}</p>
+    {cover}
+    {p['html']}
+  </div>
+</div></article>""")
     return "\n".join(out)
 
 
