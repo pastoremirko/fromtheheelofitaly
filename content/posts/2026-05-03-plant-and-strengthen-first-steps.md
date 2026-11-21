@@ -4,7 +4,7 @@ date: 2026-05-03
 area: plant-and-strengthen
 cover: /images/2026-11-plant-strengthen-map.jpg
 cover_alt: Map of southern Italy with dotted lines from Modugno to Giugliano, Potenza and Massafra
-gallery: /images/2021-10-connect-church-giugliano.jpg
+gallery: /images/2021-10-connect-church-giugliano.jpg, /images/2021-10-connect-church-commissioning.jpg, /images/2021-10-connect-church-embrace.jpg
 excerpt: Giugliano, Potenza and Massafra: three churches God has given us the privilege to encourage and to bless.
 ---
 
