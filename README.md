@@ -26,6 +26,7 @@ title: Titolo dell'articolo
 date: 2026-12-05
 area: il-rifugio
 cover: /images/2026-12-rifugio-campo.jpg
+gallery: /images/2026-12-rifugio-2.jpg, /images/2026-12-rifugio-3.jpg
 excerpt: Una o due frasi di riassunto.
 video: https://www.youtube.com/watch?v=XXXXXXXXXXX
 ---
@@ -33,7 +34,9 @@ video: https://www.youtube.com/watch?v=XXXXXXXXXXX
 Testo dell'articolo (300–400 parole)...
 ```
 
-Aree valide: `family`, `church`, `il-rifugio`, `missions`, `plant-and-strengthen`
+`gallery` (facoltativo): altre foto, separate da virgole; compaiono a sinistra quando si apre "Read more". Ogni foto si può cliccare per vederla grande.
+
+Aree valide: `family`, `church`, `nations-among-us`, `il-rifugio`, `missions`, `plant-and-strengthen`
 (lasciare vuoto per una notizia generale). Un link YouTube su una riga da solo diventa un video incorporato.
 
 3. Esegui `python3 build.py` (serve `pip install markdown`) e fai commit anche della cartella `public/`.

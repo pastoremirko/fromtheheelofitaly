@@ -110,5 +110,27 @@
     <p class="small">© 2026 Pieno Vangelo Church · Modugno (BA), Italy · <a href="/privacy/">Privacy</a></p>
   </div>
 </footer>
+<div class="lightbox" hidden><button class="lb-close" aria-label="Close">×</button><button class="lb-prev" aria-label="Previous">‹</button><img alt=""><button class="lb-next" aria-label="Next">›</button></div>
+<script>{
+  const box = document.querySelector('.lightbox'), big = box.querySelector('img');
+  let set = [], i = 0;
+  const show = () => { big.src = set[i].currentSrc || set[i].src; big.alt = set[i].alt;
+    box.classList.toggle('single', set.length < 2); };
+  document.addEventListener('click', e => {
+    const im = e.target.closest('.ap-img img, .prose img, .article-cover img');
+    if (!im || im.closest('.lightbox')) return;
+    const scope = im.closest('article') || document;
+    set = [...scope.querySelectorAll('.ap-img img, .prose img, .article-cover img')].filter(x => x.offsetParent);
+    i = Math.max(0, set.indexOf(im)); show(); box.hidden = false; document.body.style.overflow = 'hidden';
+  });
+  const close = () => { box.hidden = true; document.body.style.overflow = ''; };
+  box.addEventListener('click', e => { if (e.target === box || e.target.classList.contains('lb-close')) close(); });
+  box.querySelector('.lb-prev').onclick = () => { i = (i - 1 + set.length) % set.length; show(); };
+  box.querySelector('.lb-next').onclick = () => { i = (i + 1) % set.length; show(); };
+  addEventListener('keydown', e => { if (box.hidden) return;
+    if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') box.querySelector('.lb-prev').click();
+    if (e.key === 'ArrowRight') box.querySelector('.lb-next').click(); });
+}</script>
+
 </body>
 </html>

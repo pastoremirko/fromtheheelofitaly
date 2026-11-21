@@ -93,6 +93,7 @@ def load_posts():
         posts.append({
             "title": meta.get("title", slug), "slug": slug, "date": d, "area": area,
             "cover": meta.get("cover", ""), "cover_alt": meta.get("cover_alt", meta.get("title", "")),
+            "gallery": [g.strip() for g in meta.get("gallery", "").split(",") if g.strip()],
             "excerpt": excerpt, "html": html_body, "url": f"/updates/{slug}/",
         })
     posts.sort(key=lambda x: x["date"], reverse=True)
@@ -111,6 +112,30 @@ def nav(active=""):
         f'<a href="{u}"{" class=active" if k == active else ""}>{esc(t)}</a>' for u, t, k in links)
     items += '<a class="btn-sub" href="/support/">Support</a>'
     return items
+
+
+LIGHTBOX = """<div class="lightbox" hidden><button class="lb-close" aria-label="Close">×</button><button class="lb-prev" aria-label="Previous">‹</button><img alt=""><button class="lb-next" aria-label="Next">›</button></div>
+<script>{
+  const box = document.querySelector('.lightbox'), big = box.querySelector('img');
+  let set = [], i = 0;
+  const show = () => { big.src = set[i].currentSrc || set[i].src; big.alt = set[i].alt;
+    box.classList.toggle('single', set.length < 2); };
+  document.addEventListener('click', e => {
+    const im = e.target.closest('.ap-img img, .prose img, .article-cover img');
+    if (!im || im.closest('.lightbox')) return;
+    const scope = im.closest('article') || document;
+    set = [...scope.querySelectorAll('.ap-img img, .prose img, .article-cover img')].filter(x => x.offsetParent);
+    i = Math.max(0, set.indexOf(im)); show(); box.hidden = false; document.body.style.overflow = 'hidden';
+  });
+  const close = () => { box.hidden = true; document.body.style.overflow = ''; };
+  box.addEventListener('click', e => { if (e.target === box || e.target.classList.contains('lb-close')) close(); });
+  box.querySelector('.lb-prev').onclick = () => { i = (i - 1 + set.length) % set.length; show(); };
+  box.querySelector('.lb-next').onclick = () => { i = (i + 1) % set.length; show(); };
+  addEventListener('keydown', e => { if (box.hidden) return;
+    if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') box.querySelector('.lb-prev').click();
+    if (e.key === 'ArrowRight') box.querySelector('.lb-next').click(); });
+}</script>
+"""
 
 
 def layout(title, content, description=None, active="", image=None, path="/"):
@@ -181,6 +206,7 @@ def layout(title, content, description=None, active="", image=None, path="/"):
     <p class="small">© {year} {esc(SITE['church'])} · Modugno (BA), Italy · <a href="/privacy/">Privacy</a></p>
   </div>
 </footer>
+{LIGHTBOX}
 </body>
 </html>
 """
@@ -357,8 +383,11 @@ def area_articles(mine):
     out = []
     for p in mine:
         img = f'<img src="{esc(p["cover"])}" alt="{esc(p["cover_alt"])}" loading="lazy">' if p["cover"] else ""
+        gallery = ("<div class=\"ap-gallery\">" + "".join(
+            f'<img src="{esc(g)}" alt="{esc(p["title"])} – photo {i + 2}" loading="lazy">'
+            for i, g in enumerate(p["gallery"])) + "</div>") if p["gallery"] else ""
         out.append(f"""<article class="area-post{' has-img' if img else ''}" id="{esc(p['slug'])}">
-  {f'<div class="ap-img">{img}</div>' if img else ''}
+  {f'<div class="ap-img">{img}{gallery}</div>' if img else ''}
   <div class="ap-text">
     <p class="ap-date"><time datetime="{p['date'].isoformat()}">{fmt_date(p['date'])}</time></p>
     <h2 class="ap-title">{esc(p['title'])}</h2>
@@ -373,6 +402,8 @@ def area_articles(mine):
   const open = () => { const el = location.hash && document.getElementById(location.hash.slice(1));
     const d = el && el.querySelector('details.ap-more'); if (d) { d.open = true; el.scrollIntoView(); } };
   open(); addEventListener('hashchange', open);
+  document.querySelectorAll('details.ap-more').forEach(d => d.addEventListener('toggle', () =>
+    d.closest('.area-post').classList.toggle('is-open', d.open)));
 }</script>"""
     return '<section class="area-posts"><div class="wrap">' + "\n".join(out) + "</div></section>" + script
 
