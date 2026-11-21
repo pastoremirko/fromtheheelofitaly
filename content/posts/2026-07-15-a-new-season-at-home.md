@@ -4,6 +4,7 @@ date: 2026-07-15
 area: family
 cover: /images/2026-07-family-update.jpg
 cover_alt: Pastor Mirko and Giorgia with Johanna and Amedeo, smiling together
+gallery: /images/2026-07-family-johanna-preschool.jpg
 excerpt: Johanna has started preschool, Amedeo is growing fast, and we are learning to protect what matters most in a busy and beautiful season.
 ---
 
