@@ -350,22 +350,31 @@ def page_area(a, posts):
 
 
 def area_articles(mine):
-    """On an area page every update is shown in full, newest first (no extra click)."""
+    """Compact list of updates on an area page, as wide as the area window.
+    Each shows date, title, excerpt and image; the full text opens in place."""
     if not mine:
         return '<section><div class="wrap"><div class="empty">The first update from this area is on its way.</div></div></section>'
     out = []
     for p in mine:
-        cover = f'<figure class="post-img"><img src="{esc(p["cover"])}" alt="{esc(p["cover_alt"])}" loading="lazy"></figure>' if p["cover"] else ""
-        out.append(f"""<article class="area-article" id="{esc(p['slug'])}"><div class="narrow">
-  <div class="prose-card prose">
-    <p class="post-date"><time datetime="{p['date'].isoformat()}">{fmt_date(p['date'])}</time></p>
-    <h2 class="post-title"><a href="{p['url']}">{esc(p['title'])}</a></h2>
-    <p class="post-author">{esc(SITE['author'])}</p>
-    {cover}
-    {p['html']}
+        img = f'<img src="{esc(p["cover"])}" alt="{esc(p["cover_alt"])}" loading="lazy">' if p["cover"] else ""
+        out.append(f"""<article class="area-post{' has-img' if img else ''}" id="{esc(p['slug'])}">
+  {f'<div class="ap-img">{img}</div>' if img else ''}
+  <div class="ap-text">
+    <p class="ap-date"><time datetime="{p['date'].isoformat()}">{fmt_date(p['date'])}</time></p>
+    <h2 class="ap-title">{esc(p['title'])}</h2>
+    <p class="ap-excerpt">{esc(p['excerpt'])}</p>
+    <details class="ap-more">
+      <summary><span class="open">Read more →</span><span class="close">Close ↑</span></summary>
+      <div class="prose">{p['html']}</div>
+    </details>
   </div>
-</div></article>""")
-    return "\n".join(out)
+</article>""")
+    script = """<script>{
+  const open = () => { const el = location.hash && document.getElementById(location.hash.slice(1));
+    const d = el && el.querySelector('details.ap-more'); if (d) { d.open = true; el.scrollIntoView(); } };
+  open(); addEventListener('hashchange', open);
+}</script>"""
+    return '<section class="area-posts"><div class="wrap">' + "\n".join(out) + "</div></section>" + script
 
 
 def area_about(a):

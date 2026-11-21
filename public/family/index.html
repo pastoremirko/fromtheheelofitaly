@@ -39,13 +39,15 @@
 </div></div>
 
 
-<article class="area-article" id="a-new-season-at-home"><div class="narrow">
-  <div class="prose-card prose">
-    <p class="post-date"><time datetime="2026-07-15">15 July 2026</time></p>
-    <h2 class="post-title"><a href="/updates/a-new-season-at-home/">A New Season at Home</a></h2>
-    <p class="post-author">Pastor Mirko Ronchi</p>
-    <figure class="post-img"><img src="/images/area-family.jpg" alt="Pastor Mirko and Giorgia with Johanna and Amedeo by the sea" loading="lazy"></figure>
-    <p>Dear friends,</p>
+<section class="area-posts"><div class="wrap"><article class="area-post has-img" id="a-new-season-at-home">
+  <div class="ap-img"><img src="/images/area-family.jpg" alt="Pastor Mirko and Giorgia with Johanna and Amedeo by the sea" loading="lazy"></div>
+  <div class="ap-text">
+    <p class="ap-date"><time datetime="2026-07-15">15 July 2026</time></p>
+    <h2 class="ap-title">A New Season at Home</h2>
+    <p class="ap-excerpt">Johanna has started preschool, Amedeo is growing fast, and we are learning to protect what matters most in a busy and beautiful season.</p>
+    <details class="ap-more">
+      <summary><span class="open">Read more →</span><span class="close">Close ↑</span></summary>
+      <div class="prose"><p>Dear friends,</p>
 <p>Our home is full and busy these days. Johanna is now three and a half, and Amedeo is one and a half. Both of them are a real joy, and we are deeply grateful for the life and the family the Lord has given us.</p>
 <h2>A new rhythm</h2>
 <p>Johanna has just started preschool. It is a small step for her and a big change for all of us: new routines, new emotions and new dynamics at home that are not always simple. But God is giving us the grace to live this season well, one day at a time.</p>
@@ -62,9 +64,14 @@
 </ul>
 <p>If you would like to stand with us in a practical way as well, you can find out how on our <a href="/support/">Support</a> page.</p>
 <p>Thank you for walking with us.</p>
-<p><em>Pastor Mirko</em></p>
+<p><em>Pastor Mirko</em></p></div>
+    </details>
   </div>
-</div></article>
+</article></div></section><script>{
+  const open = () => { const el = location.hash && document.getElementById(location.hash.slice(1));
+    const d = el && el.querySelector('details.ap-more'); if (d) { d.open = true; el.scrollIntoView(); } };
+  open(); addEventListener('hashchange', open);
+}</script>
 <section class="subscribe" id="subscribe"><div class="wrap"><div class="box">
   <div>
     <h2 class="display">Walk <em>with us</em></h2>

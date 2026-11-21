@@ -517,3 +517,21 @@ a.window:hover .bg img { transform: scale(1.05); }
 .sup-card:not(.main) .sup-bank { grid-template-columns: 1fr; gap: 0; margin: 4px 0 10px; }
 .sup-card:not(.main) .sup-bank dd { margin-bottom: 6px; }
 .sup-card:not(.main) .sup-bank dd.mono { font-size: .86rem; white-space: nowrap; letter-spacing: 0; }
+
+/* Area pages: compact updates, as wide as the area window */
+.area-posts { padding: 18px 0 40px; }
+.area-posts .wrap { display: grid; gap: 16px; }
+.area-post { background: var(--surface); border-radius: var(--r-lg); box-shadow: var(--shadow-rest); padding: 22px; display: grid; gap: 22px; align-items: start; }
+.area-post.has-img { grid-template-columns: 240px minmax(0, 1fr); }
+.area-post .ap-img img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--r-md); }
+.area-post .ap-date { margin: 2px 0 4px; font-weight: 700; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: var(--brand); }
+.area-post .ap-title { margin: 0 0 6px; font-size: 1.35rem; line-height: 1.25; }
+.area-post .ap-excerpt { margin: 0 0 10px; color: var(--ink-soft); }
+.ap-more summary { list-style: none; cursor: pointer; font-weight: 700; font-size: .92rem; color: var(--brand); display: inline-block; padding: 4px 0; }
+.ap-more summary::-webkit-details-marker { display: none; }
+.ap-more .close, .ap-more[open] .open { display: none; }
+.ap-more[open] .close { display: inline; }
+.ap-more[open] summary { margin-bottom: 8px; }
+.ap-more .prose { max-width: 720px; }
+.ap-more .prose > :first-child { margin-top: 0; }
+@media (max-width: 700px) { .area-post.has-img { grid-template-columns: 1fr; } .area-post { padding: 16px; } }
