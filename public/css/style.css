@@ -577,4 +577,4 @@ a.window:hover .bg img { transform: scale(1.05); }
 .featured .media { position: relative; }
 .featured .media img { position: absolute; inset: 0; }
 
-.about-map svg { max-width: 340px; margin: 0 auto; }
+.about-map svg { max-width: 100%; margin: 0 auto; }
