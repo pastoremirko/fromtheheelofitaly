@@ -49,7 +49,7 @@ out = f'''<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport"
 <td style="border:2px solid {RED};border-radius:999px;"><a href="{BASE}/support/" style="{F}display:inline-block;padding:11px 22px;font-size:15px;font-weight:800;color:{RED};text-decoration:none;">Support the work</a></td>
 </tr></table>
 <p style="margin:30px 0 4px;">With joy and gratitude,</p>
-<p style="margin:0 0 30px;font-weight:800;">Pastor Mirko and the Ronchi family</p>
+<p style="margin:0 0 30px;font-weight:800;">Pastor Mirko and Giorgia</p>
 </td></tr>
 <tr><td style="background:#1f2326;padding:22px 36px;{F}font-size:12px;line-height:1.6;color:#9aa1a6;">
 Pieno Vangelo Church · Modugno (BA), Italy · <a href="{BASE}/" style="color:#ffffff;">fromtheheelofitaly.org</a><br>

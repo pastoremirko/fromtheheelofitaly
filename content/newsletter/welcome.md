@@ -25,4 +25,4 @@ Once a month, our newsletter will bring you an update from one of these areas, r
 [Explore the updates →]   [Support the work]
 
 With joy and gratitude,
-Pastor Mirko and the Ronchi family
+Pastor Mirko and Giorgia
