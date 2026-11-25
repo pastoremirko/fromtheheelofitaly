@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Church Life · From the Heel of Italy</title>
+<meta name="description" content="Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, was born in the 1970s through the work of Dutch missionaries. Here you&#x27;ll find news on initiatives and the vision we are pursuing for our city and beyond.">
+<link rel="canonical" href="https://fromtheheelofitaly.org/church/">
+<meta property="og:title" content="Church Life · From the Heel of Italy">
+<meta property="og:description" content="Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, was born in the 1970s through the work of Dutch missionaries. Here you&#x27;ll find news on initiatives and the vision we are pursuing for our city and beyond.">
+<meta property="og:url" content="https://fromtheheelofitaly.org/church/">
+<meta property="og:type" content="website">
+
+<meta name="theme-color" content="#f6f6f6">
+
+<link rel="icon" href="/img/pv-glifo.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="alternate" type="application/rss+xml" title="From the Heel of Italy" href="/feed.xml">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="From the Heel of Italy – home"><img class="pv-logo" src="/img/pv-glifo.svg" alt="Chiesa Pienovangelo"></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">Menu</button>
+    <nav class="nav"><a href="/about/">About</a><a href="/family/">Family</a><a href="/church/" class=active>Church Life</a><a href="/welcoming-immigrants/">Immigrants</a><a href="/plant-and-strengthen/">Plant &amp; Strengthen</a><a href="/missions/">Missions</a><a href="/il-rifugio/">Il Rifugio</a><a class="btn-sub" href="/support/">Support</a></nav>
+  </div>
+</header>
+<main>
+<div class="area-hero"><div class="wrap">
+  <div class="window has-img" style="--c:#b0181b">
+    <div class="bg"><img src="/images/area-church.jpg" alt="" loading="lazy"></div>
+    <div class="inner">
+      <span class="count">Coming soon</span>
+      <h1>Church Life</h1>
+      <p>Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, was born in the 1970s through the work of Dutch missionaries. Here you&#x27;ll find news on initiatives and the vision we are pursuing for our city and beyond.</p>
+    </div>
+  </div>
+</div></div>
+
+
+<section><div class="wrap"><div class="empty">The first update from this area is on its way.</div></div></section>
+<section class="subscribe" id="subscribe"><div class="wrap"><div class="box">
+  <div>
+    <h2 class="display">Walk <em>with us</em></h2>
+    <p>A short update every few weeks: one story, one photo and a link to read more. No spam, unsubscribe anytime.</p>
+  </div>
+  <div class="actions">
+    <a class="btn btn-primary" href="/subscribe/">Subscribe</a>
+    <a class="btn btn-light" href="/support/">Support the work</a>
+  </div>
+</div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="foot-brand" href="https://pienovangelo.it" rel="noopener"><img src="/img/pv-glifo.svg" alt="Chiesa Pienovangelo"></a>
+        <p class="brandline">From the Heel of Italy<br><em>to the ends of the earth</em></p>
+        <p>Updates from the Pieno Vangelo ministry and the Ronchi family: our church in Modugno, Il Rifugio, missions and church planting across Puglia and beyond.</p>
+      </div>
+      <div>
+        <h4>Areas</h4>
+        <ul><li><a href="/family/">Family Life</a></li><li><a href="/church/">Church Life</a></li><li><a href="/welcoming-immigrants/">Welcoming Immigrants to Christ</a></li><li><a href="/plant-and-strengthen/">Plant &amp; Strengthen</a></li><li><a href="/missions/">To the Ends of the Earth</a></li><li><a href="/il-rifugio/">Il Rifugio Center</a></li></ul>
+      </div>
+      <div>
+        <h4>Stay in touch</h4>
+        <ul>
+          <li><a href="/subscribe/">Subscribe to the newsletter</a></li>
+          <li><a href="/support/">Support the work</a></li>
+          
+          <li><a href="https://pienovangelo.it" rel="noopener">pienovangelo.it</a></li>
+          <li><a href="/feed.xml">RSS feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="small">© 2026 Pieno Vangelo Church · Modugno (BA), Italy · <a href="/privacy/">Privacy</a></p>
+  </div>
+</footer>
+<div class="lightbox" hidden><button class="lb-close" aria-label="Close">×</button><button class="lb-prev" aria-label="Previous">‹</button><img alt=""><button class="lb-next" aria-label="Next">›</button></div>
+<script>{
+  const box = document.querySelector('.lightbox'), big = box.querySelector('img');
+  let set = [], i = 0;
+  const show = () => { big.src = set[i].currentSrc || set[i].src; big.alt = set[i].alt;
+    box.classList.toggle('single', set.length < 2); };
+  document.addEventListener('click', e => {
+    const im = e.target.closest('.ap-img img, .prose img, .article-cover img');
+    if (!im || im.closest('.lightbox')) return;
+    const scope = im.closest('article') || document;
+    set = [...scope.querySelectorAll('.ap-img img, .prose img, .article-cover img')].filter(x => x.offsetParent);
+    i = Math.max(0, set.indexOf(im)); show(); box.hidden = false; document.body.style.overflow = 'hidden';
+  });
+  const close = () => { box.hidden = true; document.body.style.overflow = ''; };
+  box.addEventListener('click', e => { if (e.target === box || e.target.classList.contains('lb-close')) close(); });
+  box.querySelector('.lb-prev').onclick = () => { i = (i - 1 + set.length) % set.length; show(); };
+  box.querySelector('.lb-next').onclick = () => { i = (i + 1) % set.length; show(); };
+  addEventListener('keydown', e => { if (box.hidden) return;
+    if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') box.querySelector('.lb-prev').click();
+    if (e.key === 'ArrowRight') box.querySelector('.lb-next').click(); });
+}</script>
+
+</body>
+</html>

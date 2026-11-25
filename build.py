@@ -19,13 +19,14 @@ ROOT = Path(__file__).parent
 OUT = ROOT / "public"
 SITE = json.loads((ROOT / "site.json").read_text(encoding="utf-8"))
 AREAS = {a["slug"]: a for a in SITE["areas"]}
-GENERAL = {"slug": "", "name": "News", "short": "News", "color": "#e74759", "icon": "mark"}
+GENERAL = {"slug": "", "name": "News", "short": "News", "color": "#e74759", "icon": "church"}
 
 ICONS = {
     "home": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M12 17.5s-3-1.8-3-3.8a1.6 1.6 0 0 1 3-.8 1.6 1.6 0 0 1 3 .8c0 2-3 3.8-3 3.8z"/></svg>',
     "church": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v5M10 4h4"/><path d="M6 21V11l6-4 6 4v10"/><path d="M3 21h18"/><path d="M10 21v-4a2 2 0 0 1 4 0v4"/></svg>',
     "tent": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 20h18L12 4z"/><path d="M12 4v16"/><path d="m9 20 3-6 3 6"/><path d="M2 20h20"/></svg>',
     "globe": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>',
+    "people": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.6 2.7-6 6-6s6 2.4 6 6"/><circle cx="17" cy="9.5" r="2.6"/><path d="M15.5 14.3c.5-.2 1-.3 1.5-.3 2.8 0 4.5 2.1 4.5 5"/></svg>',
     "seed": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9"/><path d="M12 12c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 14c0-3-2.5-5.5-7-5.5 0 4 2.5 5.5 7 5.5z"/><path d="M7 21h10"/></svg>',
     "mark": '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="51" r="7" fill="currentColor" stroke="none"/><path d="M22 43C30 28 38 20 52 13" stroke-dasharray="0.1 9"/><path d="M42 9.5 55 11l-4.5 12"/></svg>',
 }
@@ -92,6 +93,7 @@ def load_posts():
         posts.append({
             "title": meta.get("title", slug), "slug": slug, "date": d, "area": area,
             "cover": meta.get("cover", ""), "cover_alt": meta.get("cover_alt", meta.get("title", "")),
+            "gallery": [g.strip() for g in meta.get("gallery", "").split(",") if g.strip()],
             "excerpt": excerpt, "html": html_body, "url": f"/updates/{slug}/",
         })
     posts.sort(key=lambda x: x["date"], reverse=True)
@@ -105,17 +107,39 @@ def fmt_date(d):
 
 
 def nav(active=""):
-    links = [("/updates/", "Updates", "updates")]
-    links += [(f"/{a['slug']}/", a["short"], a["slug"]) for a in SITE["areas"]]
-    links += [("/about/", "About", "about"), ("/support/", "Support", "support")]
+    links = [("/about/", "About", "about")] + [(f"/{a['slug']}/", a["short"], a["slug"]) for a in SITE["areas"]]
     items = "".join(
         f'<a href="{u}"{" class=active" if k == active else ""}>{esc(t)}</a>' for u, t, k in links)
-    items += f'<a class="btn-sub" href="{SITE["subscribe_url"]}">Subscribe</a>'
+    items += '<a class="btn-sub" href="/support/">Support</a>'
     return items
 
 
+LIGHTBOX = """<div class="lightbox" hidden><button class="lb-close" aria-label="Close">×</button><button class="lb-prev" aria-label="Previous">‹</button><img alt=""><button class="lb-next" aria-label="Next">›</button></div>
+<script>{
+  const box = document.querySelector('.lightbox'), big = box.querySelector('img');
+  let set = [], i = 0;
+  const show = () => { big.src = set[i].currentSrc || set[i].src; big.alt = set[i].alt;
+    box.classList.toggle('single', set.length < 2); };
+  document.addEventListener('click', e => {
+    const im = e.target.closest('.ap-img img, .prose img, .article-cover img');
+    if (!im || im.closest('.lightbox')) return;
+    const scope = im.closest('article') || document;
+    set = [...scope.querySelectorAll('.ap-img img, .prose img, .article-cover img')].filter(x => x.offsetParent);
+    i = Math.max(0, set.indexOf(im)); show(); box.hidden = false; document.body.style.overflow = 'hidden';
+  });
+  const close = () => { box.hidden = true; document.body.style.overflow = ''; };
+  box.addEventListener('click', e => { if (e.target === box || e.target.classList.contains('lb-close')) close(); });
+  box.querySelector('.lb-prev').onclick = () => { i = (i - 1 + set.length) % set.length; show(); };
+  box.querySelector('.lb-next').onclick = () => { i = (i + 1) % set.length; show(); };
+  addEventListener('keydown', e => { if (box.hidden) return;
+    if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') box.querySelector('.lb-prev').click();
+    if (e.key === 'ArrowRight') box.querySelector('.lb-next').click(); });
+}</script>
+"""
+
+
 def layout(title, content, description=None, active="", image=None, path="/"):
-    full_title = SITE["title"] if title == SITE["title"] else f"{title} · {SITE['title']}"
+    full_title = f"{SITE['title']} · Updates from Pieno Vangelo" if title == SITE["title"] else f"{title} · {SITE['title']}"
     desc = esc(description or SITE["description"])
     url = SITE["base_url"].rstrip("/") + path
     og_img = f'<meta property="og:image" content="{SITE["base_url"].rstrip("/")}{image}">' if image else ""
@@ -140,7 +164,7 @@ def layout(title, content, description=None, active="", image=None, path="/"):
 {og_img}
 <meta name="theme-color" content="#f6f6f6">
 {'<meta name="robots" content="noindex, nofollow">' if SITE.get("draft_mode") else ''}
-<link rel="icon" href="/img/mark.svg" type="image/svg+xml">
+<link rel="icon" href="/img/pv-glifo.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" type="application/rss+xml" title="{esc(SITE['title'])}" href="/feed.xml">
 <link rel="stylesheet" href="/css/style.css">
@@ -148,7 +172,7 @@ def layout(title, content, description=None, active="", image=None, path="/"):
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/img/mark.svg" alt=""><span>{esc(SITE['title'])}</span></a>
+    <a class="brand" href="/" aria-label="From the Heel of Italy – home"><img class="pv-logo" src="/img/pv-glifo.svg" alt="Chiesa Pienovangelo"></a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">Menu</button>
     <nav class="nav">{nav(active)}</nav>
   </div>
@@ -160,6 +184,7 @@ def layout(title, content, description=None, active="", image=None, path="/"):
   <div class="wrap">
     <div class="cols">
       <div>
+        <a class="foot-brand" href="https://pienovangelo.it" rel="noopener"><img src="/img/pv-glifo.svg" alt="Chiesa Pienovangelo"></a>
         <p class="brandline">From the Heel of Italy<br><em>to the ends of the earth</em></p>
         <p>{esc(SITE['description'])}</p>
       </div>
@@ -172,7 +197,6 @@ def layout(title, content, description=None, active="", image=None, path="/"):
         <ul>
           <li><a href="{SITE['subscribe_url']}">Subscribe to the newsletter</a></li>
           <li><a href="/support/">Support the work</a></li>
-          <li><a href="/about/">About us</a></li>
           {contact}{socials}
           <li><a href="https://pienovangelo.it" rel="noopener">pienovangelo.it</a></li>
           <li><a href="/feed.xml">RSS feed</a></li>
@@ -182,6 +206,7 @@ def layout(title, content, description=None, active="", image=None, path="/"):
     <p class="small">© {year} {esc(SITE['church'])} · Modugno (BA), Italy · <a href="/privacy/">Privacy</a></p>
   </div>
 </footer>
+{LIGHTBOX}
 </body>
 </html>
 """
@@ -288,17 +313,16 @@ def page_home(posts):
     latest = ""
     if posts:
         latest = featured(posts[0])
-        if len(posts) > 1:
-            latest += cards_grid(posts[1:4], cls="top")
     else:
         latest = '<div class="empty">The first update is on its way.</div>'
     content = f"""<div class="intro"><div class="wrap">
-  <p class="eyebrow">{esc(SITE['church'])} · Puglia, Southern Italy</p>
-  <h1 class="display">From the Heel of Italy<br><em>to the ends of the earth</em></h1>
+  <p class="eyebrow">News &amp; stories</p>
+  <h1 class="display">From the <em>Heel of Italy</em></h1>
   <div class="sub">
-    <p>{esc(SITE['description'])}</p>
+    <p class="lead">Updates from the Pieno Vangelo ministry and the Ronchi family.</p>
     <div class="actions">
       <a class="btn btn-primary" href="{SITE['subscribe_url']}">Get the newsletter</a>
+      <a class="btn btn-outline" href="https://pienovangelo.it" rel="noopener">pienovangelo.it</a>
     </div>
   </div>
 </div></div>
@@ -311,15 +335,10 @@ def page_home(posts):
 </div></section>
 <section><div class="wrap">
   <div class="section-head">
-    <h2 class="display">Our areas of ministry</h2>
-    <span class="link">One church, one mission</span>
+    <h2 class="display">Updates by area</h2>
   </div>
   <div class="areas">{windows}</div>
 </div></section>
-<div class="verse"><div class="wrap"><div class="box">
-  <blockquote>“You will be my witnesses in Jerusalem, and in all Judea and Samaria, and <em>to the ends of the earth</em>.”</blockquote>
-  <cite>Acts 1:8</cite>
-</div></div></div>
 {subscribe_band()}"""
     return layout(SITE["title"], content, active="home")
 
@@ -346,11 +365,61 @@ def page_area(a, posts):
       <p>{esc(a['intro'])}</p>
     </div>
   </div>
-  {chips(a['slug'])}
 </div></div>
-<section><div class="wrap">{cards_grid(mine, "The first update from this area is on its way.")}</div></section>
+{area_about(a)}
+{'<section><div class="wrap"><div class="section-head"><h2 class="display">Latest updates</h2></div></div></section>' if (ROOT / "content" / "areas" / (a["slug"] + ".md")).exists() else ''}
+{area_articles(mine)}
 {subscribe_band()}"""
     return layout(a["name"], content, description=a["intro"], active=a["slug"], path=f"/{a['slug']}/")
+
+
+def area_articles(mine):
+    """Compact list of updates on an area page, as wide as the area window.
+    Each shows date, title, excerpt and image; the full text opens in place."""
+    if not mine:
+        return '<section><div class="wrap"><div class="empty">The first update from this area is on its way.</div></div></section>'
+    out = []
+    for p in mine:
+        img = f'<img src="{esc(p["cover"])}" alt="{esc(p["cover_alt"])}" loading="lazy">' if p["cover"] else ""
+        gallery = ("<div class=\"ap-gallery\">" + "".join(
+            f'<img src="{esc(g)}" alt="{esc(p["title"])} – photo {i + 2}" loading="lazy">'
+            for i, g in enumerate(p["gallery"])) + "</div>") if p["gallery"] else ""
+        out.append(f"""<article class="area-post{' has-img' if img else ''}" id="{esc(p['slug'])}">
+  {f'<div class="ap-img">{img}{gallery}</div>' if img else ''}
+  <div class="ap-text">
+    <p class="ap-date"><time datetime="{p['date'].isoformat()}">{fmt_date(p['date'])}</time></p>
+    <h2 class="ap-title">{esc(p['title'])}</h2>
+    <p class="ap-excerpt">{esc(p['excerpt'])}</p>
+    <details class="ap-more">
+      <summary><span class="open">Read more →</span><span class="close">Close ↑</span></summary>
+      <div class="prose">{p['html']}</div>
+    </details>
+  </div>
+</article>""")
+    script = """<script>{
+  const open = () => { const el = location.hash && document.getElementById(location.hash.slice(1));
+    const d = el && el.querySelector('details.ap-more'); if (d) { d.open = true; el.scrollIntoView(); } };
+  open(); addEventListener('hashchange', open);
+  document.querySelectorAll('details.ap-more').forEach(d => d.addEventListener('toggle', () =>
+    d.closest('.area-post').classList.toggle('is-open', d.open)));
+}</script>"""
+    return '<section class="area-posts"><div class="wrap">' + "\n".join(out) + "</div></section>" + script
+
+
+def area_about(a):
+    """Optional presentation (text + video) from content/areas/<slug>.md"""
+    path = ROOT / "content" / "areas" / f"{a['slug']}.md"
+    if not path.exists():
+        return ""
+    meta, body = parse_md(path)
+    video = video_embed(meta.get("video", ""))
+    return f"""<section class="area-about"><div class="wrap"><div class="about-grid{' has-video' if video else ''}">
+  {f'<div class="about-video">{video}</div>' if video else ''}
+  <div class="about-text prose">
+    <h2>{esc(meta.get('title', 'About'))}</h2>
+    {render_body(body)}
+  </div>
+</div></div></section>"""
 
 
 def page_post(p, posts):
@@ -390,9 +459,45 @@ def page_simple(slug, meta, body):
   <h1 class="display">{esc(meta.get('title', slug))}</h1>
   {f"<p>{esc(meta['intro'])}</p>" if meta.get('intro') else ""}
 </div></header>
-<div class="narrow page-body"><div class="prose-card prose">{render_body(body)}</div></div>
-{subscribe_band() if slug != 'privacy' else ''}"""
+<div class="narrow page-body"><div class="prose-card prose">{('<div class="about-map">' + (ROOT / "static" / "img" / "map-italy-puglia.svg").read_text(encoding="utf-8") + '</div>') if slug == 'about' else ''}{render_body(body)}</div></div>
+{subscribe_band() if slug not in ('privacy', 'subscribe') else ''}"""
     return layout(meta.get("title", slug), content, description=meta.get("intro"), active=slug, path=f"/{slug}/")
+
+
+BREVO_FORM = "https://36a940e5.sibforms.com/serve/MUIFAEFtdAN7GjCm-AuY7B6D7oFzLgCFwCa8E13xulCfjhB61wh3tmIzLsTYJvG5nzJ8Sd1IT0sWJjIkB6RRHnLRxuOofGwwzazUZLyCTzaHxdfVvTcX12MKzcmnqlTnZ-w4ATzYlFVNVwaZuxnb7s40ZrW6TCW-ob6SYHI2yrUBExRDkQwaEuzYx54I5PZqCAMry5H_RBGjIq34jA=="
+
+
+def page_subscribe(meta):
+    """Minimal native signup form that posts to the Brevo form (no iframe)."""
+    content = f"""<header class="page-head"><div class="narrow">
+  <h1 class="display">{esc(meta.get('title', 'Subscribe'))}</h1>
+  {f"<p>{esc(meta['intro'])}</p>" if meta.get('intro') else ""}
+  <form class="signup" id="signup" method="POST" action="{BREVO_FORM}">
+    <label class="sr-only" for="EMAIL">Email</label>
+    <input type="email" id="EMAIL" name="EMAIL" placeholder="Your email" autocomplete="email" required>
+    <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+    <input type="hidden" name="locale" value="en">
+    <button class="btn btn-primary" type="submit">Subscribe</button>
+  </form>
+  <p class="signup-msg" id="signup-msg" role="status" aria-live="polite"></p>
+  <p class="signup-note">Only these updates, nothing else. Unsubscribe anytime. <a href="/privacy/">Privacy</a></p>
+</div></header>
+<script>{{
+  const f = document.getElementById('signup'), m = document.getElementById('signup-msg');
+  f.addEventListener('submit', async (e) => {{
+    e.preventDefault();
+    const b = f.querySelector('button'); b.disabled = true; m.className = 'signup-msg';
+    try {{
+      const r = await fetch(f.action + '?isAjax=1', {{ method: 'POST', body: new FormData(f) }});
+      const j = await r.json().catch(() => ({{}}));
+      if (!r.ok || j.success === false) throw 0;
+      f.hidden = true; m.textContent = 'Thank you for walking with us! You are now subscribed.'; m.classList.add('ok');
+    }} catch (_) {{
+      m.textContent = 'Something went wrong. Please check your email address and try again.'; m.classList.add('err');
+    }} finally {{ b.disabled = false; }}
+  }});
+}}</script>"""
+    return layout(meta.get("title", "Subscribe"), content, description=meta.get("intro"), active="subscribe", path="/subscribe/")
 
 
 def feed(posts):
@@ -421,44 +526,7 @@ def write(rel, text):
     path.write_text(text, encoding="utf-8")
 
 
-def coming_soon():
-    """Minimal holding page published on the live domain until launch."""
-    if OUT.exists():
-        shutil.rmtree(OUT)
-    OUT.mkdir()
-    for d in ("css", "fonts", "img"):
-        shutil.copytree(ROOT / "static" / d, OUT / d)
-    shutil.copy(ROOT / "static" / "robots.txt", OUT / "robots.txt")
-    page = """<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>From the Heel of Italy · Coming soon</title>
-<link rel="icon" href="/img/mark.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/css/style.css">
-<style>
- .soon{min-height:100vh;display:grid;place-items:center;padding:40px 24px;text-align:center}
- .soon img{width:56px;height:56px;border-radius:14px;margin:0 auto 26px}
- .soon .display{font-size:clamp(2.2rem,6vw,3.8rem)}
- .soon p{color:var(--ink-soft);max-width:520px;margin:18px auto 0;font-size:1.08rem}
- .soon .eyebrow{justify-content:center}
-</style></head>
-<body><main class="soon"><div>
- <img src="/img/mark.svg" alt="">
- <p class="eyebrow">Coming soon</p>
- <h1 class="display">From the Heel of Italy<br><em>to the ends of the earth</em></h1>
- <p>Updates from Full Gospel Church in Modugno, Southern Italy, are on their way.</p>
-</div></main></body></html>
-"""
-    for rel in ("index.html", "404.html"):
-        (OUT / rel).write_text(page, encoding="utf-8")
-    print("Built coming-soon page into", OUT)
-
-
 def main():
-    import sys
-    if "--coming-soon" in sys.argv:
-        return coming_soon()
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / "static", OUT)
@@ -471,7 +539,8 @@ def main():
         write(f"updates/{p['slug']}/index.html", page_post(p, posts))
     for pg in sorted((ROOT / "content" / "pages").glob("*.md")):
         meta, body = parse_md(pg)
-        write(f"{pg.stem}/index.html", page_simple(pg.stem, meta, body))
+        page = page_subscribe(meta) if pg.stem == "subscribe" else page_simple(pg.stem, meta, body)
+        write(f"{pg.stem}/index.html", page)
     write("feed.xml", feed(posts))
     write("404.html", layout("Page not found", """<header class="page-head"><div class="wrap">
   <h1 class="display">Page <em>not found</em></h1><p>The page you are looking for is not here. <a href="/">Go back home</a>.</p>

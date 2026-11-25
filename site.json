@@ -1,11 +1,11 @@
 {
   "title": "From the Heel of Italy",
-  "tagline": "…to the ends of the earth",
-  "description": "Updates from Pastor Mirko and Full Gospel Church in Modugno, Southern Italy: family, church life, Il Rifugio Center, missions and church planting across Puglia and beyond.",
+  "tagline": "From the heel of Italy to the nations",
+  "description": "Updates from the Pieno Vangelo ministry and the Ronchi family: our church in Modugno, Il Rifugio, missions and church planting across Puglia and beyond.",
   "base_url": "https://fromtheheelofitaly.org",
-  "author": "Pastor Mirko",
-  "church": "Full Gospel Church Modugno",
-  "subscribe_url": "#subscribe",
+  "author": "Pastor Mirko Ronchi",
+  "church": "Pieno Vangelo Church",
+  "subscribe_url": "/subscribe/",
   "contact_email": "",
   "youtube": "",
   "facebook": "",
@@ -17,26 +17,35 @@
       "short": "Family",
       "color": "#e74759",
       "icon": "home",
-      "intro": "Personal news from Pastor Mirko and family: what God is doing in our home, how we are doing, and how you can pray for us.",
+      "intro": "Personal news from Pastor Mirko and the Ronchi family. Here you'll find what God is doing in our home, how we are doing and how you can pray for us.",
       "image": "/images/area-family.jpg"
     },
     {
       "slug": "church",
-      "name": "Our Church – Modugno",
-      "short": "Church",
+      "name": "Church Life",
+      "short": "Church Life",
       "color": "#b0181b",
       "icon": "church",
-      "intro": "Full Gospel Church in Modugno, near Bari, was born in the 1970s from a Dutch missionary work. Here we share news on events, new projects, initiatives and the vision we are pursuing for our city.",
-      "image": ""
+      "intro": "Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, was born in the 1970s through the work of Dutch missionaries. Here you'll find news on initiatives and the vision we are pursuing for our city and beyond.",
+      "image": "/images/area-church.jpg"
     },
     {
-      "slug": "il-rifugio",
-      "name": "Il Rifugio Center",
-      "short": "Il Rifugio",
-      "color": "#e26900",
-      "icon": "tent",
-      "intro": "Il Rifugio, in Ruvo di Puglia, is a centre serving churches in Puglia and across Italy: camps, retreats, conferences, leadership training and a place of rest for missionaries.",
-      "image": ""
+      "slug": "welcoming-immigrants",
+      "name": "Welcoming Immigrants to Christ",
+      "short": "Immigrants",
+      "color": "#7a4f8f",
+      "icon": "people",
+      "intro": "Many come to Puglia from far away, leaving behind hardship and danger in search of a better life for their families. We long to welcome them with open arms, to love them as Christ has loved us and to serve them through friendship, practical help and our after-school program. Here you'll find stories of the people God is bringing to our doorstep.",
+      "image": "/images/area-nations.jpg"
+    },
+    {
+      "slug": "plant-and-strengthen",
+      "name": "Plant & Strengthen",
+      "short": "Plant & Strengthen",
+      "color": "#8a9a3b",
+      "icon": "seed",
+      "intro": "Many towns in Puglia still have no living church. We plant new churches and stand alongside existing ones that need support to keep going. Here you'll find news from these churches and the people who lead them.",
+      "image": "/images/area-planting.jpg"
     },
     {
       "slug": "missions",
@@ -44,18 +53,18 @@
       "short": "Missions",
       "color": "#2f7d8a",
       "icon": "globe",
-      "intro": "Sending workers beyond our borders and preparing young people to go: training, departures and stories from those we send.",
-      "image": ""
+      "intro": "We send workers beyond our borders and prepare young people to go. Here you'll find news on training, departures and stories from those we send.",
+      "image": "/images/area-missions.jpg"
     },
     {
-      "slug": "plant-and-strengthen",
-      "name": "Plant & Strengthen",
-      "short": "Church Planting",
-      "color": "#8a9a3b",
-      "icon": "seed",
-      "intro": "Planting new churches across Puglia, a region where many towns still have no living church, and standing alongside existing churches that need support to keep going.",
-      "image": ""
+      "slug": "il-rifugio",
+      "name": "Il Rifugio Center",
+      "short": "Il Rifugio",
+      "color": "#e26900",
+      "icon": "tent",
+      "intro": "Il Rifugio, in Ruvo di Puglia, is a place of welcome and rest where churches and ministries are refreshed, workers are trained and the Church is built up. Here you'll find news on camps, retreats and what God is doing there.",
+      "image": "/images/area-rifugio.jpg"
     }
   ],
-  "draft_mode": true
+  "draft_mode": false
 }
