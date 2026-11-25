@@ -9,7 +9,7 @@ Dear friend,
 
 We're so glad you're here, and thrilled that you've chosen to walk with us! With this newsletter we'd love to keep you updated on what God is doing here in Puglia, the "heel" of Italy, and from here to the ends of the earth.
 
-These updates come from Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, and from our family. Every few weeks you'll receive one short story, one photo and a link to read more, from one of these six areas:
+On our blog, fromtheheelofitaly.org, you can follow every update from Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, and from our family. And once a month we'll send you an email with news from one of these six areas:
 
 [photo] Family Life: our home, our children and how God is at work in our everyday life.
 [photo] Church Life: our church family in Modugno, its people, its growth and the vision for our city.

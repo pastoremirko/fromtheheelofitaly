@@ -37,7 +37,7 @@ out = f'''<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport"
 <tr><td style="padding:34px 36px 8px;{F}font-size:16px;line-height:1.65;color:{INK};">
 <p style="margin:0 0 14px;">Dear friend,</p>
 <p style="margin:0 0 14px;">We're so glad you're here, and thrilled that you've chosen to walk with us! With this newsletter we'd love to keep you updated on what God is doing here in Puglia, the "heel" of Italy, and from here to the ends of the earth.</p>
-<p style="margin:0 0 24px;">These updates come from Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, and from our family. Every few weeks you'll receive one short story, one photo and a link to read more, from one of these six areas:</p>
+<p style="margin:0 0 24px;">On our blog, <a href="{BASE}/" style="color:#e74759;font-weight:700;">fromtheheelofitaly.org</a>, you can follow every update from Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, and from our family. And once a month we'll send you an email with news from one of these six areas:</p>
 </td></tr>
 <tr><td style="padding:0 36px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table></td></tr>
 <tr><td style="padding:6px 36px 8px;{F}font-size:16px;line-height:1.65;color:{INK};">
