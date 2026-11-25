@@ -13,7 +13,7 @@ On our blog, fromtheheelofitaly.org, you can follow every update on our ministry
 
 [photo] Family Life: our home, our children and how God is at work in our everyday life.
 [photo] Church Life: our church family in Modugno, its people, its growth and the vision for our city.
-[photo] Reaching the Nations Here: reaching those who have come to Puglia from far away with friendship, practical help and the Gospel of Jesus.
+[photo] Welcoming Immigrants to Christ: welcoming those who have come to Puglia from far away with friendship, practical help and the Gospel of Jesus.
 [photo] Plant & Strengthen: planting new churches in southern Italy and beyond, and walking alongside churches that need support.
 [photo] To the Ends of the Earth: training and sending workers beyond our borders.
 [photo] Il Rifugio Center: our center in Ruvo di Puglia, a place of rest and training for churches and ministries.

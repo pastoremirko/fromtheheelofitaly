@@ -30,7 +30,7 @@ intro: Thank you for considering standing with us in prayer, visiting us and giv
 <dt>BIC / SWIFT</dt><dd class="mono">BCITITMME77</dd>
 <dt>Bank</dt><dd>Intesa Sanpaolo, Bari, Italy</dd>
 </dl>
-<p class="sup-note"><strong>What is your gift for?</strong> Write it in the payment reference: <em>Ronchi Family, Church, Nations Here, Plant &amp; Strengthen, Missions</em> or <em>Il Rifugio</em>. If you leave it blank, your gift goes where the need is greatest.</p>
+<p class="sup-note"><strong>What is your gift for?</strong> Write it in the payment reference: <em>Ronchi Family, Church, Immigrants, Plant &amp; Strengthen, Missions</em> or <em>Il Rifugio</em>. If you leave it blank, your gift goes where the need is greatest.</p>
 </div>
 <div class="sup-card main">
 <p class="sup-k">For the Ronchi family <span>Personal support</span></p>

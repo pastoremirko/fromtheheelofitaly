@@ -15,7 +15,7 @@ One voice for the whole blog and every newsletter, so that every update sounds l
 - **English** for the whole site and the newsletter, with **American spelling** (*center, program, honor, traveling*).
 - First mention of the church: **Pieno Vangelo (Full Gospel) Church in Modugno**; after that, *our church* or *Pieno Vangelo*.
 - Names to write the same way every time: **Il Rifugio** (*Il Rifugio Center* in titles), **Ruvo di Puglia**, **Modugno, near Bari**, **Puglia** (not "Apulia"), **Pastor Mirko**, **the Ronchi family**.
-- Area names, always the same: *Family Life · Church Life · Reaching the Nations Here · Plant & Strengthen · To the Ends of the Earth · Il Rifugio Center*.
+- Area names, always the same: *Family Life · Church Life · Welcoming Immigrants to Christ · Plant & Strengthen · To the Ends of the Earth · Il Rifugio Center*.
 - Missions: never name the exact countries or cities where our workers serve. Use regions ("North Africa", "Central Asia") or "beyond our borders".
 
 ## Area intros (site)
