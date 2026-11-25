@@ -7,7 +7,7 @@ blurbs = {
   "family": "Our home, our children and how God is at work in our everyday life.",
   "church": "Our church family in Modugno: its people, its growth and the vision for our city.",
   "nations-among-us": "Welcoming those who have come to Puglia from far away, with friendship and practical help.",
-  "plant-and-strengthen": "New churches across Puglia, and walking alongside churches that need support.",
+  "plant-and-strengthen": "Planting new churches in southern Italy and beyond, and walking alongside churches that need support.",
   "missions": "Training and sending workers beyond our borders.",
   "il-rifugio": "Our center in Ruvo di Puglia, a place of rest and training for churches and ministries.",
 }
