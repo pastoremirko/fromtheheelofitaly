@@ -7,9 +7,9 @@ Updates from the Heel of Italy
 
 Dear friend,
 
-We're so glad you're here! With this first email we're starting something we have long wanted to do: sharing with everyone who wants to follow along what God is doing here in Puglia, the "heel" of Italy, and from here to the ends of the earth.
+We're so glad you're here, and we're honored that you've chosen to walk with us! You have just joined a growing family of friends who follow what God is doing here in Puglia, the "heel" of Italy, and from here to the ends of the earth.
 
-These are the updates from Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, and from our family. Every few weeks you'll receive one short story, one photo and a link to read more, from one of these six areas:
+These updates come from Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, and from our family. Every few weeks you'll receive one short story, one photo and a link to read more, from one of these six areas:
 
 [photo] Family Life: our home, our children and how God is at work in our everyday life.
 [photo] Church Life: our church family in Modugno, its people, its growth and the vision for our city.
@@ -18,7 +18,7 @@ These are the updates from Pieno Vangelo (Full Gospel) Church in Modugno, near B
 [photo] To the Ends of the Earth: training and sending workers beyond our borders.
 [photo] Il Rifugio Center: our center in Ruvo di Puglia, a place of rest and training for churches and ministries.
 
-This is a story that is still being written, and now you are part of it. Every prayer, every word of encouragement and every gift helps this work grow stronger. Thank you for being with us!
+This story is still being written, and now you are part of it too. Every prayer, every word of encouragement and every gift helps this work grow stronger. Thank you for being with us!
 
 [Explore the updates →]   [Support the work]
 

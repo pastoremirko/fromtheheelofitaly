@@ -36,12 +36,12 @@ out = f'''<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport"
 </td></tr>
 <tr><td style="padding:34px 36px 8px;{F}font-size:16px;line-height:1.65;color:{INK};">
 <p style="margin:0 0 14px;">Dear friend,</p>
-<p style="margin:0 0 14px;">We're so glad you're here! With this first email we're starting something we have long wanted to do: sharing with everyone who wants to follow along what God is doing here in Puglia, the "heel" of Italy, and from here to the ends of the earth.</p>
-<p style="margin:0 0 24px;">These are the updates from Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, and from our family. Every few weeks you'll receive one short story, one photo and a link to read more, from one of these six areas:</p>
+<p style="margin:0 0 14px;">We're so glad you're here, and we're honored that you've chosen to walk with us! You have just joined a growing family of friends who follow what God is doing here in Puglia, the "heel" of Italy, and from here to the ends of the earth.</p>
+<p style="margin:0 0 24px;">These updates come from Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, and from our family. Every few weeks you'll receive one short story, one photo and a link to read more, from one of these six areas:</p>
 </td></tr>
 <tr><td style="padding:0 36px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table></td></tr>
 <tr><td style="padding:6px 36px 8px;{F}font-size:16px;line-height:1.65;color:{INK};">
-<p style="margin:0 0 24px;">This is a story that is still being written, and now you are part of it. Every prayer, every word of encouragement and every gift helps this work grow stronger. <strong>Thank you for being with us!</strong></p>
+<p style="margin:0 0 24px;">This story is still being written, and now you are part of it too. Every prayer, every word of encouragement and every gift helps this work grow stronger. <strong>Thank you for being with us!</strong></p>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
 <td style="background:{RED};border-radius:999px;"><a href="{BASE}/" style="{F}display:inline-block;padding:13px 24px;font-size:15px;font-weight:800;color:#ffffff;text-decoration:none;">Explore the updates →</a></td>
 <td width="10"></td>
