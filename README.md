@@ -36,7 +36,7 @@ Testo dell'articolo (300–400 parole)...
 
 `gallery` (facoltativo): altre foto, separate da virgole; compaiono a sinistra quando si apre "Read more". Ogni foto si può cliccare per vederla grande.
 
-Aree valide: `family`, `church`, `nations-among-us`, `il-rifugio`, `missions`, `plant-and-strengthen`
+Aree valide: `family`, `church`, `reaching-the-nations`, `il-rifugio`, `missions`, `plant-and-strengthen`
 (lasciare vuoto per una notizia generale). Un link YouTube su una riga da solo diventa un video incorporato.
 
 3. Esegui `python3 build.py` (serve `pip install markdown`) e fai commit anche della cartella `public/`.
