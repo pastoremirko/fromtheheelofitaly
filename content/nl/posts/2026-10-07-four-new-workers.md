@@ -15,9 +15,9 @@ In de afgelopen twee jaar hebben vier gelovigen uit de Pieno Vangelo-kerk (Volle
 
 We hebben hen zien groeien in geloof, hun roeping zien toetsen en zich geduldig zien voorbereiden. Het is een voorrecht om gelovigen uit onze eigen gemeente zo te zien rijpen en die stap te zien zetten, en we staan graag achter hun besluit.
 
-## Een verhaal dat in Apulië begon
+## Een verhaal dat in Puglia begon
 
-Onze werkers dienen bij Frontiers Italia, en de Italiaanse basis daarvan wordt vanuit onze gemeente geleid. Het is voortgekomen uit i6:8, een werk dat in 2004 hier in Apulië begon met het mobiliseren van jongeren, in 2011 de eerste langetermijnwerkers uitzond en zich in 2014 bij Frontiers aansloot. Samen bereiden we werkers voor, zenden we hen uit en zorgen we voor hen onder de volken die het minst toegang hebben tot het evangelie. Meer weten? Kijk op [frontiersitalia.org](https://www.frontiersitalia.org/).
+Onze werkers dienen bij Frontiers Italia, en de Italiaanse basis daarvan wordt vanuit onze gemeente geleid. Het is voortgekomen uit i6:8, een werk dat in 2004 hier in Puglia begon met het mobiliseren van jongeren, in 2011 de eerste langetermijnwerkers uitzond en zich in 2014 bij Frontiers aansloot. Samen bereiden we werkers voor, zenden we hen uit en zorgen we voor hen onder de volken die het minst toegang hebben tot het evangelie. Meer weten? Kijk op [frontiersitalia.org](https://www.frontiersitalia.org/).
 
 ## Waarom Italianen?
 
