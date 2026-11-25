@@ -20,6 +20,6 @@ Each email will be short. If you want to know more, the *Read more* link will br
 
 Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, was born in the 1970s through the work of Dutch missionaries and the churches in the Netherlands that stood behind them. From the very beginning we have carried a clear vision: to be a church that responds concretely to the Great Commission, a community that looks from Puglia to the ends of the earth.
 
-Puglia, the "heel" of Italy, is still a region where many towns, even large ones, have no living, healthy church. We believe God wants to change that, and that from here the Gospel can reach the nations.
+Puglia, the "heel" of Italy, is still a region where many towns, even large ones, have no living, healthy church. We believe God wants to change that. Puglia also stands at a strategic crossroads, close to North Africa, the Balkans and the Muslim nations of the Middle East, and we believe Italians have a key role in carrying the Gospel from here to the nations.
 
 Thank you for walking with us.
