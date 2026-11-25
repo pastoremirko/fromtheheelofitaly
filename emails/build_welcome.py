@@ -24,16 +24,15 @@ for a in site["areas"]:
 <p style="{F}margin:6px 0 0;font-size:15px;line-height:1.5;color:{SOFT};">{html.escape(blurbs[a["slug"]])}</p>
 </td></tr></table></td></tr>'''
 out = f'''<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Welcome to From the Heel of Italy</title></head>
+<title>Welcome · Updates from the Heel of Italy</title></head>
 <body style="margin:0;padding:0;background:#f4f4f4;">
 <div style="display:none;max-height:0;overflow:hidden;">From the heel of Italy to the ends of the earth, and now you are part of the story.</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f4f4f4;"><tr><td align="center" style="padding:28px 12px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:100%;background:#ffffff;border-radius:18px;overflow:hidden;">
 <tr><td style="background:{RED};padding:38px 36px 34px;text-align:left;">
 <img src="{BASE}/img/pv-glifo.svg" width="44" height="44" alt="Pieno Vangelo" style="display:block;border:0;margin-bottom:22px;">
-<p style="{F}margin:0 0 8px;font-size:13px;font-weight:800;letter-spacing:2px;color:#ffe3e6;">WELCOME</p>
-<h1 style="{F}margin:0;font-size:34px;line-height:1.1;font-weight:800;color:#ffffff;">Welcome to From the Heel of Italy!</h1>
-<p style="{F}margin:12px 0 0;font-size:17px;color:#ffe3e6;">… to the ends of the earth.</p>
+<h1 style="{F}margin:0;font-size:40px;line-height:1.05;font-weight:800;color:#ffffff;">Welcome</h1>
+<p style="{F}margin:10px 0 0;font-size:19px;font-weight:700;color:#ffe3e6;">Updates from the Heel of Italy</p>
 </td></tr>
 <tr><td style="padding:34px 36px 8px;{F}font-size:16px;line-height:1.65;color:{INK};">
 <p style="margin:0 0 14px;">Dear friend,</p>

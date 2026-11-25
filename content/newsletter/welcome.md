@@ -2,9 +2,8 @@ Subject: Welcome! You're now walking with us
 Preview text: From the heel of Italy to the ends of the earth, and now you are part of the story.
 Use: automatic welcome email for every new subscriber (and for addresses added by hand)
 
-WELCOME
-
-Welcome to From the Heel of Italy!
+Welcome
+Updates from the Heel of Italy
 
 Dear friend,
 
