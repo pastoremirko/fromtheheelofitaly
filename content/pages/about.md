@@ -3,8 +3,6 @@ title: About these updates
 intro: News from the Pieno Vangelo ministry in Modugno and from the Ronchi family.
 ---
 
-Dear friends,
-
 Thank you for being here. Many of you have prayed for us, visited us or supported our work in Puglia over the years, and we have often wished we could keep you better informed. These updates are our answer to that.
 
 Every two to four weeks we will send you a short update from one of the areas of ministry that grow out of our local church, Pieno Vangelo in Modugno:
@@ -24,9 +22,4 @@ Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, was born in the 1970s 
 
 Puglia, the "heel" of Italy, is still a region where many towns, even large ones, have no living, healthy church. We believe God wants to change that, and that from here the Gospel can reach the nations.
 
-For everything else about our church, visit [pienovangelo.it](https://pienovangelo.it).
-
 Thank you for walking with us.
-
-*With gratitude,*  
-*Pastor Mirko*
