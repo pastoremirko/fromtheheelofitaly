@@ -46,3 +46,9 @@ Aree valide: `family`, `church`, `welcoming-immigrants`, `il-rifugio`, `missions
 - Framework preset: *None*
 - Build command: *(vuoto)*
 - Build output directory: `public`
+
+## Dutch version (/nl/)
+
+- English is built at `/`, Dutch at `/nl/`. The flag switch in the header links to the same page in the other language.
+- Dutch texts: `content/nl/{posts,pages,areas}/` (same file names as the English ones), area names/intros in `site.nl.json`, interface words in `i18n.json`.
+- If a Dutch file is missing, the English text is used, so add the Dutch version when you add a new post.

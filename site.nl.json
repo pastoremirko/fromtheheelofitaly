@@ -1,0 +1,38 @@
+{
+  "tagline": "Vanuit de hak van Italië naar de volken",
+  "description": "Nieuws van het werk van Pieno Vangelo en de familie Ronchi: onze kerk in Modugno, Il Rifugio, zending en kerkstichting in Apulië en daarbuiten.",
+  "author": "Pastor Mirko Ronchi",
+  "church": "Pieno Vangelo-kerk",
+  "areas": {
+    "family": {
+      "name": "Ons gezin",
+      "short": "Gezin",
+      "intro": "Persoonlijk nieuws van pastor Mirko en de familie Ronchi. Hier lees je wat God in ons gezin doet, hoe het met ons gaat en hoe je voor ons kunt bidden."
+    },
+    "church": {
+      "name": "Gemeenteleven",
+      "short": "Gemeente",
+      "intro": "De Pieno Vangelo-kerk (Volle Evangelie) in Modugno, vlak bij Bari, is in de jaren zeventig ontstaan door het werk van Nederlandse zendelingen. Hier lees je over onze activiteiten en over de visie die we hebben voor onze stad en daarbuiten."
+    },
+    "welcoming-immigrants": {
+      "name": "Nieuwkomers welkom bij Jezus",
+      "short": "Nieuwkomers",
+      "intro": "Veel mensen komen van ver naar Apulië. Ze laten armoede en gevaar achter zich, op zoek naar een beter leven voor hun gezin. We willen hen met open armen ontvangen, van hen houden zoals Christus van ons houdt en hen dienen met vriendschap, praktische hulp en ons naschoolse programma. Hier lees je verhalen over de mensen die God op ons pad brengt."
+    },
+    "plant-and-strengthen": {
+      "name": "Kerken stichten en versterken",
+      "short": "Kerken stichten",
+      "intro": "In veel plaatsen in Apulië is nog steeds geen levende kerk. Wij stichten nieuwe kerken en staan naast bestaande gemeenten die steun nodig hebben om door te gaan. Hier lees je nieuws over deze kerken en over de mensen die ze leiden."
+    },
+    "missions": {
+      "name": "Tot aan de uiteinden van de aarde",
+      "short": "Zending",
+      "intro": "We zenden werkers uit over de grens en bereiden jongeren voor om te gaan. Hier lees je over toerusting, vertrek en verhalen van wie we uitzenden."
+    },
+    "il-rifugio": {
+      "name": "Centrum Il Rifugio",
+      "short": "Il Rifugio",
+      "intro": "Il Rifugio, in Ruvo di Puglia, is een plek van ontvangst en rust waar kerken en bedieningen op adem komen, werkers worden toegerust en de Kerk wordt opgebouwd. Hier lees je over kampen, retraites en wat God daar doet."
+    }
+  }
+}

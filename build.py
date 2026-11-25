@@ -17,9 +17,58 @@ import markdown
 
 ROOT = Path(__file__).parent
 OUT = ROOT / "public"
-SITE = json.loads((ROOT / "site.json").read_text(encoding="utf-8"))
-AREAS = {a["slug"]: a for a in SITE["areas"]}
+BASE_SITE = json.loads((ROOT / "site.json").read_text(encoding="utf-8"))
+LANGS = ["en", "nl"]
+UI = json.loads((ROOT / "i18n.json").read_text(encoding="utf-8"))
+# Set per language by set_lang()
+LANG, PFX, SITE, AREAS, T = "en", "", BASE_SITE, {}, UI["en"]
 GENERAL = {"slug": "", "name": "News", "short": "News", "color": "#e74759", "icon": "church"}
+
+
+def set_lang(lang):
+    """Switch every template to one language. English lives at /, others at /<lang>/."""
+    global LANG, PFX, SITE, AREAS, T, GENERAL
+    LANG, PFX, T = lang, ("" if lang == "en" else f"/{lang}"), UI[lang]
+    SITE = json.loads(json.dumps(BASE_SITE))
+    over = ROOT / f"site.{lang}.json"
+    if over.exists():
+        o = json.loads(over.read_text(encoding="utf-8"))
+        by_slug = o.pop("areas", {})
+        SITE.update(o)
+        for a in SITE["areas"]:
+            a.update(by_slug.get(a["slug"], {}))
+    SITE["subscribe_url"] = PFX + BASE_SITE["subscribe_url"]
+    AREAS = {a["slug"]: a for a in SITE["areas"]}
+    GENERAL = {**GENERAL, "name": T["news"], "short": T["news"]}
+
+
+def u(path):
+    """Site-internal link in the current language."""
+    return PFX + path
+
+
+def tr(path):
+    """content/<...> file in the current language, falling back to English."""
+    if LANG != "en":
+        alt = ROOT / "content" / LANG / path.relative_to(ROOT / "content")
+        if alt.exists():
+            return alt
+    return path
+
+
+FLAGS = {
+    "en": '<svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="fl-t"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#fl-t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>',
+    "nl": '<svg viewBox="0 0 9 6" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path fill="#21468B" d="M0 0h9v6H0z"/><path fill="#fff" d="M0 0h9v4H0z"/><path fill="#AE1C28" d="M0 0h9v2H0z"/></svg>',
+}
+
+
+def lang_switch(path):
+    out = []
+    for lg in LANGS:
+        href = ("" if lg == "en" else f"/{lg}") + path
+        cur = ' class="on" aria-current="true"' if lg == LANG else ""
+        out.append(f'<a href="{href}" hreflang="{lg}" lang="{lg}" title="{UI[lg]["lang_name"]}"{cur}>{FLAGS[lg]}<span>{lg.upper()}</span></a>')
+    return '<div class="lang">' + "".join(out) + "</div>"
 
 ICONS = {
     "home": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M12 17.5s-3-1.8-3-3.8a1.6 1.6 0 0 1 3-.8 1.6 1.6 0 0 1 3 .8c0 2-3 3.8-3 3.8z"/></svg>',
@@ -80,7 +129,7 @@ def render_body(body):
 def load_posts():
     posts = []
     for p in sorted((ROOT / "content" / "posts").glob("*.md")):
-        meta, body = parse_md(p)
+        meta, body = parse_md(tr(p))
         if meta.get("draft", "").lower() in ("true", "yes"):
             continue
         slug = meta.get("slug") or re.sub(r"^\d{4}-\d{2}-\d{2}-", "", p.stem)
@@ -94,7 +143,7 @@ def load_posts():
             "title": meta.get("title", slug), "slug": slug, "date": d, "area": area,
             "cover": meta.get("cover", ""), "cover_alt": meta.get("cover_alt", meta.get("title", "")),
             "gallery": [g.strip() for g in meta.get("gallery", "").split(",") if g.strip()],
-            "excerpt": excerpt, "html": html_body, "url": f"/updates/{slug}/",
+            "excerpt": excerpt, "html": html_body, "url": u(f"/updates/{slug}/"), "path": f"/updates/{slug}/",
         })
     posts.sort(key=lambda x: x["date"], reverse=True)
     return posts
@@ -103,14 +152,18 @@ def load_posts():
 # ---------- templates ----------
 
 def fmt_date(d):
-    return d.strftime("%-d %B %Y")
+    return f"{d.day} {T['months'][d.month - 1]} {d.year}"
+
+
+def n_updates(n):
+    return T["coming_soon"] if not n else f"{n} {T['update'] if n == 1 else T['updates']}"
 
 
 def nav(active=""):
-    links = [("/about/", "About", "about")] + [(f"/{a['slug']}/", a["short"], a["slug"]) for a in SITE["areas"]]
+    links = [(u("/about/"), T["about"], "about")] + [(u(f"/{a['slug']}/"), a["short"], a["slug"]) for a in SITE["areas"]]
     items = "".join(
         f'<a href="{u}"{" class=active" if k == active else ""}>{esc(t)}</a>' for u, t, k in links)
-    items += '<a class="btn-sub" href="/support/">Support</a>'
+    items += f'<a class="btn-sub" href="{u("/support/")}">{T["support"]}</a>'
     return items
 
 
@@ -139,24 +192,28 @@ LIGHTBOX = """<div class="lightbox" hidden><button class="lb-close" aria-label="
 
 
 def layout(title, content, description=None, active="", image=None, path="/"):
-    full_title = f"{SITE['title']} · Updates from Pieno Vangelo" if title == SITE["title"] else f"{title} · {SITE['title']}"
+    full_title = f"{SITE['title']} · {T['title_suffix']}" if title == SITE["title"] else f"{title} · {SITE['title']}"
     desc = esc(description or SITE["description"])
-    url = SITE["base_url"].rstrip("/") + path
+    base = SITE["base_url"].rstrip("/")
+    url = base + PFX + path
+    alternates = "".join(f'<link rel="alternate" hreflang="{lg}" href="{base}{"" if lg == "en" else "/" + lg}{path}">' for lg in LANGS)
+    alternates += f'<link rel="alternate" hreflang="x-default" href="{base}{path}">'
     og_img = f'<meta property="og:image" content="{SITE["base_url"].rstrip("/")}{image}">' if image else ""
     year = date.today().year
-    area_links = "".join(f'<li><a href="/{a["slug"]}/">{esc(a["name"])}</a></li>' for a in SITE["areas"])
+    area_links = "".join(f'<li><a href="{u("/" + a["slug"] + "/")}">{esc(a["name"])}</a></li>' for a in SITE["areas"])
     socials = "".join(
         f'<li><a href="{SITE[k]}" rel="noopener">{n}</a></li>'
         for k, n in (("youtube", "YouTube"), ("facebook", "Facebook"), ("instagram", "Instagram")) if SITE.get(k))
-    contact = f'<li><a href="mailto:{SITE["contact_email"]}">Email us</a></li>' if SITE.get("contact_email") else ""
+    contact = f'<li><a href="mailto:{SITE["contact_email"]}">{T["email_us"]}</a></li>' if SITE.get("contact_email") else ""
     return f"""<!doctype html>
-<html lang="en">
+<html lang="{LANG}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(full_title)}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{url}">
+{alternates}
 <meta property="og:title" content="{esc(full_title)}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}">
@@ -166,15 +223,16 @@ def layout(title, content, description=None, active="", image=None, path="/"):
 {'<meta name="robots" content="noindex, nofollow">' if SITE.get("draft_mode") else ''}
 <link rel="icon" href="/img/pv-glifo.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="alternate" type="application/rss+xml" title="{esc(SITE['title'])}" href="/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="{esc(SITE['title'])}" href="{u('/feed.xml')}">
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/" aria-label="From the Heel of Italy – home"><img class="pv-logo" src="/img/pv-glifo.svg" alt="Chiesa Pienovangelo"></a>
+    <a class="brand" href="{u('/')}" aria-label="{esc(SITE['title'])} – home"><img class="pv-logo" src="/img/pv-glifo.svg" alt="Chiesa Pienovangelo"></a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">Menu</button>
     <nav class="nav">{nav(active)}</nav>
+    {lang_switch(path)}
   </div>
 </header>
 <main>
@@ -185,25 +243,25 @@ def layout(title, content, description=None, active="", image=None, path="/"):
     <div class="cols">
       <div>
         <a class="foot-brand" href="https://pienovangelo.it" rel="noopener"><img src="/img/pv-glifo.svg" alt="Chiesa Pienovangelo"></a>
-        <p class="brandline">From the Heel of Italy<br><em>to the ends of the earth</em></p>
+        <p class="brandline">{T['brand_1']}<br><em>{T['brand_2']}</em></p>
         <p>{esc(SITE['description'])}</p>
       </div>
       <div>
-        <h4>Areas</h4>
+        <h4>{T['areas']}</h4>
         <ul>{area_links}</ul>
       </div>
       <div>
-        <h4>Stay in touch</h4>
+        <h4>{T['stay_in_touch']}</h4>
         <ul>
-          <li><a href="{SITE['subscribe_url']}">Subscribe to the newsletter</a></li>
-          <li><a href="/support/">Support the work</a></li>
+          <li><a href="{SITE['subscribe_url']}">{T['subscribe_newsletter']}</a></li>
+          <li><a href="{u('/support/')}">{T['support_the_work']}</a></li>
           {contact}{socials}
           <li><a href="https://pienovangelo.it" rel="noopener">pienovangelo.it</a></li>
-          <li><a href="/feed.xml">RSS feed</a></li>
+          <li><a href="{u('/feed.xml')}">RSS feed</a></li>
         </ul>
       </div>
     </div>
-    <p class="small">© {year} {esc(SITE['church'])} · Modugno (BA), Italy · <a href="/privacy/">Privacy</a></p>
+    <p class="small">© {year} {esc(SITE['church'])} · Modugno (BA), {T['italy']} · <a href="{u('/privacy/')}">Privacy</a></p>
   </div>
 </footer>
 {LIGHTBOX}
@@ -246,12 +304,13 @@ def featured(p):
     {tag_html(p['area'])}
     <h3>{esc(p['title'])}</h3>
     <p>{esc(p['excerpt'])}</p>
-    <span class="meta">{fmt_date(p['date'])} · Read more →</span>
+    <span class="meta">{fmt_date(p['date'])} · {T['read_more']}</span>
   </div>
 </a>"""
 
 
-def cards_grid(posts, empty="The first update is on its way.", cls=""):
+def cards_grid(posts, empty=None, cls=""):
+    empty = empty or T["first_update"]
     if not posts:
         return f'<div class="empty">{esc(empty)}</div>'
     return f'<div class="grid {cls}">' + "".join(card(p) for p in posts) + "</div>"
@@ -264,18 +323,18 @@ def window_bg(a):
 
 
 def area_window(a, n):
-    label = f"{n} update{'s' if n != 1 else ''}" if n else "Coming soon"
+    label = n_updates(n)
     if a.get("image"):
         img = f'<div class="media"><img src="{esc(a["image"])}" alt="" loading="lazy"></div>'
     else:
         img = f'<div class="media ph" {style_c(a)}>{ICONS[a["icon"]]}</div>'
-    return f"""<a class="area-card" href="/{a['slug']}/" {style_c(a)}>
+    return f"""<a class="area-card" href="{u('/' + a['slug'] + '/')}" {style_c(a)}>
   {img}
   <div class="body">
     <span class="tag">{label}</span>
     <h3>{esc(a['name'])}</h3>
     <p>{esc(a['intro'])}</p>
-    <span class="go">Read the updates</span>
+    <span class="go">{T['read_the_updates']}</span>
   </div>
 </a>"""
 
@@ -283,18 +342,18 @@ def area_window(a, n):
 def subscribe_band():
     return f"""<section class="subscribe" id="subscribe"><div class="wrap"><div class="box">
   <div>
-    <h2 class="display">Walk <em>with us</em></h2>
-    <p>A short update every few weeks: one story, one photo and a link to read more. No spam, unsubscribe anytime.</p>
+    <h2 class="display">{T['band_title']}</h2>
+    <p>{T['band_text']}</p>
   </div>
   <div class="actions">
-    <a class="btn btn-primary" href="{SITE['subscribe_url']}">Subscribe</a>
-    <a class="btn btn-light" href="/support/">Support the work</a>
+    <a class="btn btn-primary" href="{SITE['subscribe_url']}">{T['subscribe']}</a>
+    <a class="btn btn-light" href="{u('/support/')}">{T['support_the_work']}</a>
   </div>
 </div></div></section>"""
 
 
 def chips(active=""):
-    items = [("/updates/", "All", "")] + [(f"/{a['slug']}/", a["short"], a["slug"]) for a in SITE["areas"]]
+    items = [(u("/updates/"), T["all"], "")] + [(u(f"/{a['slug']}/"), a["short"], a["slug"]) for a in SITE["areas"]]
     return '<nav class="chips">' + "".join(
         f'<a href="{u}"{" class=on" if k == active else ""}>{esc(t)}</a>' for u, t, k in items) + "</nav>"
 
@@ -302,40 +361,40 @@ def chips(active=""):
 def page_home(posts):
     counts = {a["slug"]: sum(1 for p in posts if p["area"]["slug"] == a["slug"]) for a in SITE["areas"]}
     windows = "".join(area_window(a, counts[a["slug"]]) for a in SITE["areas"])
-    windows += f"""<a class="area-card cta" href="/support/">
+    windows += f"""<a class="area-card cta" href="{u('/support/')}">
   <div class="body">
-    <span class="tag">Partner with us</span>
-    <h3>Support the work</h3>
-    <p>Pray with us, give, or come and visit. Every area of this ministry is carried by friends like you.</p>
-    <span class="go">How to help</span>
+    <span class="tag">{T['partner']}</span>
+    <h3>{T['support_the_work']}</h3>
+    <p>{T['support_card']}</p>
+    <span class="go">{T['how_to_help']}</span>
   </div>
 </a>"""
     latest = ""
     if posts:
         latest = featured(posts[0])
     else:
-        latest = '<div class="empty">The first update is on its way.</div>'
+        latest = f'<div class="empty">{T["first_update"]}</div>'
     content = f"""<div class="intro"><div class="wrap">
-  <p class="eyebrow">News &amp; stories</p>
-  <h1 class="display">From the <em>Heel of Italy</em></h1>
+  <p class="eyebrow">{T['news_stories']}</p>
+  <h1 class="display">{T['home_h1']}</h1>
   <div class="sub">
-    <p class="lead">Updates from the Pieno Vangelo ministry and the Ronchi family.</p>
+    <p class="lead">{T['home_lead']}</p>
     <div class="actions">
-      <a class="btn btn-primary" href="{SITE['subscribe_url']}">Get the newsletter</a>
+      <a class="btn btn-primary" href="{SITE['subscribe_url']}">{T['get_newsletter']}</a>
       <a class="btn btn-outline" href="https://pienovangelo.it" rel="noopener">pienovangelo.it</a>
     </div>
   </div>
 </div></div>
 <section><div class="wrap">
   <div class="section-head">
-    <h2 class="display">Latest updates</h2>
-    <a class="link" href="/updates/">All updates →</a>
+    <h2 class="display">{T['latest_updates']}</h2>
+    <a class="link" href="{u('/updates/')}">{T['all_updates']}</a>
   </div>
   {latest}
 </div></section>
 <section><div class="wrap">
   <div class="section-head">
-    <h2 class="display">Updates by area</h2>
+    <h2 class="display">{T['updates_by_area']}</h2>
   </div>
   <div class="areas">{windows}</div>
 </div></section>
@@ -345,13 +404,13 @@ def page_home(posts):
 
 def page_updates(posts):
     content = f"""<header class="page-head"><div class="wrap">
-  <p class="eyebrow">News &amp; stories</p>
-  <h1 class="display">All <em>updates</em></h1>
+  <p class="eyebrow">{T['news_stories']}</p>
+  <h1 class="display">{T['all_updates_h1']}</h1>
   {chips("")}
 </div></header>
 <section><div class="wrap">{cards_grid(posts)}</div></section>
 {subscribe_band()}"""
-    return layout("Updates", content, active="updates", path="/updates/")
+    return layout(T["updates_title"], content, active="updates", path="/updates/")
 
 
 def page_area(a, posts):
@@ -360,14 +419,14 @@ def page_area(a, posts):
   <div class="window{' has-img' if a.get('image') else ''}" {style_c(a)}>
     {window_bg(a)}
     <div class="inner">
-      <span class="count">{(str(len(mine)) + ' update' + ('s' if len(mine) != 1 else '')) if mine else 'Coming soon'}</span>
+      <span class="count">{n_updates(len(mine))}</span>
       <h1>{esc(a['name'])}</h1>
       <p>{esc(a['intro'])}</p>
     </div>
   </div>
 </div></div>
 {area_about(a)}
-{'<section><div class="wrap"><div class="section-head"><h2 class="display">Latest updates</h2></div></div></section>' if (ROOT / "content" / "areas" / (a["slug"] + ".md")).exists() else ''}
+{f'<section><div class="wrap"><div class="section-head"><h2 class="display">{T["latest_updates"]}</h2></div></div></section>' if (ROOT / "content" / "areas" / (a["slug"] + ".md")).exists() else ''}
 {area_articles(mine)}
 {subscribe_band()}"""
     return layout(a["name"], content, description=a["intro"], active=a["slug"], path=f"/{a['slug']}/")
@@ -377,12 +436,12 @@ def area_articles(mine):
     """Compact list of updates on an area page, as wide as the area window.
     Each shows date, title, excerpt and image; the full text opens in place."""
     if not mine:
-        return '<section><div class="wrap"><div class="empty">The first update from this area is on its way.</div></div></section>'
+        return f'<section><div class="wrap"><div class="empty">{T["first_area_update"]}</div></div></section>'
     out = []
     for p in mine:
         img = f'<img src="{esc(p["cover"])}" alt="{esc(p["cover_alt"])}" loading="lazy">' if p["cover"] else ""
         gallery = ("<div class=\"ap-gallery\">" + "".join(
-            f'<img src="{esc(g)}" alt="{esc(p["title"])} – photo {i + 2}" loading="lazy">'
+            f'<img src="{esc(g)}" alt="{esc(p["title"])} – {T['photo']} {i + 2}" loading="lazy">'
             for i, g in enumerate(p["gallery"])) + "</div>") if p["gallery"] else ""
         out.append(f"""<article class="area-post{' has-img' if img else ''}" id="{esc(p['slug'])}">
   {f'<div class="ap-img">{img}{gallery}</div>' if img else ''}
@@ -391,7 +450,7 @@ def area_articles(mine):
     <h2 class="ap-title">{esc(p['title'])}</h2>
     <p class="ap-excerpt">{esc(p['excerpt'])}</p>
     <details class="ap-more">
-      <summary><span class="open">Read more →</span><span class="close">Close ↑</span></summary>
+      <summary><span class="open">{T['read_more']}</span><span class="close">{T['close']}</span></summary>
       <div class="prose">{p['html']}</div>
     </details>
   </div>
@@ -411,7 +470,7 @@ def area_about(a):
     path = ROOT / "content" / "areas" / f"{a['slug']}.md"
     if not path.exists():
         return ""
-    meta, body = parse_md(path)
+    meta, body = parse_md(tr(path))
     video = video_embed(meta.get("video", ""))
     return f"""<section class="area-about"><div class="wrap"><div class="about-grid{' has-video' if video else ''}">
   {f'<div class="about-video">{video}</div>' if video else ''}
@@ -424,18 +483,18 @@ def area_about(a):
 
 def page_post(p, posts):
     a = p["area"]
-    eyebrow = (f'<a class="eyebrow" href="/{a["slug"]}/">{esc(a["name"])}</a>' if a["slug"]
+    eyebrow = (f'<a class="eyebrow" href="{u("/" + a["slug"] + "/")}">{esc(a["name"])}</a>' if a["slug"]
                else f'<p class="eyebrow">{esc(a["name"])}</p>')
     more = [q for q in posts if q is not p and (q["area"]["slug"] == a["slug"] or not a["slug"])][:3]
     more_html = ""
     if more:
-        title = f"More from {esc(a['name'])}" if a["slug"] else "More updates"
+        title = T["more_from"].format(esc(a['name'])) if a["slug"] else T["more_updates"]
         more_html = f"""<section><div class="wrap">
   <div class="section-head"><h2 class="display">{title}</h2></div>
   {cards_grid(more)}
 </div></section>"""
-    back = (f'<a href="/{a["slug"]}/">← All {esc(a["name"])} updates</a>' if a["slug"]
-            else '<a href="/updates/">← All updates</a>')
+    back = (f'<a href="{u("/" + a["slug"] + "/")}">{T["back_area"].format(esc(a["name"]))}</a>' if a["slug"]
+            else f'<a href="{u("/updates/")}">{T["back_all"]}</a>')
     cover = f'<div class="article-cover">{media(p)}</div>' if p["cover"] else ""
     content = f"""<article>
   <header class="article-head"><div class="narrow">
@@ -445,13 +504,13 @@ def page_post(p, posts):
   </div></header>
   {cover}
   <div class="narrow page-body"><div class="prose-card prose">{p['html']}
-    <div class="article-foot">{back}<a href="{SITE['subscribe_url']}">Get updates by email →</a></div>
+    <div class="article-foot">{back}<a href="{SITE['subscribe_url']}">{T['get_by_email']}</a></div>
   </div></div>
 </article>
 {more_html}
 {subscribe_band()}"""
     return layout(p["title"], content, description=p["excerpt"], active=a["slug"],
-                  image=p["cover"] or None, path=p["url"])
+                  image=p["cover"] or None, path=p["path"])
 
 
 def page_simple(slug, meta, body):
@@ -474,13 +533,13 @@ def page_subscribe(meta):
   {f"<p>{esc(meta['intro'])}</p>" if meta.get('intro') else ""}
   <form class="signup" id="signup" method="POST" action="{BREVO_FORM}">
     <label class="sr-only" for="EMAIL">Email</label>
-    <input type="email" id="EMAIL" name="EMAIL" placeholder="Your email" autocomplete="email" required>
+    <input type="email" id="EMAIL" name="EMAIL" placeholder="{T['your_email']}" autocomplete="email" required>
     <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
     <input type="hidden" name="locale" value="en">
-    <button class="btn btn-primary" type="submit">Subscribe</button>
+    <button class="btn btn-primary" type="submit">{T['subscribe']}</button>
   </form>
   <p class="signup-msg" id="signup-msg" role="status" aria-live="polite"></p>
-  <p class="signup-note">Only these updates, nothing else. Unsubscribe anytime. <a href="/privacy/">Privacy</a></p>
+  <p class="signup-note">{T['signup_note']} <a href="{u('/privacy/')}">Privacy</a></p>
 </div></header>
 <script>{{
   const f = document.getElementById('signup'), m = document.getElementById('signup-msg');
@@ -491,9 +550,9 @@ def page_subscribe(meta):
       const r = await fetch(f.action + '?isAjax=1', {{ method: 'POST', body: new FormData(f) }});
       const j = await r.json().catch(() => ({{}}));
       if (!r.ok || j.success === false) throw 0;
-      f.hidden = true; m.textContent = 'Thank you for walking with us! You are now subscribed.'; m.classList.add('ok');
+      f.hidden = true; m.textContent = {json.dumps(T['signup_ok'])}; m.classList.add('ok');
     }} catch (_) {{
-      m.textContent = 'Something went wrong. Please check your email address and try again.'; m.classList.add('err');
+      m.textContent = {json.dumps(T['signup_err'])}; m.classList.add('err');
     }} finally {{ b.disabled = false; }}
   }});
 }}</script>"""
@@ -512,8 +571,8 @@ def feed(posts):
 """
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>
-<title>{esc(SITE['title'])}</title><link>{base}/</link>
-<description>{esc(SITE['description'])}</description><language>en</language>
+<title>{esc(SITE['title'])}</title><link>{base}{PFX}/</link>
+<description>{esc(SITE['description'])}</description><language>{LANG}</language>
 {items}</channel></rss>
 """
 
@@ -521,7 +580,7 @@ def feed(posts):
 # ---------- build ----------
 
 def write(rel, text):
-    path = OUT / rel
+    path = OUT / (PFX.lstrip("/") + "/" + rel if PFX else rel)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8")
 
@@ -530,6 +589,13 @@ def main():
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / "static", OUT)
+    for lang in LANGS:
+        set_lang(lang)
+        build_lang()
+    print(f"Built {', '.join(LANGS)} into {OUT}")
+
+
+def build_lang():
     posts = load_posts()
     write("index.html", page_home(posts))
     write("updates/index.html", page_updates(posts))
@@ -538,14 +604,15 @@ def main():
     for p in posts:
         write(f"updates/{p['slug']}/index.html", page_post(p, posts))
     for pg in sorted((ROOT / "content" / "pages").glob("*.md")):
-        meta, body = parse_md(pg)
+        meta, body = parse_md(tr(pg))
         page = page_subscribe(meta) if pg.stem == "subscribe" else page_simple(pg.stem, meta, body)
         write(f"{pg.stem}/index.html", page)
     write("feed.xml", feed(posts))
+    if LANG != "en":
+        return
     write("404.html", layout("Page not found", """<header class="page-head"><div class="wrap">
   <h1 class="display">Page <em>not found</em></h1><p>The page you are looking for is not here. <a href="/">Go back home</a>.</p>
 </div></header>"""))
-    print(f"Built {len(posts)} posts into {OUT}")
 
 
 if __name__ == "__main__":
