@@ -62,8 +62,9 @@
       "short": "Il Rifugio",
       "color": "#e26900",
       "icon": "tent",
-      "intro": "Il Rifugio, in Ruvo di Puglia, is a place of welcome and rest where churches and ministries are refreshed, workers are trained and the Church is built up. Here you'll find news on camps, retreats and what God is doing there.",
-      "image": "/images/area-rifugio.jpg"
+      "intro": "Set among pine woods and olive groves in the countryside of Ruvo di Puglia, Il Rifugio is a place of welcome and refreshment at the service of churches and ministries. Through camps, conferences and retreats, guests are renewed in body and spirit, workers for the harvest are trained and helped to grow, and the Church is built up. Here you'll find news of what God is doing there.",
+      "image": "/images/area-rifugio.jpg",
+      "video": "https://youtu.be/cfAFyEttCmE"
     }
   ],
   "draft_mode": false

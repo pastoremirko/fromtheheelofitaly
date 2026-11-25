@@ -316,6 +316,36 @@ def cards_grid(posts, empty=None, cls=""):
     return f'<div class="grid {cls}">' + "".join(card(p) for p in posts) + "</div>"
 
 
+def video_cover(a):
+    """Area video in the hero, in place of the photo: a photo with a play button.
+    On the live site a click plays the video in the page; elsewhere (e.g. previews
+    that block embedded players) the link opens the video on YouTube."""
+    vid = youtube_id(a.get("video", ""))
+    if not vid:
+        return ""
+    poster = (f'<img src="{esc(a["image"])}" alt="" loading="lazy">' if a.get("image")
+              else f'<img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" loading="lazy">')
+    return (f'<div class="bg bg-video"><a class="yt-facade" href="https://www.youtube.com/watch?v={vid}" '
+            f'target="_blank" rel="noopener" data-yt="{vid}" data-title="{esc(a["name"])}" '
+            f'aria-label="{esc(T["watch_video"])}: {esc(a["name"])}">{poster}'
+            f'<span class="yt-play" aria-hidden="true"></span><span class="yt-label">{esc(T["watch_video"])}</span></a></div>')
+
+
+VIDEO_SCRIPT = """<script>{
+  const live = /(^|\\.)fromtheheelofitaly\\.org$|\\.workers\\.dev$|\\.pages\\.dev$|^localhost$|^127\\.0\\.0\\.1$/.test(location.hostname);
+  document.querySelectorAll('.yt-facade').forEach(a => a.addEventListener('click', e => {
+    if (!live) return;
+    e.preventDefault();
+    const f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.yt + '?autoplay=1';
+    f.title = a.dataset.title;
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    f.allowFullscreen = true;
+    a.replaceWith(f);
+  }));
+}</script>"""
+
+
 def window_bg(a):
     if a.get("image"):
         return f'<div class="bg"><img src="{esc(a["image"])}" alt="" loading="lazy"></div>'
@@ -416,8 +446,8 @@ def page_updates(posts):
 def page_area(a, posts):
     mine = [p for p in posts if p["area"]["slug"] == a["slug"]]
     content = f"""<div class="area-hero"><div class="wrap">
-  <div class="window{' has-img' if a.get('image') else ''}" {style_c(a)}>
-    {window_bg(a)}
+  <div class="window{' has-img' if a.get('image') or video_cover(a) else ''}" {style_c(a)}>
+    {video_cover(a) or window_bg(a)}
     <div class="inner">
       <span class="count">{n_updates(len(mine))}</span>
       <h1>{esc(a['name'])}</h1>
@@ -425,10 +455,10 @@ def page_area(a, posts):
     </div>
   </div>
 </div></div>
-{area_about(a)}
-{f'<section><div class="wrap"><div class="section-head"><h2 class="display">{T["latest_updates"]}</h2></div></div></section>' if (ROOT / "content" / "areas" / (a["slug"] + ".md")).exists() else ''}
+{area_about(a) if not a.get('video') else ''}
 {area_articles(mine)}
-{subscribe_band()}"""
+{subscribe_band()}
+{VIDEO_SCRIPT if video_cover(a) else ''}"""
     return layout(a["name"], content, description=a["intro"], active=a["slug"], path=f"/{a['slug']}/")
 
 
