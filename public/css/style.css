@@ -578,3 +578,4 @@ a.window:hover .bg img { transform: scale(1.05); }
 .featured .media img { position: absolute; inset: 0; }
 
 .about-map svg { max-width: 100%; margin: 0 auto; }
+.sup-grid > .sup-card.main + .sup-card.main { margin-top: 4px; }

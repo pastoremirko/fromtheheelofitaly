@@ -32,13 +32,7 @@ intro: Thank you for considering standing with us in prayer, visiting us and giv
 </dl>
 <p class="sup-note"><strong>What is your gift for?</strong> Write it in the payment reference: <em>Ronchi Family, Church, Nations Here, Plant &amp; Strengthen, Missions</em> or <em>Il Rifugio</em>. If you leave it blank, your gift goes where the need is greatest.</p>
 </div>
-<div class="sup-card">
-<p class="sup-k">Tax-deductible gift <span>From the United States</span></p>
-<p>Give online through our partner <strong>Adventive (ACCI)</strong>.</p>
-<p><a class="sup-btn" href="https://www.adventive.ca/make-a-donation-us/">Give through Adventive →</a></p>
-<p class="sup-small">Select fund: <strong>Europe → Italy Pieno Vangelo</strong></p>
-</div>
-<div class="sup-card">
+<div class="sup-card main">
 <p class="sup-k">For the Ronchi family <span>Personal support</span></p>
 <p>Gifts for our family go to our personal account.</p>
 <dl class="sup-bank">
@@ -48,9 +42,13 @@ intro: Thank you for considering standing with us in prayer, visiting us and giv
 </dl>
 <p class="sup-small">From outside the SEPA area use BIC MICSITM3XXX.</p>
 </div>
-</div>
-
-
+<div class="sup-card main">
+<p class="sup-k">Tax-deductible gift <span>From the United States</span></p>
+<p>Give online through our partner <strong>Adventive (ACCI)</strong>.</p>
+<p><a class="sup-btn" href="https://www.adventive.ca/make-a-donation-us/">Give through Adventive →</a></p>
+<p class="sup-small">Select fund: <strong>Europe → Italy Pieno Vangelo</strong></p>
 <p class="sup-small">Giving by check in the US? Make it payable to ACCI with a note “Italy Pieno Vangelo”, and don't write our names on the check.</p>
+</div>
+</div>
 
 <p>Thank you for your generosity.</p>
