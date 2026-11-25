@@ -1,6 +1,6 @@
 Subject: Four new workers, sent from our church
 Preview text: Four believers from our church are heading to the unreached nations, one of them this very month.
-Image:
+Image: /images/2026-11-missions-embrace.jpg
 Read more: https://fromtheheelofitaly.org/missions/#four-new-workers
 
 TO THE ENDS OF THE EARTH

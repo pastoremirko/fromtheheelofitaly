@@ -2,6 +2,8 @@
 title: Four New Workers, Sent from Our Church
 date: 2026-10-07
 area: missions
+cover: /images/2026-11-missions-embrace.jpg
+cover_alt: A young man with his arm around an older man in a prayer cap, under palm trees
 excerpt: Four believers from our church are heading to the unreached nations, one of them this very month. Here is their story, and why Italians are well placed to go.
 ---
 

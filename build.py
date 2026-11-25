@@ -142,6 +142,7 @@ def load_posts():
         posts.append({
             "title": meta.get("title", slug), "slug": slug, "date": d, "area": area,
             "cover": meta.get("cover", ""), "cover_alt": meta.get("cover_alt", meta.get("title", "")),
+            "cover_fit": meta.get("cover_fit", "").lower() in ("true", "yes"),
             "gallery": [g.strip() for g in meta.get("gallery", "").split(",") if g.strip()],
             "excerpt": excerpt, "html": html_body, "url": u(f"/updates/{slug}/"), "path": f"/updates/{slug}/",
         })
@@ -277,7 +278,8 @@ def style_c(area):
 def media(post, extra=""):
     a = post["area"]
     if post["cover"]:
-        return f'<div class="media {extra}"><img src="{esc(post["cover"])}" alt="{esc(post["cover_alt"])}" loading="lazy"></div>'
+        fit = ' class="fit"' if post.get("cover_fit") else ""
+        return f'<div class="media {extra}"><img{fit} src="{esc(post["cover"])}" alt="{esc(post["cover_alt"])}" loading="lazy"></div>'
     return f'<div class="media ph {extra}" {style_c(a)}>{ICONS[a["icon"]]}</div>'
 
 
@@ -314,6 +316,36 @@ def cards_grid(posts, empty=None, cls=""):
     if not posts:
         return f'<div class="empty">{esc(empty)}</div>'
     return f'<div class="grid {cls}">' + "".join(card(p) for p in posts) + "</div>"
+
+
+def video_cover(a):
+    """Area video in the hero, in place of the photo: a photo with a play button.
+    On the live site a click plays the video in the page; elsewhere (e.g. previews
+    that block embedded players) the link opens the video on YouTube."""
+    vid = youtube_id(a.get("video", ""))
+    if not vid:
+        return ""
+    poster = (f'<img src="{esc(a["image"])}" alt="" loading="lazy">' if a.get("image")
+              else f'<img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" loading="lazy">')
+    return (f'<div class="bg bg-video"><a class="yt-facade" href="https://www.youtube.com/watch?v={vid}" '
+            f'target="_blank" rel="noopener" data-yt="{vid}" data-title="{esc(a["name"])}" '
+            f'aria-label="{esc(T["watch_video"])}: {esc(a["name"])}">{poster}'
+            f'<span class="yt-play" aria-hidden="true"></span><span class="yt-label">{esc(T["watch_video"])}</span></a></div>')
+
+
+VIDEO_SCRIPT = """<script>{
+  const live = /(^|\\.)fromtheheelofitaly\\.org$|\\.workers\\.dev$|\\.pages\\.dev$|^localhost$|^127\\.0\\.0\\.1$/.test(location.hostname);
+  document.querySelectorAll('.yt-facade').forEach(a => a.addEventListener('click', e => {
+    if (!live) return;
+    e.preventDefault();
+    const f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.yt + '?autoplay=1';
+    f.title = a.dataset.title;
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    f.allowFullscreen = true;
+    a.replaceWith(f);
+  }));
+}</script>"""
 
 
 def window_bg(a):
@@ -416,8 +448,8 @@ def page_updates(posts):
 def page_area(a, posts):
     mine = [p for p in posts if p["area"]["slug"] == a["slug"]]
     content = f"""<div class="area-hero"><div class="wrap">
-  <div class="window{' has-img' if a.get('image') else ''}" {style_c(a)}>
-    {window_bg(a)}
+  <div class="window{' has-img' if a.get('image') or video_cover(a) else ''}" {style_c(a)}>
+    {video_cover(a) or window_bg(a)}
     <div class="inner">
       <span class="count">{n_updates(len(mine))}</span>
       <h1>{esc(a['name'])}</h1>
@@ -425,10 +457,10 @@ def page_area(a, posts):
     </div>
   </div>
 </div></div>
-{area_about(a)}
-{f'<section><div class="wrap"><div class="section-head"><h2 class="display">{T["latest_updates"]}</h2></div></div></section>' if (ROOT / "content" / "areas" / (a["slug"] + ".md")).exists() else ''}
+{area_about(a) if not a.get('video') else ''}
 {area_articles(mine)}
-{subscribe_band()}"""
+{subscribe_band()}
+{VIDEO_SCRIPT if video_cover(a) else ''}"""
     return layout(a["name"], content, description=a["intro"], active=a["slug"], path=f"/{a['slug']}/")
 
 
@@ -439,7 +471,7 @@ def area_articles(mine):
         return f'<section><div class="wrap"><div class="empty">{T["first_area_update"]}</div></div></section>'
     out = []
     for p in mine:
-        img = f'<img src="{esc(p["cover"])}" alt="{esc(p["cover_alt"])}" loading="lazy">' if p["cover"] else ""
+        img = f'<img{' class="fit"' if p.get("cover_fit") else ""} src="{esc(p["cover"])}" alt="{esc(p["cover_alt"])}" loading="lazy">' if p["cover"] else ""
         gallery = ("<div class=\"ap-gallery\">" + "".join(
             f'<img src="{esc(g)}" alt="{esc(p["title"])} – {T['photo']} {i + 2}" loading="lazy">'
             for i, g in enumerate(p["gallery"])) + "</div>") if p["gallery"] else ""

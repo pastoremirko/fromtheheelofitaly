@@ -2,6 +2,8 @@
 title: Vier werkers uitgezonden vanuit onze gemeente
 date: 2026-10-07
 area: missions
+cover: /images/2026-11-missions-embrace.jpg
+cover_alt: Een jonge man met zijn arm om een oudere man met een gebedskapje, onder palmbomen
 excerpt: Vier gelovigen uit onze gemeente gaan naar de onbereikte volken, één van hen deze maand al. Dit is hun verhaal, en waarom juist Italianen goed kunnen gaan.
 ---
 

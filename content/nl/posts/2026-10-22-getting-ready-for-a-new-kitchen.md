@@ -1,6 +1,6 @@
 ---
 title: Op weg naar een nieuwe keuken
-date: 2026-11-25
+date: 2026-10-22
 area: il-rifugio
 cover: /images/2026-11-rifugio-kitchen-volunteers.jpg
 cover_alt: Vrijwilligers bereiden een maaltijd in de oude keuken van centrum Il Rifugio

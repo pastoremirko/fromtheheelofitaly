@@ -35,7 +35,7 @@
       "short": "Immigrants",
       "color": "#7a4f8f",
       "icon": "people",
-      "intro": "Many come to Puglia from far away, leaving behind hardship and danger in search of a better life for their families. We long to welcome them with open arms, to love them as Christ has loved us and to serve them through friendship, practical help and our after-school program. Here you'll find stories of the people God is bringing to our doorstep.",
+      "intro": "Many families come to Puglia from far away in search of a better life. We long to welcome them with the love of Christ, through friendship and practical help. Here you'll find stories of the people God is bringing to our doorstep.",
       "image": "/images/area-nations.jpg"
     },
     {
@@ -62,8 +62,9 @@
       "short": "Il Rifugio",
       "color": "#e26900",
       "icon": "tent",
-      "intro": "Il Rifugio, in Ruvo di Puglia, is a place of welcome and rest where churches and ministries are refreshed, workers are trained and the Church is built up. Here you'll find news on camps, retreats and what God is doing there.",
-      "image": "/images/area-rifugio.jpg"
+      "intro": "Set among pine woods and olive groves in the countryside of Ruvo di Puglia, Il Rifugio is a place of welcome and refreshment at the service of churches and ministries. Through camps, conferences and retreats, guests are renewed in body and spirit, workers for the harvest are trained and helped to grow, and the Church is built up. Here you'll find news of what God is doing there.",
+      "image": "/images/area-rifugio.jpg",
+      "video": "https://youtu.be/cfAFyEttCmE"
     }
   ],
   "draft_mode": false

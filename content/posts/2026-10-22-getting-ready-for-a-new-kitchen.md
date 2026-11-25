@@ -1,6 +1,6 @@
 ---
 title: Getting Ready for a New Kitchen
-date: 2026-11-25
+date: 2026-10-22
 area: il-rifugio
 cover: /images/2026-11-rifugio-kitchen-volunteers.jpg
 cover_alt: Volunteers preparing a meal in the old kitchen at Il Rifugio Center
