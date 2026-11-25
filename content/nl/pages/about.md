@@ -20,6 +20,6 @@ Elke e-mail is kort (de nieuwsbrief verschijnt in het Engels). Wil je meer weten
 
 De Pieno Vangelo-kerk (Volle Evangelie) in Modugno, vlak bij Bari, is in de jaren zeventig ontstaan door het werk van Nederlandse zendelingen en de kerken in Nederland die achter hen stonden. Vanaf het begin hebben we een duidelijke visie: een kerk zijn die concreet gehoor geeft aan de grote opdracht, een gemeenschap die vanuit Puglia kijkt naar de uiteinden van de aarde.
 
-Puglia, de "hak" van Italië, is nog altijd een streek waar veel plaatsen, ook grote, geen levende, gezonde kerk hebben. We geloven dat God dat wil veranderen, en dat het evangelie van hieruit de volken kan bereiken.
+Puglia, de "hak" van Italië, is nog altijd een streek waar veel plaatsen, ook grote, geen levende, gezonde kerk hebben. We geloven dat God dat wil veranderen. Puglia ligt bovendien op een strategisch kruispunt, dicht bij Noord-Afrika, de Balkan en de islamitische landen van het Midden-Oosten, en we geloven dat Italianen een belangrijke rol hebben om het evangelie van hieruit naar de volken te brengen.
 
 Dank jullie wel dat jullie met ons meeleven.
