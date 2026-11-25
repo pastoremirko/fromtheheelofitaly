@@ -7,7 +7,7 @@ Updates from the Heel of Italy
 
 Dear friend,
 
-We're so glad you're here, and we're honored that you've chosen to walk with us! You have just joined a growing family of friends who follow what God is doing here in Puglia, the "heel" of Italy, and from here to the ends of the earth.
+We're so glad you're here, and thrilled that you've chosen to walk with us! With this newsletter we'd love to keep you updated on what God is doing here in Puglia, the "heel" of Italy, and from here to the ends of the earth.
 
 These updates come from Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, and from our family. Every few weeks you'll receive one short story, one photo and a link to read more, from one of these six areas:
 
