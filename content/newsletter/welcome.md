@@ -9,7 +9,7 @@ Dear friend,
 
 We're so glad you're here, and thrilled that you've chosen to walk with us! With this newsletter we'd love to keep you updated on what God is doing here in Puglia, the "heel" of Italy, and from here to the ends of the earth.
 
-On our blog, fromtheheelofitaly.org, you can follow every update from Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, and from our family. And once a month we'll send you an email with news from one of these six areas:
+On our blog, fromtheheelofitaly.org, you can follow every update on our ministry in this part of Italy. There you'll find news from these six areas:
 
 [photo] Family Life: our home, our children and how God is at work in our everyday life.
 [photo] Church Life: our church family in Modugno, its people, its growth and the vision for our city.
@@ -19,6 +19,8 @@ On our blog, fromtheheelofitaly.org, you can follow every update from Pieno Vang
 [photo] Il Rifugio Center: our center in Ruvo di Puglia, a place of rest and training for churches and ministries.
 
 This story is still being written, and now you are part of it too. Every prayer, every word of encouragement and every gift helps this work grow stronger. Thank you for being with us!
+
+Once a month, our newsletter will bring you an update from one of these areas, right to your inbox.
 
 [Explore the updates →]   [Support the work]
 

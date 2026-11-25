@@ -37,11 +37,12 @@ out = f'''<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport"
 <tr><td style="padding:34px 36px 8px;{F}font-size:16px;line-height:1.65;color:{INK};">
 <p style="margin:0 0 14px;">Dear friend,</p>
 <p style="margin:0 0 14px;">We're so glad you're here, and thrilled that you've chosen to walk with us! With this newsletter we'd love to keep you updated on what God is doing here in Puglia, the "heel" of Italy, and from here to the ends of the earth.</p>
-<p style="margin:0 0 24px;">On our blog, <a href="{BASE}/" style="color:#e74759;font-weight:700;">fromtheheelofitaly.org</a>, you can follow every update from Pieno Vangelo (Full Gospel) Church in Modugno, near Bari, and from our family. And once a month we'll send you an email with news from one of these six areas:</p>
+<p style="margin:0 0 24px;">On our blog, <a href="{BASE}/" style="color:#e74759;font-weight:700;">fromtheheelofitaly.org</a>, you can follow every update on our ministry in this part of Italy. There you'll find news from these six areas:</p>
 </td></tr>
 <tr><td style="padding:0 36px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table></td></tr>
 <tr><td style="padding:6px 36px 8px;{F}font-size:16px;line-height:1.65;color:{INK};">
-<p style="margin:0 0 24px;">This story is still being written, and now you are part of it too. Every prayer, every word of encouragement and every gift helps this work grow stronger. <strong>Thank you for being with us!</strong></p>
+<p style="margin:0 0 14px;">This story is still being written, and now you are part of it too. Every prayer, every word of encouragement and every gift helps this work grow stronger. <strong>Thank you for being with us!</strong></p>
+<p style="margin:0 0 24px;">Once a month, our newsletter will bring you an update from one of these areas, right to your inbox.</p>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
 <td style="background:{RED};border-radius:999px;"><a href="{BASE}/" style="{F}display:inline-block;padding:13px 24px;font-size:15px;font-weight:800;color:#ffffff;text-decoration:none;">Explore the updates →</a></td>
 <td width="10"></td>
