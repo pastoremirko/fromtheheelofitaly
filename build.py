@@ -230,9 +230,9 @@ def layout(title, content, description=None, active="", image=None, path="/"):
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="{u('/')}" aria-label="{esc(SITE['title'])} – home"><img class="pv-logo" src="/img/pv-glifo.svg" alt="Chiesa Pienovangelo"></a>
+    {lang_switch(path)}
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">Menu</button>
     <nav class="nav">{nav(active)}</nav>
-    {lang_switch(path)}
   </div>
 </header>
 <main>
