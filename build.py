@@ -142,6 +142,7 @@ def load_posts():
         posts.append({
             "title": meta.get("title", slug), "slug": slug, "date": d, "area": area,
             "cover": meta.get("cover", ""), "cover_alt": meta.get("cover_alt", meta.get("title", "")),
+            "cover_fit": meta.get("cover_fit", "").lower() in ("true", "yes"),
             "gallery": [g.strip() for g in meta.get("gallery", "").split(",") if g.strip()],
             "excerpt": excerpt, "html": html_body, "url": u(f"/updates/{slug}/"), "path": f"/updates/{slug}/",
         })
@@ -277,7 +278,8 @@ def style_c(area):
 def media(post, extra=""):
     a = post["area"]
     if post["cover"]:
-        return f'<div class="media {extra}"><img src="{esc(post["cover"])}" alt="{esc(post["cover_alt"])}" loading="lazy"></div>'
+        fit = ' class="fit"' if post.get("cover_fit") else ""
+        return f'<div class="media {extra}"><img{fit} src="{esc(post["cover"])}" alt="{esc(post["cover_alt"])}" loading="lazy"></div>'
     return f'<div class="media ph {extra}" {style_c(a)}>{ICONS[a["icon"]]}</div>'
 
 
@@ -469,7 +471,7 @@ def area_articles(mine):
         return f'<section><div class="wrap"><div class="empty">{T["first_area_update"]}</div></div></section>'
     out = []
     for p in mine:
-        img = f'<img src="{esc(p["cover"])}" alt="{esc(p["cover_alt"])}" loading="lazy">' if p["cover"] else ""
+        img = f'<img{' class="fit"' if p.get("cover_fit") else ""} src="{esc(p["cover"])}" alt="{esc(p["cover_alt"])}" loading="lazy">' if p["cover"] else ""
         gallery = ("<div class=\"ap-gallery\">" + "".join(
             f'<img src="{esc(g)}" alt="{esc(p["title"])} – {T['photo']} {i + 2}" loading="lazy">'
             for i, g in enumerate(p["gallery"])) + "</div>") if p["gallery"] else ""

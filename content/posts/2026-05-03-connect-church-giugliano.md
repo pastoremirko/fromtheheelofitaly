@@ -20,11 +20,11 @@ Vincenzo and Numa had a burden for Giugliano, near Naples. After a season of get
 
 In 2021 **Connect Church Giugliano** was born. On that first day, thirteen people were baptized. It was a celebration of what God had already been doing in their lives, and a sign of what He was about to do in the city.
 
-## Sent with our blessing
+## With our blessing
 
-After the service, our pastoral team laid hands on Vincenzo and Numa and prayed for them. We blessed them as they began this new work and told them that they could count on us for any support they needed. It was a moving moment for all of us, and a clear start for the work in Giugliano.
+After the service, our pastoral team from Modugno, together with Pastors Thomas and George of **Eleviva**, a Canadian ministry that supports church planting in Italy, laid hands on Vincenzo and Numa and prayed for them. We blessed them as they began this new work in their own city and told them that they could count on us for any support they needed. It was a moving moment for all of us, and a clear start for the work in Giugliano.
 
-Since then the church has kept growing and reaching more people, and we are glad to keep walking beside them, together with our friends at Eleviva.
+Since 2021 we have watched the church grow and develop steadily, and today we keep walking alongside them in the new challenges they face, together with our friends at Eleviva.
 
 ## How you can pray
 

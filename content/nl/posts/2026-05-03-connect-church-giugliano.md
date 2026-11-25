@@ -20,11 +20,11 @@ Vincenzo en Numa hadden een hart voor Giugliano, vlak bij Napels. Na een tijd va
 
 In 2021 ontstond **Connect Church Giugliano**. Op die eerste dag werden dertien mensen gedoopt. Het was een feest om te vieren wat God al in hun leven had gedaan, en een teken van wat Hij in de stad ging doen.
 
-## Uitgezonden met onze zegen
+## Met onze zegen
 
-Na de dienst legde ons pastorale team Vincenzo en Numa de handen op en baden we voor hen. We zegenden hen bij het begin van dit nieuwe werk en zeiden dat ze voor alle steun die ze nodig hadden op ons konden rekenen. Het was een ontroerend moment voor ons allemaal, en een duidelijk begin van het werk in Giugliano.
+Na de dienst legde ons pastorale team uit Modugno, samen met de voorgangers Thomas en George van **Eleviva**, een Canadese bediening die kerkplanting in Italië ondersteunt, Vincenzo en Numa de handen op en baden we voor hen. We zegenden hen bij het begin van dit nieuwe werk in hun eigen stad en zeiden dat ze voor alle steun die ze nodig hadden op ons konden rekenen. Het was een ontroerend moment voor ons allemaal, en een duidelijk begin van het werk in Giugliano.
 
-Sindsdien is de kerk blijven groeien en bereikt ze steeds meer mensen. We zijn blij dat we met hen mogen blijven optrekken, samen met onze vrienden van Eleviva.
+Sinds 2021 hebben we de kerk gestaag zien groeien en zich zien ontwikkelen, en vandaag lopen we met hen mee in de nieuwe uitdagingen waar ze voor staan, samen met onze vrienden van Eleviva.
 
 ## Gebedspunten
 

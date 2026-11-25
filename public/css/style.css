@@ -607,3 +607,9 @@ a.window:hover .bg img { transform: scale(1.05); }
 .yt-play { position: absolute; z-index: 2; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; background: var(--c, #e26900); box-shadow: 0 6px 24px rgba(0,0,0,.35); }
 .yt-play::after { content: ""; position: absolute; left: 30px; top: 23px; border-style: solid; border-width: 15px 0 15px 24px; border-color: transparent transparent transparent #fff; }
 .yt-label { position: absolute; z-index: 2; left: 0; right: 0; bottom: 16px; text-align: center; font-weight: 700; font-size: 14.5px; }
+
+/* Charts and diagrams: show the whole image, never crop */
+img.fit { object-fit: contain !important; background: #f5f5f5; }
+/* Area hero: same column widths in every area, whatever the photo size */
+.area-hero .window.has-img { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); }
+@media (max-width: 820px) { .area-hero .window.has-img { grid-template-columns: minmax(0, 1fr); } }
