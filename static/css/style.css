@@ -579,3 +579,10 @@ a.window:hover .bg img { transform: scale(1.05); }
 
 .about-map svg { max-width: 100%; margin: 0 auto; }
 .sup-grid > .sup-card.main + .sup-card.main { margin-top: 4px; }
+
+/* Area hero: let long titles and intros grow the box instead of being cut off */
+@media (min-width: 821px) {
+  .area-hero .window.has-img .bg { aspect-ratio: auto; min-height: 360px; }
+  .area-hero .window.has-img .bg img { position: absolute; inset: 0; }
+  .area-hero .window h1 { text-wrap: balance; }
+}
