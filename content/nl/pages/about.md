@@ -14,7 +14,7 @@ Elke twee tot vier weken sturen we een kort bericht over een van de onderdelen v
 - **Tot aan de uiteinden van de aarde** – de werkers en jongeren die we voorbereiden en uitzenden.
 - **Centrum Il Rifugio** – een plek van ontvangst en rust in Ruvo di Puglia, in dienst van kerken en bedieningen.
 
-Elke e-mail is kort (de nieuwsbrief verschijnt in het Engels). Wil je meer weten, dan brengt de link *Lees meer* je hier, waar je bij elk onderwerp langere verhalen, foto's en video's vindt.
+Elke e-mail is kort (de nieuwsbrief verschijnt in het Nederlands of het Engels, zoals je zelf kiest). Wil je meer weten, dan brengt de link *Lees meer* je hier, waar je bij elk onderwerp langere verhalen, foto's en video's vindt.
 
 ## Wie we zijn
 
