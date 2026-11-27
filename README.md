@@ -2,7 +2,7 @@
 
 Tono, lingua e struttura di newsletter e aggiornamenti: vedi [STYLE.md](STYLE.md).
 
-Sito di aggiornamenti per sostenitori — https://hoi.place
+Sito di aggiornamenti per sostenitori — https://fromtheheelofitaly.org
 
 ## Struttura
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hoi.place/feed.xml
+Sitemap: https://fromtheheelofitaly.org/feed.xml
