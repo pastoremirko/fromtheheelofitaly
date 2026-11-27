@@ -5,7 +5,7 @@ intro: Nieuws over het werk van Pieno Vangelo in Modugno en van de familie Ronch
 
 Fijn dat je hier bent. Velen van jullie hebben in de loop van de jaren voor ons gebeden, ons bezocht of ons werk in Puglia gesteund, en we hebben vaak gewenst dat we jullie beter op de hoogte konden houden. Deze berichten zijn ons antwoord daarop.
 
-Elke twee tot vier weken sturen we een kort bericht over een van de onderdelen van het werk dat voortkomt uit onze plaatselijke gemeente, Pieno Vangelo in Modugno:
+Op deze site delen we regelmatig nieuws over de onderdelen van het werk dat voortkomt uit onze plaatselijke gemeente, Pieno Vangelo in Modugno:
 
 - **Ons gezin** – persoonlijk nieuws van thuis.
 - **Gemeenteleven** – activiteiten en de visie die we hebben voor Modugno en daarbuiten.
@@ -14,7 +14,7 @@ Elke twee tot vier weken sturen we een kort bericht over een van de onderdelen v
 - **Tot aan de uiteinden van de aarde** – de werkers en jongeren die we voorbereiden en uitzenden.
 - **Centrum Il Rifugio** – een plek van ontvangst en rust in Ruvo di Puglia, in dienst van kerken en bedieningen.
 
-Elke e-mail is kort (de nieuwsbrief verschijnt in het Nederlands of het Engels, zoals je zelf kiest). Wil je meer weten, dan brengt de link *Lees meer* je hier, waar je bij elk onderwerp langere verhalen, foto's en video's vindt.
+Ongeveer één keer per maand brengt onze nieuwsbrief een van deze berichten in je inbox, in het Nederlands of het Engels, zoals je zelf kiest. Elke e-mail is kort: wil je meer weten, dan brengt de link *Lees meer* je hier, waar je bij elk onderwerp langere verhalen, foto's en video's vindt.
 
 ## Wie we zijn
 
