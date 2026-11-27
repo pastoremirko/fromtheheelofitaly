@@ -34,7 +34,8 @@
     "your_email": "Your email",
     "signup_note": "Only these updates, nothing else. Unsubscribe anytime.",
     "signup_ok": "Thank you for walking with us! You are now subscribed.",
-    "signup_err": "Something went wrong. Please check your email address and try again."
+    "signup_err": "Something went wrong. Please check your email address and try again.",
+    "newsletter_language": "Newsletter language:"
   },
   "nl": {
     "lang_name": "Nederlands",
@@ -71,6 +72,7 @@
     "your_email": "Je e-mailadres",
     "signup_note": "Alleen deze nieuwsbrief, verder niets. Afmelden kan altijd. De nieuwsbrief is in het Engels.",
     "signup_ok": "Dank je wel dat je met ons meeleeft! Je bent nu aangemeld.",
-    "signup_err": "Er ging iets mis. Controleer je e-mailadres en probeer het opnieuw."
+    "signup_err": "Er ging iets mis. Controleer je e-mailadres en probeer het opnieuw.",
+    "newsletter_language": "Taal van de nieuwsbrief:"
   }
 }

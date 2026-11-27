@@ -567,8 +567,13 @@ def page_subscribe(meta):
     <label class="sr-only" for="EMAIL">Email</label>
     <input type="email" id="EMAIL" name="EMAIL" placeholder="{T['your_email']}" autocomplete="email" required>
     <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
-    <input type="hidden" name="locale" value="en">
+    <input type="hidden" name="locale" value="{LANG}">
     <button class="btn btn-primary" type="submit">{T['subscribe']}</button>
+    <fieldset class="signup-lang">
+      <legend>{T['newsletter_language']}</legend>
+      <label><input type="radio" name="LINGUA" value="EN"{' checked' if LANG == 'en' else ''}> English</label>
+      <label><input type="radio" name="LINGUA" value="NL"{' checked' if LANG == 'nl' else ''}> Nederlands</label>
+    </fieldset>
   </form>
   <p class="signup-msg" id="signup-msg" role="status" aria-live="polite"></p>
   <p class="signup-note">{T['signup_note']} <a href="{u('/privacy/')}">Privacy</a></p>
