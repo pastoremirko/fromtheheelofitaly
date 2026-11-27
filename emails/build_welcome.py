@@ -32,7 +32,7 @@ TX = {
     p1="We're so glad you're here, and thrilled that you've chosen to walk with us! With this newsletter we'd love to keep you updated on what God is doing here in Puglia, the \"heel\" of Italy, and from here to the ends of the earth.",
     p2a="On our blog, ", p2b=", you can follow every update on our ministry in this part of Italy. There you'll find news from these six areas:",
     p3="This story is still being written, and now you are part of it too. Every prayer, every word of encouragement and every gift helps this work grow stronger. <strong>Thank you for being with us!</strong>",
-    p4="Once a month, our newsletter will bring you an update from one of these areas, right to your inbox.",
+    p4="About once a month, you'll find a short letter from us in your inbox: one story, one photo and a glimpse of what God is doing among us. Whenever you'd like more details, you'll find them on our blog.",
     b1="Explore the updates →", b2="Support the work", bye="With joy and gratitude,", sig="Pastor Mirko and Giorgia",
     foot1="Pieno Vangelo Church · Modugno (BA), Italy", foot2="You are receiving this because you subscribed to our updates.", unsub="Unsubscribe"),
   "nl": dict(title="Welkom · Nieuws uit de hak van Italië", pre="Vanuit de hak van Italië tot aan de uiteinden van de aarde, en nu ben jij een deel van het verhaal.",
@@ -40,7 +40,7 @@ TX = {
     p1="Wat fijn dat je er bent, en dat je met ons mee wilt lopen! Met deze nieuwsbrief houden we je graag op de hoogte van wat God doet hier in Puglia, de \"hak\" van Italië, en van hieruit tot aan de uiteinden van de aarde.",
     p2a="Op onze blog, ", p2b=", kun je al het nieuws over ons werk in dit deel van Italië volgen. Je vindt daar berichten uit deze zes gebieden:",
     p3="Dit verhaal wordt nog geschreven, en nu ben jij er ook een deel van. Elk gebed, elk bemoedigend woord en elke gift helpt dit werk te groeien. <strong>Dank je wel dat je met ons meeleeft!</strong>",
-    p4="Eén keer per maand brengt onze nieuwsbrief je nieuws uit een van deze gebieden, rechtstreeks in je inbox.",
+    p4="Ongeveer één keer per maand vind je een korte brief van ons in je inbox: één verhaal, één foto en een inkijkje in wat God hier doet. Wil je meer weten? Op onze blog lees je alle details.",
     b1="Lees het nieuws →", b2="Steun het werk", bye="Met vreugde en dankbaarheid,", sig="Pastor Mirko en Giorgia",
     foot1="Pieno Vangelo-kerk · Modugno (BA), Italië", foot2="Je ontvangt deze e-mail omdat je je hebt aangemeld voor ons nieuws.", unsub="Afmelden"),
 }[LANG]

@@ -20,7 +20,7 @@ On our blog, fromtheheelofitaly.org, you can follow every update on our ministry
 
 This story is still being written, and now you are part of it too. Every prayer, every word of encouragement and every gift helps this work grow stronger. Thank you for being with us!
 
-Once a month, our newsletter will bring you an update from one of these areas, right to your inbox.
+About once a month, you'll find a short letter from us in your inbox: one story, one photo and a glimpse of what God is doing among us. Whenever you'd like more details, you'll find them on our blog.
 
 [Explore the updates →]   [Support the work]
 
