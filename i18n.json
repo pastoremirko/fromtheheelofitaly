@@ -54,7 +54,7 @@
     "first_area_update": "Het eerste bericht over dit onderwerp komt eraan.",
     "read_the_updates": "Lees de berichten",
     "band_title": "Leef <em>met ons mee</em>",
-    "band_text": "Eens in de paar weken een kort bericht: één verhaal, één foto en een link om verder te lezen. Geen spam, je kunt je altijd afmelden. De nieuwsbrief is in het Engels.",
+    "band_text": "Eens in de paar weken een kort bericht: één verhaal, één foto en een link om verder te lezen. Geen spam, je kunt je altijd afmelden. Je kunt de nieuwsbrief in het Nederlands of het Engels ontvangen.",
     "subscribe": "Aanmelden",
     "all": "Alles",
     "partner": "Doe mee",
@@ -70,7 +70,7 @@
     "back_area": "← Alle berichten: {}", "back_all": "← Al het nieuws",
     "get_by_email": "Ontvang het nieuws per e-mail →",
     "your_email": "Je e-mailadres",
-    "signup_note": "Alleen deze nieuwsbrief, verder niets. Afmelden kan altijd. De nieuwsbrief is in het Engels.",
+    "signup_note": "Alleen deze nieuwsbrief, verder niets. Afmelden kan altijd. Je kunt de nieuwsbrief in het Nederlands of het Engels ontvangen.",
     "signup_ok": "Dank je wel dat je met ons meeleeft! Je bent nu aangemeld.",
     "signup_err": "Er ging iets mis. Controleer je e-mailadres en probeer het opnieuw.",
     "newsletter_language": "Taal van de nieuwsbrief:"
