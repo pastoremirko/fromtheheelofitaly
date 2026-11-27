@@ -1,7 +1,7 @@
 """Builds the welcome email as email-safe HTML (tables + inline styles).
 python3 emails/build_welcome.py [BASE_URL] [en|nl] > emails/welcome.html   (or welcome.nl.html)"""
 import json, sys, html
-BASE = sys.argv[1] if len(sys.argv) > 1 else "https://fromtheheelofitaly.org"
+BASE = sys.argv[1] if len(sys.argv) > 1 else "https://hoi.place"
 LANG = sys.argv[2] if len(sys.argv) > 2 else "en"
 site = json.load(open("site.json"))
 if LANG == "nl":
@@ -70,7 +70,7 @@ out = f'''<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport"
 <tr><td style="padding:34px 36px 8px;{F}font-size:16px;line-height:1.65;color:{INK};">
 <p style="margin:0 0 14px;">{TX["dear"]}</p>
 <p style="margin:0 0 14px;">{TX["p1"]}</p>
-<p style="margin:0 0 24px;">{TX["p2a"]}<a href="{BASE}{P}/" style="color:#e74759;font-weight:700;">fromtheheelofitaly.org</a>{TX["p2b"]}</p>
+<p style="margin:0 0 24px;">{TX["p2a"]}<a href="{BASE}{P}/" style="color:#e74759;font-weight:700;">hoi.place</a>{TX["p2b"]}</p>
 </td></tr>
 <tr><td style="padding:0 36px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table></td></tr>
 <tr><td style="padding:6px 36px 8px;{F}font-size:16px;line-height:1.65;color:{INK};">
@@ -85,7 +85,7 @@ out = f'''<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport"
 <p style="margin:0 0 30px;font-weight:800;">{TX["sig"]}</p>
 </td></tr>
 <tr><td style="background:#1f2326;padding:22px 36px;{F}font-size:12px;line-height:1.6;color:#9aa1a6;">
-{TX["foot1"]} · <a href="{BASE}{P}/" style="color:#ffffff;">fromtheheelofitaly.org</a><br>
+{TX["foot1"]} · <a href="{BASE}{P}/" style="color:#ffffff;">hoi.place</a><br>
 {TX["foot2"]} <a href="{{{{ unsubscribe }}}}" style="color:#ffffff;">{TX["unsub"]}</a>
 </td></tr>
 </table></td></tr></table></body></html>'''

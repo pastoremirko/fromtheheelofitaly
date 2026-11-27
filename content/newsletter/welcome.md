@@ -9,7 +9,7 @@ Dear friend,
 
 We're so glad you're here, and thrilled that you've chosen to walk with us! With this newsletter we'd love to keep you updated on what God is doing here in Puglia, the "heel" of Italy, and from here to the ends of the earth.
 
-On our blog, fromtheheelofitaly.org, you can follow every update on our ministry in this part of Italy. There you'll find news from these six areas:
+On our blog, hoi.place, you can follow every update on our ministry in this part of Italy. There you'll find news from these six areas:
 
 [photo] Family Life: our home, our children and how God is at work in our everyday life.
 [photo] Church Life: our church family in Modugno, its people, its growth and the vision for our city.
